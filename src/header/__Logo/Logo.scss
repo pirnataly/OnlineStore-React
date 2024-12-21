@@ -1,0 +1,17 @@
+$logo-text-color: #090909;
+@use "../../Main" as Main;
+
+.logo {
+  padding-top: 5px;
+  @media (max-width: 690px) {
+    padding: 0;
+  }
+}
+
+.logo__text {
+  font-size: 40px;
+  line-height: 28px;
+  font-weight: 600;
+  color: $logo-text-color;
+  font-family: Main.$font;
+}

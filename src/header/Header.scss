@@ -1,0 +1,42 @@
+$almost-white-background: #f2f7f7;
+$gray: #bccdd1;
+$search-width-desktop: 1080px;
+$search-width-mobile: 351px;
+@use "../Main";
+
+.header {
+  display: flex;
+  padding: 0 16px 16px;
+  &__search {
+    width: 75%;
+    max-width: $search-width-desktop;
+    margin: 0 20px;
+    @media (max-width: Main.$mobile) {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    align-self: center;
+    width: 12.2%;
+    max-width: Main.$menu-size;
+    @media (max-width: 690px) {
+      display: none;
+    }
+  }
+  &__menu {
+    justify-content: space-between;
+  }
+  &__search-button {
+    display: none;
+    @media (max-width: Main.$mobile) {
+      display: block;
+    }
+  }
+
+  @media (max-width: 690px) {
+    padding: 8px 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

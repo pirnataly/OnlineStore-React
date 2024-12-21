@@ -1,0 +1,37 @@
+@use "../../Main";
+
+.navigation {
+  min-width: Main.$menu-size;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-item {
+  list-style: none;
+  width: 32px;
+  height: 32px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cart {
+  background-image: url("../../../public/icons/cart.svg");
+}
+
+.order {
+  background-image: url("../../../public/icons/order.svg");
+}
+
+.profile {
+  background-image: url("../../../public/icons/profile.svg");
+}
+
+.likes {
+  background-image: url("../../../public/icons/likes.svg");
+}
