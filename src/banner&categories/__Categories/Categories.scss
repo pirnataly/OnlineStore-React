@@ -1,0 +1,14 @@
+.categories {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+
+  &__navigation {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__menu {
+    justify-content: space-between;
+  }
+}

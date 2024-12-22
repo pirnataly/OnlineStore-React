@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "psychology",
+    "description": "Помощь психолога"
+  },
+  {
+    "id": 2,
+    "name": "gadgets",
+    "description": "Гаджеты"
+  },
+  {
+    "id": 3,
+    "name": "art",
+    "description": "Предметы искусства"
+  },
+  {
+    "id": 4,
+    "name": "home",
+    "description": "Товары для дома"
+  },
+  {
+    "id": 5,
+    "name": "talents",
+    "description": "Таланты"
+  },
+  {
+    "id": 6,
+    "name": "magic",
+    "description": "Магия"
+  },
+  {
+    "id": 7,
+    "name": "relax",
+    "description": "Релакс"
+  },
+  {
+    "id": 8,
+    "name": "entertainment",
+    "description": "Развлечения"
+  },
+  {
+    "id": 9,
+    "name": "treasures",
+    "description": "Сокровища"
+  },
+  {
+    "id": 10,
+    "name": "real_estate",
+    "description": "Недвижимость"
+  },
+  {
+    "id": 11,
+    "name": "beauty",
+    "description": "Красота и искусство"
+  },
+  {
+    "id": 12,
+    "name": "power",
+    "description": "Могущество"
+  },
+  {
+    "id": 13,
+    "name": "style",
+    "description": "Стиль"
+  }
+]

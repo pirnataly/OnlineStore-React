@@ -1,0 +1,16 @@
+@use "../Main";
+$categories-wrapper-width: 1314px;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px;
+
+  &__categories {
+    max-width: $categories-wrapper-width;
+    padding: 0 16px;
+    @media (max-width: Main.$mobile) {
+      padding: 0;
+    }
+  }
+}

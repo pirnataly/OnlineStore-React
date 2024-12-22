@@ -1,20 +1,13 @@
 @use "../../Main";
 
-.navigation {
-  min-width: Main.$menu-size;
-}
-
 .menu {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.menu-item {
+.item {
   list-style: none;
-  width: 32px;
-  height: 32px;
-
   &:hover {
     cursor: pointer;
   }

@@ -19,6 +19,7 @@ $search-width-mobile: 351px;
   &__navigation {
     align-self: center;
     width: 12.2%;
+    min-width: Main.$menu-size;
     max-width: Main.$menu-size;
     @media (max-width: 690px) {
       display: none;
@@ -27,6 +28,11 @@ $search-width-mobile: 351px;
   &__menu {
     justify-content: space-between;
   }
+  &-item {
+    width: 32px;
+    height: 32px;
+  }
+
   &__search-button {
     display: none;
     @media (max-width: Main.$mobile) {

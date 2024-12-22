@@ -1,0 +1,82 @@
+$category-height: 124px;
+$category-image-size: 90px;
+$category-gap-right: 6px;
+$gap: 8px;
+
+@use "../../../Main.scss";
+
+.category {
+  height: $category-height;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+
+  &-item {
+    margin-right: $category-gap-right;
+  }
+
+  &-image {
+    width: $category-image-size;
+    height: $category-image-size;
+    margin-bottom: $gap;
+  }
+
+  &-name {
+    font-family: Main.$font;
+    font-size: 15px;
+    font-weight: 550;
+    line-height: 100%;
+  }
+}
+
+.img-psychology {
+  background: url("../../../../public/categories/psychology.png") no-repeat;
+}
+
+.img-gadgets {
+  background: url("../../../../public/categories/gadgets.png") no-repeat;
+}
+
+.img-art {
+  background: url("../../../../public/categories/art.png") no-repeat;
+}
+
+.img-home {
+  background: url("../../../../public/categories/home.png") no-repeat;
+}
+
+.img-talents {
+  background: url("../../../../public/categories/talents.png") no-repeat;
+}
+
+.img-magic {
+  background: url("../../../../public/categories/magic.png") no-repeat;
+}
+
+.img-relax {
+  background: url("../../../../public/categories/relax.png") no-repeat;
+}
+
+.img-entertainment {
+  background: url("../../../../public/categories/entertainment.png") no-repeat;
+}
+
+.img-treasures {
+  background: url("../../../../public/categories/treasures.png") no-repeat;
+}
+
+.img-real_estate {
+  background: url("../../../../public/categories/real_estate.png") no-repeat;
+}
+
+.img-beauty {
+  background: url("../../../../public/categories/beauty.png") no-repeat;
+}
+
+.img-power {
+  background: url("../../../../public/categories/power.png") no-repeat;
+}
+
+.img-style {
+  background: url("../../../../public/categories/style.png") no-repeat;
+}

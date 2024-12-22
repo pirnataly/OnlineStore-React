@@ -1,0 +1,8 @@
+$bannerHeight: 405px;
+
+.banner {
+  height: $bannerHeight;
+  background: url("../../../public/images/banner.png") no-repeat center;
+  border-radius: 16px;
+  margin-bottom: 6px;
+}

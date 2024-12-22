@@ -1,21 +1,21 @@
 import React from "react";
 import "./Menu.scss";
-import { MenuItem } from "../../interfaces/types";
+import { menuItemProps } from "../../interfaces/types";
+import Category from "../../banner&categories/__Categories/__Category/Category";
 
-const Menu = (props: { items: MenuItem[]; navClass?: string }) => {
+const Menu = (props: menuItemProps) => {
   return (
-    <nav
-      className={
-        props.navClass
-          ? `navigation ${props.navClass}__navigation`
-          : "navigation"
-      }
-    >
-      <menu
-        className={props.navClass ? `menu ${props.navClass}__menu` : "menu"}
-      >
+    <nav className={`${props.blockClass}__navigation`}>
+      <menu className={`menu ${props.blockClass}__menu`}>
         {props.items.map((item) => (
-          <li key={item.id} className={`menu-item ${item.name}`}></li>
+          <li
+            key={item.id}
+            className={`item ${props.itemType}-item ${item.name}`}
+          >
+            {item.description ? (
+              <Category name={item.name} description={item.description} />
+            ) : null}
+          </li>
         ))}
       </menu>
     </nav>
