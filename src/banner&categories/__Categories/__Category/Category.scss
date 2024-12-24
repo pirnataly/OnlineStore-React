@@ -1,4 +1,4 @@
-$category-height: 124px;
+$category-height: 130px;
 $category-image-size: 90px;
 $category-gap-right: 6px;
 $gap: 8px;
@@ -9,7 +9,7 @@ $gap: 8px;
   height: $category-height;
   display: flex;
   flex-direction: column;
-  place-content: center;
+  max-width: $category-image-size;
 
   &-item {
     margin-right: $category-gap-right;
@@ -26,6 +26,10 @@ $gap: 8px;
     font-size: 15px;
     font-weight: 550;
     line-height: 100%;
+    text-align: center;
+    font-variant-numeric: ordinal;
+    hyphens: auto;
+    word-wrap: break-word;
   }
 }
 

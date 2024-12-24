@@ -1,9 +1,9 @@
 import React from "react";
 import "./Menu.scss";
-import { menuItemProps } from "../../interfaces/types";
+import { MenuItemProps } from "../../interfaces/types";
 import Category from "../../banner&categories/__Categories/__Category/Category";
 
-const Menu = (props: menuItemProps) => {
+const Menu = (props: MenuItemProps) => {
   return (
     <nav className={`${props.blockClass}__navigation`}>
       <menu className={`menu ${props.blockClass}__menu`}>

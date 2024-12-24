@@ -1,8 +1,16 @@
 $bannerHeight: 405px;
+$bannerHeight_mobile: 209px;
+
+@use "../../Main";
 
 .banner {
   height: $bannerHeight;
   background: url("../../../public/images/banner.png") no-repeat center;
   border-radius: 16px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  @media (max-width: Main.$mobile) {
+    height: $bannerHeight_mobile;
+    border-radius: 12px;
+    background: url("../../../public/images/banner_mobile.png") no-repeat center;
+  }
 }

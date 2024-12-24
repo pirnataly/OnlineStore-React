@@ -1,0 +1,34 @@
+.snippet-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 600px;
+}
+
+.photo-double_left {
+  width: 49%;
+}
+
+.photo-double_right {
+  width: 49%;
+}
+
+.anonymous_mask {
+  background-image: url("../../../../public/products/Маска «Анонимус».png");
+  background-color: lightgray;
+  background-repeat: no-repeat;
+
+  &_left {
+    background-position: 100.14px -15.801px;
+    background-size: 72.717% 108.167%;
+  }
+  &_right {
+    background-position: 135.8px 44.98px;
+    background-size: 61.961% 92.167%;
+  }
+}

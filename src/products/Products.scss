@@ -1,0 +1,11 @@
+@use "../Main";
+
+.products {
+  padding-top: 54px;
+  @media (max-width: Main.$mobile) {
+    padding-top: 36px;
+  }
+  &__container {
+    margin-bottom: 100px;
+  }
+}
