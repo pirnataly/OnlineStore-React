@@ -16,7 +16,7 @@ const Products = () => {
       <Container
         blockClass={"products"}
         snippets={productsItemsArray}
-        title={"Сокровищные сокровища"}
+        // title={"Сокровищные сокровища"}
       />
     </section>
   );

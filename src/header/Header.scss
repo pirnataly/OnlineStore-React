@@ -7,10 +7,11 @@ $search-width-mobile: 351px;
 .header {
   display: flex;
   padding: 0 16px 16px;
+  justify-content: space-between;
   &__search {
-    width: 75%;
+    width: 78%;
     max-width: $search-width-desktop;
-    margin: 0 20px;
+
     @media (max-width: Main.$mobile) {
       display: none;
     }

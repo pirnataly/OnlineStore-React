@@ -1,21 +1,62 @@
-.snippet-container {
+$snippet-margin-bottom: 50px;
+$photos-height: 600px;
+$photos-bottom: 4px;
+$info-width: 1104px;
+$info-margin-right: 8px;
+$name-size: 60px;
+$name-line-height: 87%;
+$name-weight: 500;
+$text-weight: 550;
+$like-size: 45px;
+$max-width: 714px;
+$photo-border-radius: 16px;
+$text-width: 1000px;
+$text-size: 22px;
+
+@use "../../../Main.scss";
+
+.snippet {
   display: flex;
   flex-direction: column;
 }
 
+.snippet-container {
+  margin-bottom: $snippet-margin-bottom;
+  padding: 0 4px;
+
+  &__info {
+    max-width: $info-width;
+    padding: 4px 12px 0;
+  }
+}
+
 .photos {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 600px;
+  height: $photos-height;
 }
 
-.photo-double_left {
-  width: 49%;
+.snippet__photos {
+  margin-bottom: $photos-bottom;
 }
 
+// исправить
+.promo {
+  position: absolute;
+  background-color: #0d99a5;
+  width: 20px;
+  height: 20px;
+  top: 514px;
+  left: 12px;
+}
+
+.photo-double_left,
 .photo-double_right {
-  width: 49%;
+  width: 50%;
+  max-width: $max-width;
+  border-radius: $photo-border-radius;
 }
 
 .anonymous_mask {
@@ -27,8 +68,82 @@
     background-position: 100.14px -15.801px;
     background-size: 72.717% 108.167%;
   }
+
   &_right {
     background-position: 135.8px 44.98px;
     background-size: 61.961% 92.167%;
   }
+}
+
+.info {
+  display: flex;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+
+  &-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+    &__name {
+      margin-right: $info-margin-right;
+    }
+  }
+
+  &__up {
+  }
+
+  &__bottom {
+    width: 100%;
+  }
+
+  &__text {
+    max-width: $text-width;
+  }
+}
+
+.product-name {
+  color: Main.$black-color;
+  font-size: $name-size;
+  font-family: Main.$font;
+  font-weight: $name-weight;
+  line-height: $name-line-height;
+}
+
+.like {
+  width: calc($like-size + 1px);
+  height: $like-size;
+  background: url("../../../../public/icons/heart.svg") no-repeat;
+
+  &:hover {
+    cursor: pointer;
+    background: url("../../../../public/icons/heart-hover.svg") no-repeat;
+  }
+}
+
+.text {
+  display: -webkit-box;
+  max-width: 1000px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  width: 100%;
+  overflow: hidden;
+  color: Main.$black-color;
+  text-overflow: ellipsis;
+  font-family: Main.$font;
+  font-size: $text-size;
+  font-weight: $text-weight;
+  line-height: 100%;
+  font-variant-numeric: ordinal;
+  font-feature-settings:
+    "dlig" on,
+    "ss01" on,
+    "ss04" on,
+    "cv01" on,
+    "cv02" on,
+    "cv03" on,
+    "cv04" on;
 }
