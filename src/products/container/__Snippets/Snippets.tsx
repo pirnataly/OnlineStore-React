@@ -17,7 +17,7 @@ const Snippets = (props: { snippets: ProductItemWithType[] }) => {
             <div className={"promo"}></div>
           </div>
           <div className={"info snippet-container__info"}>
-            <div className={"description"}>
+            <div className={"description snippet__description"}>
               <div className={"description-row description__up"}>
                 <div className={"product-name description-row__name"}>
                   {snippet.name}
@@ -28,6 +28,35 @@ const Snippets = (props: { snippets: ProductItemWithType[] }) => {
                 <p className={"text description__text"}>
                   {snippet.description}
                 </p>
+              </div>
+            </div>
+            <div className={"Buy"}>
+              <div className={"price-proof"}>
+                <div className={"price"}>
+                  <div
+                    className={"price-discount"}
+                  >{`${snippet.discount_price} ₽`}</div>
+                  <div
+                    className={"old-price price__old-price"}
+                  >{`${snippet.price} ₽`}</div>
+                </div>
+                <div className={"proof-container"}>
+                  <div className={"proof"}>
+                    <div
+                      className={"proof__text"}
+                    >{`${snippet.review_rating}`}</div>
+                    <div className={`proof__icon proof-star`}></div>
+                  </div>
+                  <div className={"proof"}>
+                    <div className={"proof__text"}>{`${snippet.likes}`}</div>
+                    <div className={`proof__icon proof-like`}></div>
+                  </div>
+                </div>
+              </div>
+              <div className={"buy-button buy__button"}>
+                <div className={"buy__minus"}></div>
+                <div className={"buy-text"}>{"В корзину"}</div>
+                <div className={"buy__plus"}></div>
               </div>
             </div>
           </div>

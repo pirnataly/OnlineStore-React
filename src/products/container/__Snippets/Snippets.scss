@@ -12,6 +12,15 @@ $max-width: 714px;
 $photo-border-radius: 16px;
 $text-width: 1000px;
 $text-size: 22px;
+$proof-size: 16px;
+$proof-text-weight: 412;
+$snippet-min-width: 1104px;
+$row-bottom-max-width: 1000px;
+$button-width: 294px;
+$button-mobile-width: 298px;
+$text-discount: 39px;
+$text-discount-weight: 700;
+$discount-size: 15px;
 
 @use "../../../Main.scss";
 
@@ -98,11 +107,17 @@ $text-size: 22px;
 
   &__bottom {
     width: 100%;
+    max-width: $row-bottom-max-width;
   }
 
   &__text {
     max-width: $text-width;
   }
+}
+
+.snippet__description {
+  min-width: $snippet-min-width;
+  margin-right: 10px;
 }
 
 .product-name {
@@ -146,4 +161,146 @@ $text-size: 22px;
     "cv02" on,
     "cv03" on,
     "cv04" on;
+}
+
+.buy {
+  display: flex;
+  flex-direction: column;
+  width: $button-width;
+  margin-bottom: 6px;
+  justify-content: space-between;
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: $button-width;
+    padding: 14px 24px 16px;
+    border-radius: Main.$button-border-radius;
+    background-color: Main.$button-color;
+    @media (max-width: Main.$mobile) {
+      width: $button-mobile-width;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: Main.$button-hover;
+    }
+  }
+
+  &-text {
+    color: Main.$white-color;
+    text-align: center;
+    font-variant-numeric: ordinal;
+    font-feature-settings:
+      "dlig" on,
+      "ss01" on,
+      "ss04" on,
+      "cv01" on,
+      "cv02" on,
+      "cv03" on,
+      "cv04" on;
+    font-family: Main.$font;
+    font-size: $text-size;
+    font-weight: $text-weight;
+    line-height: 100%;
+  }
+}
+
+.price {
+  display: flex;
+  align-items: flex-end;
+  &-discount {
+    color: Main.$shop-black;
+    text-align: center;
+    font-variant-numeric: ordinal;
+    font-feature-settings:
+      "dlig" on,
+      "ss01" on,
+      "ss04" on,
+      "ss07" on,
+      "ss08" on,
+      "cv01" on,
+      "cv02" on,
+      "cv03" on,
+      "cv04" on;
+    font-family: Main.$font;
+    font-size: $text-discount;
+    font-weight: $text-discount-weight;
+    line-height: 100%;
+  }
+  &__old-price {
+    margin-bottom: 6px;
+  }
+}
+
+.price-proof {
+  display: flex;
+  justify-content: space-between;
+}
+
+.old-price {
+  color: Main.$shop-gray;
+  font-family: Main.$font;
+  font-style: normal;
+  font-variant-numeric: ordinal;
+  font-feature-settings:
+    "dlig" on,
+    "ss01" on,
+    "ss04" on,
+    "ss07" on,
+    "ss08" on,
+    "cv01" on,
+    "cv02" on,
+    "cv03" on,
+    "cv04" on;
+  font-size: $discount-size;
+  font-weight: $text-weight;
+  line-height: 100%;
+  text-decoration: line-through;
+  align-self: flex-end;
+}
+
+.proof-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.proof {
+  display: flex;
+  align-items: flex-end;
+
+  &__text {
+    color: Main.$shop-black;
+    font-variant-numeric: ordinal;
+    font-feature-settings:
+      "dlig" on,
+      "ss01" on,
+      "ss04" on,
+      "ss07" on,
+      "ss08" on,
+      "cv01" on,
+      "cv02" on,
+      "cv03" on,
+      "cv04" on;
+    font-family: Main.$font;
+    font-size: $proof-size;
+    font-weight: $proof-text-weight;
+    line-height: 100%;
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    background-image: url("../../../../public/icons/black-star.svg");
+  }
+
+  &-star {
+    background-image: url("../../../../public/icons/black-star.svg");
+  }
+
+  &-like {
+    background-image: url("../../../../public/icons/black-heart.svg");
+  }
 }
