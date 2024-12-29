@@ -13,9 +13,9 @@ $mobile: 375px;
 $menu-size: 176px;
 $app-background: #ffffff;
 $font: "Inter Variable", sans-serif;
-$font-feature-settings:
-  "liga" 1,
-  "calt" 1; /* fix for Chrome */
+//$font-feature-settings:
+//  "liga" 1,
+//  "calt" 1; /* fix for Chrome */
 $black-color: #000000;
 $white-color: #ffffff;
 $shop-black: #090909;
@@ -23,6 +23,7 @@ $shop-gray: #bccdd1;
 $button-color: #f94233;
 $button-hover: linear-gradient(99deg, #fa0 -8.11%, #f94233 86.42%);
 $button-border-radius: 12px;
+$light-gray-color: #e1eced;
 
 * {
   margin: 0;

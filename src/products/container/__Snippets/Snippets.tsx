@@ -14,8 +14,12 @@ const Snippets = (props: { snippets: ProductItemWithType[] }) => {
             <div
               className={`photo-double_right ${snippet.id} ${snippet.id}_right`}
             ></div>
-            <div className={"promo"}></div>
+            <div className={"promo"}>
+              <div className={"tag tag-up promo__up"}>{"- 50%"}</div>
+              <div className={"tag tag-bottom promo__bottom"}></div>
+            </div>
           </div>
+
           <div className={"info snippet-container__info"}>
             <div className={"description snippet__description"}>
               <div className={"description-row description__up"}>
@@ -25,9 +29,9 @@ const Snippets = (props: { snippets: ProductItemWithType[] }) => {
                 <div className={"like"}></div>
               </div>
               <div className={"description-row description__bottom"}>
-                <p className={"text description__text"}>
+                <div className={"text description__text"}>
                   {snippet.description}
-                </p>
+                </div>
               </div>
             </div>
             <div className={"Buy"}>
