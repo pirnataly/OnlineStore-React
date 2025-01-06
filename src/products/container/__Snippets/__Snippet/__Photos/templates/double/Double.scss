@@ -1,0 +1,25 @@
+@use "../../../../../../../Main";
+@use "../../Photos";
+
+.double-photos {
+  width: 100%;
+  @include Main.flex-between();
+  height: Photos.$photos-height;
+  @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+    height: Photos.$photos-height-mobile;
+  }
+}
+
+.photo-double_left {
+  margin-right: 4px;
+}
+
+.photo-double_left,
+.photo-double_right {
+  width: 50%;
+  max-width: Photos.$max-width-double;
+  border-radius: Photos.$photo-border-radius;
+  @media (max-width: Main.$mobile) {
+    max-width: Photos.$max-width-double-mobile;
+  }
+}

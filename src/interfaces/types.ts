@@ -1,3 +1,5 @@
+import { components } from "../data/constants/constants";
+
 export type MenuItem = {
   id: number;
   name: string;
@@ -27,4 +29,10 @@ export type MainPageConfig = {
   type: string;
 };
 
+export type componentProps = {
+  snippet: ProductItemWithType;
+};
+
 export type ProductItemWithType = ProductItem & MainPageConfig;
+
+export type ComponentKeys = keyof typeof components;

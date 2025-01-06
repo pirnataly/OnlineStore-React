@@ -1,0 +1,96 @@
+$photos-height: 600px;
+$photos-height-mobile: 240px;
+$photos-bottom: 4px;
+$photo-border-radius: 16px;
+$photo-border-radius-mobile: 12px;
+$max-width-double: 714px;
+$max-width-double-mobile: 181px;
+$desktop-minus-one: 1439px;
+
+@use "../../../../../Main";
+
+.photos {
+  position: relative;
+  display: flex;
+}
+
+.snippet__photos {
+  margin-bottom: $photos-bottom;
+}
+
+.anonymous_mask {
+  background-image: url("../../../../../../public/products/Маска «Анонимус».png");
+  background-color: lightgray;
+  background-repeat: no-repeat;
+
+  &_left {
+    background-position: 100.14px -15.801px;
+    background-size: 72.717% 108.167%;
+    @media (max-width: $desktop-minus-one) and (min-width: Main.$tablet) {
+      background-position: center;
+      background-size: contain;
+    }
+    @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+      background-position: 4.043px 5.514px;
+      background-size: 100.331% 94.583%;
+    }
+  }
+
+  &_right {
+    background-position: 135.8px 44.98px;
+    background-size: 61.961% 92.167%;
+    @media (max-width: $desktop-minus-one) and (min-width: Main.$mobile) {
+      background-position: center;
+      background-size: contain;
+    }
+    @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+      background-position: 18.5px 49.379px;
+      background-size: 79.558% 75%;
+    }
+  }
+}
+
+.sunglasses {
+  background-image: url("../../../../../../public/products/Солнцезащитные очки.png");
+  background-repeat: no-repeat;
+  background-color: #2e09e5;
+  background-position: 376.816px -180.776px;
+  background-size: 47.372% 153.235%;
+  @media (max-width: $desktop-minus-one) and (min-width: Main.$tablet) {
+    background-position: center;
+    background-size: contain;
+  }
+  @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+    background-position: 50%;
+    background-size: cover;
+  }
+}
+.thomas_shelbick_cap {
+  background-image: url("../../../../../../public/products/Кепка Томаса Шелбика.png");
+  background-repeat: no-repeat;
+  background-color: #faa700;
+  &_left {
+    background-position: -81.725px -90.677px;
+    background-size: 130.177% 193.638%;
+    @media (max-width: $desktop-minus-one) and (min-width: Main.$tablet) {
+      background-position: center;
+      background-size: contain;
+    }
+    @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+      background-position: -23.697px 14.623px;
+      background-size: 146.794% 138.384%;
+    }
+  }
+  &_right {
+    background-position: 16.345px -84.139px;
+    background-size: 100% 148.75%;
+    @media (max-width: $desktop-minus-one) and (min-width: Main.$mobile) {
+      background-position: center;
+      background-size: contain;
+    }
+    @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+      background-position: 0.474px 0;
+      background-size: 106.077% 100%;
+    }
+  }
+}

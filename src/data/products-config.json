@@ -2,5 +2,13 @@
   {
     "type": "double",
     "id": "anonymous_mask"
+  },
+  {
+    "type": "single",
+    "id": "sunglasses"
+  },
+  {
+    "type": "double",
+    "id": "thomas_shelbick_cap"
   }
 ]

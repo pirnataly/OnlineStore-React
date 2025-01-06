@@ -1,4 +1,7 @@
-import { MenuItem } from "../../interfaces/types";
+import { componentProps, MenuItem } from "../../interfaces/types";
+import React from "react";
+import Double from "../../products/container/__Snippets/__Snippet/__Photos/templates/double/Double";
+import Single from "../../products/container/__Snippets/__Snippet/__Photos/templates/single/Single";
 
 export const menuItemsTop: MenuItem[] = [
   {
@@ -37,3 +40,8 @@ export const menuItemsBottom: MenuItem[] = [
     name: "cart",
   },
 ];
+
+export const components: { [k: string]: React.FC<componentProps> } = {
+  double: (props) => <Double {...props} />,
+  single: (props) => <Single {...props} />,
+};

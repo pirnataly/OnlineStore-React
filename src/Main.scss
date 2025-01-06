@@ -7,15 +7,34 @@
     "calt" 1; /* fix for Chrome */
 }
 
+@font-face {
+  font-family: "Rubik Dirt";
+  font-style: normal;
+  src: url("../public/fonts/RubikDirt-Regular.ttf") format("ttf");
+  font-feature-settings: "dlig" on;
+}
+
+@font-face {
+  font-family: "Rubik Doodle triangles";
+  src: url("../public/fonts/RubikDoodleTriangles-Regular.ttf") format("ttf");
+  font-feature-settings: "dlig" on;
+}
+
+@font-face {
+  font-family: "Rubik Beastly";
+  src: url("../public/fonts/RubikBeastly-Regular.ttf") format("ttf");
+  font-feature-settings: "dlig" on;
+}
+
 $desktop: 1440px;
 $tablet: 690px;
 $mobile: 375px;
 $menu-size: 176px;
 $app-background: #ffffff;
 $font: "Inter Variable", sans-serif;
-//$font-feature-settings:
-//  "liga" 1,
-//  "calt" 1; /* fix for Chrome */
+$font-rubik: "Rubik Dirt", sans-serif;
+$font-doodle: "Rubik Doodle triangles", sans-serif;
+$font-beastly: "Rubik Beastly", sans-serif;
 $black-color: #000000;
 $white-color: #ffffff;
 $shop-black: #090909;
@@ -25,8 +44,38 @@ $button-hover: linear-gradient(99deg, #fa0 -8.11%, #f94233 86.42%);
 $button-border-radius: 12px;
 $light-gray-color: #e1eced;
 
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin typography($color: $shop-black) {
+  color: $color;
+  font-variant-numeric: ordinal;
+  font-feature-settings:
+    "dlig" on,
+    "ss01" on,
+    "ss04" on,
+    "cv01" on,
+    "cv02" on,
+    "cv03" on,
+    "cv04" on;
+
+  font-family: $font;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 550;
+  line-height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
+  font-weight: normal;
   box-sizing: border-box;
 }

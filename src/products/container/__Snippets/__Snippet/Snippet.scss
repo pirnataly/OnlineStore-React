@@ -1,0 +1,30 @@
+$snippet-margin-bottom: 49px;
+$info-width: 1104px;
+$text-size: 22px;
+
+@use "../../../../Main";
+
+$f: Main.$font-rubik;
+.snippet {
+  @include Main.flex-column();
+}
+
+.snippet-container {
+  margin-bottom: $snippet-margin-bottom;
+  padding: 0 4px;
+
+  &__info {
+    max-width: $info-width;
+    padding: 4px 12px 0;
+  }
+}
+
+.hhhh {
+  font-family: Main.$font-doodle;
+  font-variant-numeric: ordinal;
+  font-size: 163px;
+  text-align: center;
+  color: #090909;
+  line-height: 80%; /* 130.4px */
+  letter-spacing: -6.52px;
+}

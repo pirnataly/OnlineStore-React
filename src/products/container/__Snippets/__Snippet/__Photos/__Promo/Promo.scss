@@ -1,0 +1,36 @@
+@use "../../../../../../Main";
+$tag-up-radius: 4px;
+
+.promo {
+  position: absolute;
+  @include Main.flex-column();
+  bottom: 9px;
+  left: 12px;
+  height: 77px;
+  max-width: 82px;
+  justify-content: space-between;
+  padding-top: 10px;
+  &__up {
+  }
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+
+  &-up {
+    @include Main.typography();
+    border-radius: $tag-up-radius;
+    transform: rotate(-15deg);
+    padding: 2px 6px 3px 6px;
+    background-color: Main.$light-gray-color;
+  }
+
+  &-bottom {
+    width: 160px;
+    height: 26px;
+    border-radius: 4px;
+    background: url("../../../../../../../public/tags/Autumn_huge.png")
+      no-repeat;
+  }
+}

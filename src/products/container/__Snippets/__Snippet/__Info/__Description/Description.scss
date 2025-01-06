@@ -1,0 +1,78 @@
+$snippet-min-width: 1104px;
+$info-margin-right: 8px;
+$row-bottom-max-width: 1000px;
+$text-width: 1000px;
+$name-weight: 500;
+$name-size: 60px;
+$like-size: 45px;
+$rows-bottom: 10px;
+$margin-right: 10px;
+$name-height: 44px;
+$width: 100%;
+
+@use "../../../../../../Main";
+
+.description {
+  @include Main.flex-column();
+
+  &-row {
+    display: flex;
+    align-items: flex-start;
+    width: $width;
+
+    &__name {
+      margin-right: $info-margin-right;
+    }
+  }
+
+  &__up {
+    margin-bottom: $rows-bottom;
+  }
+
+  &__bottom {
+    width: $width;
+    max-width: $row-bottom-max-width;
+    max-height: 38px;
+  }
+
+  &__text {
+    align-self: flex-start;
+    max-width: $text-width;
+  }
+}
+
+.snippet__description {
+  min-width: $snippet-min-width;
+  margin-right: $margin-right;
+}
+
+.product-name {
+  color: Main.$black-color;
+  font-size: $name-size;
+  font-family: Main.$font;
+  font-weight: $name-weight;
+  line-height: $name-height;
+}
+
+.like {
+  width: calc($like-size + 1px);
+  height: $like-size;
+  background: url("../../../../../../../public/icons/heart.svg") no-repeat;
+
+  &:hover {
+    cursor: pointer;
+    background: url("../../../../../../../public/icons/heart-hover.svg")
+      no-repeat;
+  }
+}
+
+.text {
+  display: -webkit-box;
+  max-width: $text-width;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @include Main.typography();
+}

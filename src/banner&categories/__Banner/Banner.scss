@@ -8,9 +8,18 @@ $bannerHeight_mobile: 209px;
   background: url("../../../public/images/banner.png") no-repeat center;
   border-radius: 16px;
   margin-bottom: 8px;
-  @media (max-width: Main.$mobile) {
+  @media (max-width: 1430px) and (min-width: 1200px) {
+    background-position: center;
+    background-size: contain;
+  }
+  @media (max-width: 1199px) and (min-width: Main.$mobile) {
+    border-radius: 12px;
+    background-image: url("../../../public/images/banner_mobile.png");
+    background-size: 100% 120%;
+  }
+  @media (max-width: Main.$mobile + 1px) {
     height: $bannerHeight_mobile;
     border-radius: 12px;
-    background: url("../../../public/images/banner_mobile.png") no-repeat center;
+    background: url("../../../public/images/banner_mobile.png") no-repeat;
   }
 }
