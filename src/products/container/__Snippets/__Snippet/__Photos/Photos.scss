@@ -9,6 +9,7 @@ $max-width-double-mobile: 181px;
 $desktop-minus-one: 1439px;
 $shop-shelbick-background: #faa700;
 $shop-sunglasses-background: #2e09e5;
+$shop-fur-coat-background: #f94233;
 $first-invisible-point: 1120px;
 $second-invisible-point: 841px;
 
@@ -94,5 +95,17 @@ $second-invisible-point: 841px;
   }
   &_fourth {
     @include Main.position-and-size(-1.439px 72px, 128.265% 90.524%);
+  }
+}
+
+.fur_coat {
+  background-image: url("../../../../../../public/products/Шуба в стиле «Slavic bimbo».png");
+  background-repeat: no-repeat;
+  background-color: $shop-fur-coat-background;
+  &_left {
+    @include Main.position-and-size(11.35px 30.416px, 65.827% 105.955%);
+  }
+  &_right {
+    @include Main.position-and-size(-479.771px 56.769px, 298.414% 161.909%);
   }
 }

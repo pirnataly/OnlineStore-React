@@ -1,0 +1,35 @@
+@use "../../../../../../../Main";
+@use "../../Photos";
+
+$quarter-left-max-width: 1068px;
+$quarter-right-max-width: 360px;
+
+.quarter-photos {
+  width: 100%;
+  @include Main.flex-between();
+  height: Photos.$photos-height;
+  @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+    height: Photos.$photos-height-mobile;
+  }
+}
+
+.photo-quarter_left {
+  width: 75%;
+  min-width: 75%;
+  max-width: $quarter-left-max-width;
+  margin-right: 4px;
+  border-radius: Photos.$photo-border-radius;
+  @media (max-width: $quarter-left-max-width) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.photo-quarter_right {
+  width: 25%;
+  max-width: $quarter-right-max-width;
+  border-radius: Photos.$photo-border-radius;
+  @media (max-width: $quarter-left-max-width) {
+    display: none;
+  }
+}

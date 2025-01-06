@@ -3,6 +3,7 @@ import React from "react";
 import Double from "../../products/container/__Snippets/__Snippet/__Photos/templates/double/Double";
 import Single from "../../products/container/__Snippets/__Snippet/__Photos/templates/single/Single";
 import Quadro from "../../products/container/__Snippets/__Snippet/__Photos/templates/quadro/Quadro";
+import Quarter from "../../products/container/__Snippets/__Snippet/__Photos/templates/quarter/Quarter";
 
 export const menuItemsTop: MenuItem[] = [
   {
@@ -46,4 +47,5 @@ export const components: { [k: string]: React.FC<componentProps> } = {
   double: (props) => <Double {...props} />,
   single: (props) => <Single {...props} />,
   quadro: (props) => <Quadro {...props} />,
+  quarter: (props) => <Quarter {...props} />,
 };
