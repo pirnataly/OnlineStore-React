@@ -73,6 +73,11 @@ $light-gray-color: #e1eced;
   line-height: 100%;
 }
 
+@mixin position-and-size($position, $size) {
+  background-position: $position;
+  background-size: $size;
+}
+
 * {
   margin: 0;
   padding: 0;

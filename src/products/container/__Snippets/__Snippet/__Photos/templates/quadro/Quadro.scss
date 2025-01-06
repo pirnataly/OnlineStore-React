@@ -1,0 +1,50 @@
+@use "../../../../../../../Main";
+@use "../../Photos";
+
+$quadro-min-width: 275px;
+
+.quadro-photos {
+  width: 100%;
+  height: Photos.$photos-height;
+  display: flex;
+  @media (min-width: Main.$mobile - 10px) and (max-width: Main.$tablet - 1px) {
+    height: Photos.$photos-height-mobile;
+  }
+}
+
+.photo-quadro_first,
+.photo-quadro_second,
+.photo-quadro_third,
+.photo-double_fourth {
+  width: 25%;
+  min-width: $quadro-min-width;
+  max-width: Photos.$max-width-quadro;
+  border-radius: Photos.$photo-border-radius;
+  margin-right: 4px;
+}
+
+.photo-quadro_first,
+.photo-quadro_second {
+  @media (min-width: Photos.$second-invisible-point + 1px) and (max-width: Photos.$first-invisible-point) {
+    width: 33%;
+  }
+  @media (max-width: Photos.$second-invisible-point) {
+    width: 50%;
+    max-width: 414px;
+    min-width: Photos.$max-width-double-mobile;
+  }
+}
+
+.photo-quadro_third {
+  @media (min-width: Photos.$second-invisible-point + 1px) and (max-width: Photos.$first-invisible-point) {
+    width: 33%;
+  }
+  @media (max-width: Photos.$second-invisible-point) {
+    display: none;
+  }
+}
+.photo-double_fourth {
+  @media (max-width: Photos.$first-invisible-point) {
+    display: none;
+  }
+}
