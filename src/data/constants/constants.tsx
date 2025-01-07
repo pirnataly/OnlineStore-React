@@ -1,4 +1,4 @@
-import { componentProps, MenuItem } from "../../interfaces/types";
+import { ComponentProps, MenuItem } from "../../interfaces/types";
 import React from "react";
 import Double from "../../products/container/__Snippets/__Snippet/__Photos/templates/double/Double";
 import Single from "../../products/container/__Snippets/__Snippet/__Photos/templates/single/Single";
@@ -43,7 +43,7 @@ export const menuItemsBottom: MenuItem[] = [
   },
 ];
 
-export const components: { [k: string]: React.FC<componentProps> } = {
+export const components: { [k: string]: React.FC<ComponentProps> } = {
   double: (props) => <Double {...props} />,
   single: (props) => <Single {...props} />,
   quadro: (props) => <Quadro {...props} />,

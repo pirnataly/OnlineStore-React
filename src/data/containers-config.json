@@ -1,0 +1,85 @@
+[
+  {
+    "id": "1",
+    "blockClass": "products",
+    "snippets": [
+      {
+        "type": "double",
+        "id": "anonymous_mask"
+      },
+      {
+        "type": "single",
+        "id": "sunglasses"
+      },
+      {
+        "type": "double",
+        "id": "thomas_shelbick_cap"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "blockClass": "products",
+    "snippets": [
+      {
+        "type": "quarter",
+        "id": "philosopher's_stone"
+      },
+      {
+        "type": "single",
+        "id": "egyptian_power"
+      },
+      {
+        "type": "quadro",
+        "id": "elder_stick_2_pcs"
+      },
+      {
+        "type": "double",
+        "id": "merch_with_john_travolta"
+      },
+      {
+        "type": "single",
+        "id": "lost_ark"
+      },
+      {
+        "type": "double",
+        "id": "plasticine_rings"
+      }
+    ],
+    "title": "Sale",
+    "title_id": "sale"
+  },
+
+  {
+    "id": "3",
+    "blockClass": "products",
+    "snippets": [
+      {
+        "type": "quarter",
+        "id": "fur_coat"
+      },
+      {
+        "type": "single",
+        "id": "tournament_cup"
+      },
+      {
+        "type": "quadro",
+        "id": "the_same_ring"
+      },
+      {
+        "type": "double",
+        "id": "stradivarius_violin"
+      },
+      {
+        "type": "single",
+        "id": "dinner_fork"
+      },
+      {
+        "type": "double",
+        "id": "pearl_of_kamchatka"
+      }
+    ],
+    "title": "Сокровища",
+    "title_id": "treasures"
+  }
+]

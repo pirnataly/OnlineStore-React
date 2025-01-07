@@ -24,15 +24,32 @@ export type ProductItem = {
   review_rating: number;
 };
 
-export type MainPageConfig = {
+export type SnippetItemConfig = {
   id: string;
   type: string;
 };
 
-export type componentProps = {
+export type ComponentProps = {
   snippet: ProductItemWithType;
 };
 
-export type ProductItemWithType = ProductItem & MainPageConfig;
+export type ProductItemWithType = ProductItem & SnippetItemConfig;
+
+export type ContainerConfig = {
+  id: string;
+  blockClass: string;
+  snippets: SnippetItemConfig[];
+  title?: string;
+  title_id?: string;
+};
+
+type ContainerConfigTruncated = Omit<ContainerConfig, "id" | "snippets">;
+
+type ContainerSnippets = {
+  snippets: ProductItemWithType[];
+};
+
+export type ContainerConfigWithSnippetsTypes = ContainerConfigTruncated &
+  ContainerSnippets;
 
 export type ComponentKeys = keyof typeof components;

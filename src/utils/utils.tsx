@@ -1,12 +1,12 @@
 import {
-  MainPageConfig,
+  SnippetItemConfig,
   ProductItem,
   ProductItemWithType,
 } from "../interfaces/types";
 
 export function getProductsWithType(
   products: ProductItem[],
-  config: MainPageConfig[],
+  config: SnippetItemConfig[],
 ): ProductItemWithType[] {
   const updatedProducts: ProductItemWithType[] = [];
   const productsCopy = products.slice();

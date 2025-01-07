@@ -1,24 +1,26 @@
 import React from "react";
 import products from "../../src/data/products.json";
-import config from "../../src/data/products-config.json";
-import { ProductItem, ProductItemWithType } from "../interfaces/types";
+import containers from "../../src/data/containers-config.json";
+import { ContainerConfig, ProductItem } from "../interfaces/types";
 import { getProductsWithType } from "../utils/utils";
 import "./Products.scss";
 import Container from "./container/Container";
 
 const Products = () => {
   const productsItems = products as ProductItem[];
-  const productsConfig = config as ProductItemWithType[];
-  const productsItemsArray = getProductsWithType(productsItems, productsConfig);
+  const containersArray = containers as ContainerConfig[];
 
   return (
     <section className={"products"}>
-      <Container
-        blockClass={"products"}
-        snippets={productsItemsArray}
-        title={"Сокровища"}
-        title_id={"treasures"}
-      />
+      {containersArray.map(({ id, blockClass, snippets, title, title_id }) => (
+        <Container
+          key={id}
+          blockClass={blockClass}
+          snippets={getProductsWithType(productsItems, snippets)}
+          title={title}
+          title_id={title_id}
+        />
+      ))}
     </section>
   );
 };
