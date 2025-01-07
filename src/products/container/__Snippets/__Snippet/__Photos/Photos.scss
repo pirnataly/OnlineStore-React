@@ -12,12 +12,33 @@ $shop-sunglasses-background: #2e09e5;
 $shop-fur-coat-background: #f94233;
 $first-invisible-point: 1120px;
 $second-invisible-point: 841px;
+$anonymous_mask-url: "/products/Маска «Анонимус».png";
+$sunglasses-url: "/products/Солнцезащитные очки.png";
+$thomas_shelbick_cap-url: "/products/Кепка Томаса Шелбика.png";
+$elder_stick_2_pcs-url: "/products/Бузинная палочка 2 шт.png";
+$fur_coat-url: "/products/Шуба в стиле «Slavic bimbo».png";
+$egyptian_power-url: "/products/Египетская сила.png";
+$philosopher_stone-url: "/products/Философский камень.png";
+$merch_with_john_travolta-url: "/products/Мерч с Джоном Траволтой.png";
+$lost_ark-url: "/products/Утраченный ковчег.png";
+$plasticine_rings-url: "/products/Кольцо «Пластелин колец».png";
+$tournament_cup-url: "/products/Кубок турнира «Кожаный мяч».png";
+$the_same_ring-url: "/products/То самое кольцо.png";
+$stradivarius_violin-url:"/products/Скрипка Страдивари.png";
+$dinner_fork-url:"/products/Столовая вилка.png";
 
 @use "../../../../../Main";
+
+@mixin main-photo-settings($url, $color) {
+  background-image: url($url);
+  background-color: $color;
+  background-repeat: no-repeat;
+}
 
 .photos {
   position: relative;
   display: flex;
+  align-items: center;
 }
 
 .snippet__photos {
@@ -25,9 +46,7 @@ $second-invisible-point: 841px;
 }
 
 .anonymous_mask {
-  background-image: url("../../../../../../public/products/Маска «Анонимус».png");
-  background-color: Main.$shop-gray;
-  background-repeat: no-repeat;
+  @include main-photo-settings($anonymous_mask-url, lightgray);
 
   &_left {
     @include Main.position-and-size(100.14px -15.801px, 72.717% 108.167%);
@@ -45,9 +64,7 @@ $second-invisible-point: 841px;
 }
 
 .sunglasses {
-  background-image: url("../../../../../../public/products/Солнцезащитные очки.png");
-  background-repeat: no-repeat;
-  background-color: $shop-sunglasses-background;
+  @include main-photo-settings($sunglasses-url, $shop-sunglasses-background);
   @include Main.position-and-size(376.816px -180.776px, 47.372% 153.235%);
   @media (max-width: $desktop-minus-one) and (min-width: Main.$tablet) {
     @include Main.position-and-size(center, contain);
@@ -56,16 +73,20 @@ $second-invisible-point: 841px;
     @include Main.position-and-size(50%, cover);
   }
 }
+
 .thomas_shelbick_cap {
-  background-image: url("../../../../../../public/products/Кепка Томаса Шелбика.png");
-  background-repeat: no-repeat;
-  background-color: $shop-shelbick-background;
+  @include main-photo-settings(
+                  $thomas_shelbick_cap-url,
+                  $shop-shelbick-background
+  );
+
   &_left {
     @include Main.position-and-size(-81.725px -90.677px, 130.177% 193.638%);
     @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
       @include Main.position-and-size(-23.697px 14.623px, 146.794% 138.384%);
     }
   }
+
   &_right {
     @include Main.position-and-size(16.345px -84.139px, 100% 148.75%);
     @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
@@ -75,37 +96,138 @@ $second-invisible-point: 841px;
 }
 
 .elder_stick_2_pcs {
-  background-image: url("../../../../../../public/products/Бузинная палочка 2 шт.png");
-  background-repeat: no-repeat;
-  background-color: Main.$shop-gray;
+  @include main-photo-settings($elder_stick_2_pcs-url, Main.$shop-gray);
+
   &_first {
     @include Main.position-and-size(-392.433px -735.41px, 453.95% 331.091%);
     @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
       @include Main.position-and-size(-68.462px -216.926px, 266.168% 265.22%);
     }
   }
+
   &_second {
     @include Main.position-and-size(-205.029px 82.223px, 184.219% 130.014%);
     @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
       @include Main.position-and-size(-23.286px 36px, 130.002% 129.539%);
     }
   }
+
   &_third {
     @include Main.position-and-size(-71.007px 262.874px, 123.167% 87.368%);
   }
+
   &_fourth {
     @include Main.position-and-size(-1.439px 72px, 128.265% 90.524%);
   }
 }
 
 .fur_coat {
-  background-image: url("../../../../../../public/products/Шуба в стиле «Slavic bimbo».png");
-  background-repeat: no-repeat;
-  background-color: $shop-fur-coat-background;
+  @include main-photo-settings($fur_coat-url, $shop-fur-coat-background);
+
   &_left {
     @include Main.position-and-size(11.35px 30.416px, 65.827% 105.955%);
   }
+
   &_right {
     @include Main.position-and-size(-479.771px 56.769px, 298.414% 161.909%);
   }
+}
+
+.philosopher_stone {
+  @include main-photo-settings(
+                  $philosopher_stone-url,
+                  $shop-fur-coat-background
+  );
+
+  &_left {
+    @include Main.position-and-size(292.637px 16px, 49.083% 98.508%);
+  }
+
+  &_right {
+    @include Main.position-and-size(-296.416px -15.859px, 436.042% 304.688%);
+  }
+}
+
+.egyptian_power {
+  @include main-photo-settings(
+                  $egyptian_power-url,
+                  $shop-sunglasses-background
+  );
+  @include Main.position-and-size(269.011px -224.142px, 55.725% 171.719%);
+}
+
+.merch_with_john_travolta {
+  @include main-photo-settings(
+                  $merch_with_john_travolta-url,
+                  $shop-shelbick-background
+  );
+
+  &_left {
+    align-self: stretch;
+    @include Main.position-and-size(-274.936px -56.818px, 153.946% 154.692%);
+  }
+
+  &_right {
+    @include Main.position-and-size(86.659px 70.288px, 75.726% 75.875%);
+  }
+}
+
+.lost_ark {
+  @include main-photo-settings($lost_ark-url, $shop-fur-coat-background);
+  @include Main.position-and-size(451.698px 13.309px, 36.914% 95.8%)
+}
+
+
+.plasticine_rings {
+  @include main-photo-settings($plasticine_rings-url, Main.$shop-gray);
+
+  &_left {
+    @include Main.position-and-size(-187.788px -304.243px, 150.072% 203.61%);
+  }
+
+  &_right {
+    @include Main.position-and-size(50%, cover);
+  }
+}
+
+.tournament_cup {
+  @include main-photo-settings($tournament_cup-url, $shop-shelbick-background);
+  @include Main.position-and-size(150.573px -62.06px, 69.981% 202.405%)
+}
+
+.the_same_ring {
+  @include main-photo-settings($the_same_ring-url, Main.$shop-gray);
+
+  &_first {
+    @include Main.position-and-size(-95.791px 146.359px, 189.851% 75.111%);
+  }
+
+  &_second {
+    @include Main.position-and-size(-332.651px 53.071px, 230.042% 91.012%);
+  }
+
+  &_third {
+    /*исправить стили для 3 и 4 фото*/
+    @include Main.position-and-size(60px 3px, 100%);
+  }
+
+  &_fourth {
+    @include Main.position-and-size(189.376px 234.572px, 81.445% 32.222%);
+  }
+}
+
+.stradivarius_violin{
+  @include main-photo-settings($stradivarius_violin-url,$shop-sunglasses-background);
+  &_left{
+    /*исправить стили для левого и правого фото*/
+    @include Main.position-and-size(0px 40px,102.201%100%);
+  }
+  &_right{
+    @include Main.position-and-size(50%,cover);
+  }
+}
+
+.dinner_fork {
+  @include main-photo-settings($dinner_fork-url,$shop-fur-coat-background);
+  @include Main.position-and-size(268.764px 296.439px,52.412% 138.731%);
 }

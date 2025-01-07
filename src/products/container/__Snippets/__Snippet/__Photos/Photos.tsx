@@ -1,10 +1,10 @@
 import React from "react";
-import { ComponentKeys, componentProps } from "../../../../../interfaces/types";
+import { ComponentKeys, ComponentProps } from "../../../../../interfaces/types";
 import "./Photos.scss";
 import Promo from "./__Promo/Promo";
 import { components } from "../../../../../data/constants/constants";
 
-const Photos = (props: componentProps) => {
+const Photos = (props: ComponentProps) => {
   const componentName: ComponentKeys = props.snippet.type;
   const SelectedComponent = components[componentName];
 

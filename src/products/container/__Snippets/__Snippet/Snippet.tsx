@@ -1,10 +1,10 @@
 import React from "react";
-import { componentProps } from "../../../../interfaces/types";
+import { ComponentProps } from "../../../../interfaces/types";
 import "./Snippet.scss";
 import Info from "./__Info/Info";
 import Photos from "./__Photos/Photos";
 
-const Snippet = (props: componentProps) => {
+const Snippet = (props: ComponentProps) => {
   const { snippet } = props;
 
   return (
