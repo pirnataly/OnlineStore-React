@@ -3,7 +3,7 @@ import products from "../../src/data/products.json";
 import config from "../../src/data/products-config.json";
 import { ProductItem, ProductItemWithType } from "../interfaces/types";
 import { getProductsWithType } from "../utils/utils";
-import "../products/Products.scss";
+import "./Products.scss";
 import Container from "./container/Container";
 
 const Products = () => {
@@ -16,7 +16,8 @@ const Products = () => {
       <Container
         blockClass={"products"}
         snippets={productsItemsArray}
-        // title={"Сокровищные сокровища"}
+        title={"Сокровища"}
+        title_id={"treasures"}
       />
     </section>
   );

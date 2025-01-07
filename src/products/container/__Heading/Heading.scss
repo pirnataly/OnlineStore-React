@@ -1,0 +1,26 @@
+$heading-size: 163px;
+$heading-line-height: 80%;
+$heading-letter-spacing: -6.52px;
+$heading-container-height: 80px;
+
+@use "../../../Main";
+
+.heading {
+  display: flex;
+  height: $heading-container-height;
+}
+
+.heading-text {
+  transform: rotate(-5deg);
+  font-size: $heading-size;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
+}
+
+.treasures-heading {
+  font-family: Main.$font-doodle;
+}
+
+.sale-heading {
+  font-family: Main.$font-beastly;
+}

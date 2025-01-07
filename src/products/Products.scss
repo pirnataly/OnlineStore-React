@@ -1,11 +1,26 @@
 @use "../Main";
+$container-bottom-gap: 10px;
+$padding-top: 54px;
+$mobile-padding-top: 36px;
+$products-heading-bottom-gap: 30px;
+$products-heading-text-left: 10px;
 
 .products {
-  padding-top: 54px;
+  padding-top: $padding-top;
   @media (max-width: Main.$mobile) {
-    padding-top: 36px;
+    padding-top: $mobile-padding-top;
   }
   &__container {
-    margin-bottom: 100px;
+    margin-bottom: $container-bottom-gap;
+  }
+  &__heading {
+    position: relative;
+    margin-bottom: $products-heading-bottom-gap;
+  }
+  &__heading-text {
+    color: Main.$shop-black;
+    position: absolute;
+    left: $products-heading-text-left;
+    z-index: 1;
   }
 }
