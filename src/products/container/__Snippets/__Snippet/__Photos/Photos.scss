@@ -24,9 +24,10 @@ $lost_ark-url: "/products/Утраченный ковчег.png";
 $plasticine_rings-url: "/products/Кольцо «Пластелин колец».png";
 $tournament_cup-url: "/products/Кубок турнира «Кожаный мяч».png";
 $the_same_ring-url: "/products/То самое кольцо.png";
-$stradivarius_violin-url:"/products/Скрипка Страдивари.png";
-$dinner_fork-url:"/products/Столовая вилка.png";
-
+$stradivarius_violin-url: "/products/Скрипка Страдивари.png";
+$dinner_fork-url: "/products/Столовая вилка.png";
+$pearl_of_kamchatka-url: "/products/Жемчужина Камчатки.png";
+$ring-third-url: "/products/image (3).png";
 @use "../../../../../Main";
 
 @mixin main-photo-settings($url, $color) {
@@ -76,8 +77,8 @@ $dinner_fork-url:"/products/Столовая вилка.png";
 
 .thomas_shelbick_cap {
   @include main-photo-settings(
-                  $thomas_shelbick_cap-url,
-                  $shop-shelbick-background
+    $thomas_shelbick_cap-url,
+    $shop-shelbick-background
   );
 
   &_left {
@@ -135,8 +136,8 @@ $dinner_fork-url:"/products/Столовая вилка.png";
 
 .philosopher_stone {
   @include main-photo-settings(
-                  $philosopher_stone-url,
-                  $shop-fur-coat-background
+    $philosopher_stone-url,
+    $shop-fur-coat-background
   );
 
   &_left {
@@ -150,16 +151,16 @@ $dinner_fork-url:"/products/Столовая вилка.png";
 
 .egyptian_power {
   @include main-photo-settings(
-                  $egyptian_power-url,
-                  $shop-sunglasses-background
+    $egyptian_power-url,
+    $shop-sunglasses-background
   );
   @include Main.position-and-size(269.011px -224.142px, 55.725% 171.719%);
 }
 
 .merch_with_john_travolta {
   @include main-photo-settings(
-                  $merch_with_john_travolta-url,
-                  $shop-shelbick-background
+    $merch_with_john_travolta-url,
+    $shop-shelbick-background
   );
 
   &_left {
@@ -174,9 +175,8 @@ $dinner_fork-url:"/products/Столовая вилка.png";
 
 .lost_ark {
   @include main-photo-settings($lost_ark-url, $shop-fur-coat-background);
-  @include Main.position-and-size(451.698px 13.309px, 36.914% 95.8%)
+  @include Main.position-and-size(451.698px 13.309px, 36.914% 95.8%);
 }
-
 
 .plasticine_rings {
   @include main-photo-settings($plasticine_rings-url, Main.$shop-gray);
@@ -192,13 +192,14 @@ $dinner_fork-url:"/products/Столовая вилка.png";
 
 .tournament_cup {
   @include main-photo-settings($tournament_cup-url, $shop-shelbick-background);
-  @include Main.position-and-size(150.573px -62.06px, 69.981% 202.405%)
+  @include Main.position-and-size(-150.573px -62.06px, 69.981% 202.405%);
 }
 
 .the_same_ring {
   @include main-photo-settings($the_same_ring-url, Main.$shop-gray);
 
   &_first {
+    /*исправить стили для всех фото*/
     @include Main.position-and-size(-95.791px 146.359px, 189.851% 75.111%);
   }
 
@@ -207,8 +208,7 @@ $dinner_fork-url:"/products/Столовая вилка.png";
   }
 
   &_third {
-    /*исправить стили для 3 и 4 фото*/
-    @include Main.position-and-size(60px 3px, 100%);
+    @include Main.position-and-size(-977.747px 368.476px, 249.731% 98.6%);
   }
 
   &_fourth {
@@ -216,18 +216,34 @@ $dinner_fork-url:"/products/Столовая вилка.png";
   }
 }
 
-.stradivarius_violin{
-  @include main-photo-settings($stradivarius_violin-url,$shop-sunglasses-background);
-  &_left{
-    /*исправить стили для левого и правого фото*/
-    @include Main.position-and-size(0px 40px,102.201%100%);
+.stradivarius_violin {
+  @include main-photo-settings(
+    $stradivarius_violin-url,
+    $shop-sunglasses-background
+  );
+
+  &_left {
+    @include Main.position-and-size(-11.101px 118.468px, 106.201% 82.177%);
   }
-  &_right{
-    @include Main.position-and-size(50%,cover);
+
+  &_right {
+    @include Main.position-and-size(50%, cover);
   }
 }
 
 .dinner_fork {
-  @include main-photo-settings($dinner_fork-url,$shop-fur-coat-background);
-  @include Main.position-and-size(268.764px 296.439px,52.412% 138.731%);
+  @include main-photo-settings($dinner_fork-url, $shop-fur-coat-background);
+  @include Main.position-and-size(268.764px 296.439px, 52.412% 138.731%);
+}
+
+.pearl_of_kamchatka {
+  @include main-photo-settings($pearl_of_kamchatka-url, Main.$shop-gray);
+
+  &_left {
+    @include Main.position-and-size(-1467.36px -57.549px, 497.259% 229.712%);
+  }
+
+  &_right {
+    @include Main.position-and-size(-417.482px 11.774px, 216.471% 100%);
+  }
 }
