@@ -14,7 +14,7 @@ const Container = (props: ContainerConfigWithSnippetsTypes) => {
           blockClass={props.blockClass}
         />
       )}
-      <Snippets snippets={props.snippets} />
+      <Snippets blockClass={props.blockClass} snippets={props.snippets} />
     </div>
   );
 };

@@ -1,6 +1,7 @@
 $photos-height: 600px;
 $photos-height-mobile: 240px;
 $photos-bottom: 4px;
+$catalog-photos-bottom: 8px;
 $photo-border-radius: 16px;
 $photo-border-radius-mobile: 12px;
 $max-width-double: 714px;
@@ -10,6 +11,7 @@ $desktop-minus-one: 1439px;
 $shop-shelbick-background: #faa700;
 $shop-sunglasses-background: #2e09e5;
 $shop-fur-coat-background: #f94233;
+$fork-background: #ffaa00;
 $first-invisible-point: 1120px;
 $second-invisible-point: 841px;
 $anonymous_mask-url: "/products/Маска «Анонимус».png";
@@ -28,12 +30,16 @@ $stradivarius_violin-url: "/products/Скрипка Страдивари.png";
 $dinner_fork-url: "/products/Столовая вилка.png";
 $pearl_of_kamchatka-url: "/products/Жемчужина Камчатки.png";
 $ring-third-url: "/products/image (3).png";
+
 @use "../../../../../Main";
 
-@mixin main-photo-settings($url, $color) {
+@mixin main-photo-settings($url) {
   background-image: url($url);
-  background-color: $color;
   background-repeat: no-repeat;
+}
+
+@mixin photo-background($color) {
+  background-color: $color;
 }
 
 .photos {
@@ -42,12 +48,20 @@ $ring-third-url: "/products/image (3).png";
   align-items: center;
 }
 
-.snippet__photos {
+.products-photos {
   margin-bottom: $photos-bottom;
 }
 
+.catalog-photos {
+  margin-bottom: $catalog-photos-bottom;
+}
+
 .anonymous_mask {
-  @include main-photo-settings($anonymous_mask-url, lightgray);
+  @include main-photo-settings($anonymous_mask-url);
+}
+
+.products-anonymous_mask {
+  @include photo-background(lightgray);
 
   &_left {
     @include Main.position-and-size(100.14px -15.801px, 72.717% 108.167%);
@@ -65,7 +79,11 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .sunglasses {
-  @include main-photo-settings($sunglasses-url, $shop-sunglasses-background);
+  @include main-photo-settings($sunglasses-url);
+}
+
+.products-sunglasses {
+  @include photo-background($shop-sunglasses-background);
   @include Main.position-and-size(376.816px -180.776px, 47.372% 153.235%);
   @media (max-width: $desktop-minus-one) and (min-width: Main.$tablet) {
     @include Main.position-and-size(center, contain);
@@ -76,10 +94,11 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .thomas_shelbick_cap {
-  @include main-photo-settings(
-    $thomas_shelbick_cap-url,
-    $shop-shelbick-background
-  );
+  @include main-photo-settings($thomas_shelbick_cap-url);
+}
+
+.products-thomas_shelbick_cap {
+  @include photo-background($shop-shelbick-background);
 
   &_left {
     @include Main.position-and-size(-81.725px -90.677px, 130.177% 193.638%);
@@ -97,7 +116,16 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .elder_stick_2_pcs {
-  @include main-photo-settings($elder_stick_2_pcs-url, Main.$shop-gray);
+  @include main-photo-settings($elder_stick_2_pcs-url);
+}
+
+.catalog-elder_stick_2_pcs {
+  @include photo-background(Main.$shop-gray);
+  @include Main.position-and-size(50%, cover);
+}
+
+.products-elder_stick_2_pcs {
+  @include photo-background(Main.$shop-gray);
 
   &_first {
     @include Main.position-and-size(-392.433px -735.41px, 453.95% 331.091%);
@@ -123,7 +151,11 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .fur_coat {
-  @include main-photo-settings($fur_coat-url, $shop-fur-coat-background);
+  @include main-photo-settings($fur_coat-url);
+}
+
+.products-fur_coat {
+  @include photo-background($shop-fur-coat-background);
 
   &_left {
     @include Main.position-and-size(11.35px 30.416px, 65.827% 105.955%);
@@ -135,10 +167,11 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .philosopher_stone {
-  @include main-photo-settings(
-    $philosopher_stone-url,
-    $shop-fur-coat-background
-  );
+  @include main-photo-settings($philosopher_stone-url);
+}
+
+.products-philosopher_stone {
+  @include photo-background($shop-fur-coat-background);
 
   &_left {
     @include Main.position-and-size(292.637px 16px, 49.083% 98.508%);
@@ -150,18 +183,20 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .egyptian_power {
-  @include main-photo-settings(
-    $egyptian_power-url,
-    $shop-sunglasses-background
-  );
+  @include main-photo-settings($egyptian_power-url);
+}
+
+.products-egyptian_power {
+  @include photo-background($shop-sunglasses-background);
   @include Main.position-and-size(269.011px -224.142px, 55.725% 171.719%);
 }
 
 .merch_with_john_travolta {
-  @include main-photo-settings(
-    $merch_with_john_travolta-url,
-    $shop-shelbick-background
-  );
+  @include main-photo-settings($merch_with_john_travolta-url);
+}
+
+.products-merch_with_john_travolta {
+  @include photo-background($shop-shelbick-background);
 
   &_left {
     align-self: stretch;
@@ -174,12 +209,25 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .lost_ark {
-  @include main-photo-settings($lost_ark-url, $shop-fur-coat-background);
+  @include main-photo-settings($lost_ark-url);
+}
+
+.products-lost_ark {
+  @include photo-background($shop-fur-coat-background);
   @include Main.position-and-size(451.698px 13.309px, 36.914% 95.8%);
 }
 
 .plasticine_rings {
-  @include main-photo-settings($plasticine_rings-url, Main.$shop-gray);
+  @include main-photo-settings($plasticine_rings-url);
+}
+
+.catalog-plasticine_rings {
+  @include photo-background(Main.$shop-gray);
+  @include Main.position-and-size(50%, cover);
+}
+
+.products-plasticine_rings {
+  @include photo-background(Main.$shop-gray);
 
   &_left {
     @include Main.position-and-size(-187.788px -304.243px, 150.072% 203.61%);
@@ -191,12 +239,20 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .tournament_cup {
-  @include main-photo-settings($tournament_cup-url, $shop-shelbick-background);
+  @include main-photo-settings($tournament_cup-url);
+}
+
+.products-tournament_cup {
+  @include photo-background($shop-shelbick-background);
   @include Main.position-and-size(-150.573px -62.06px, 69.981% 202.405%);
 }
 
 .the_same_ring {
-  @include main-photo-settings($the_same_ring-url, Main.$shop-gray);
+  @include main-photo-settings($the_same_ring-url);
+}
+
+.products-the_same_ring {
+  @include photo-background(Main.$shop-gray);
 
   &_first {
     /*исправить стили для всех фото*/
@@ -217,10 +273,11 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .stradivarius_violin {
-  @include main-photo-settings(
-    $stradivarius_violin-url,
-    $shop-sunglasses-background
-  );
+  @include main-photo-settings($stradivarius_violin-url);
+}
+
+.products-stradivarius_violin {
+  @include photo-background($shop-sunglasses-background);
 
   &_left {
     @include Main.position-and-size(-11.101px 118.468px, 106.201% 82.177%);
@@ -232,12 +289,25 @@ $ring-third-url: "/products/image (3).png";
 }
 
 .dinner_fork {
-  @include main-photo-settings($dinner_fork-url, $shop-fur-coat-background);
+  @include main-photo-settings($dinner_fork-url);
+}
+
+.catalog-dinner_fork {
+  @include photo-background($fork-background);
+  @include Main.position-and-size(-0.743px 0px, 132.862% 100%);
+}
+
+.products-dinner_fork {
+  @include photo-background($shop-fur-coat-background);
   @include Main.position-and-size(268.764px 296.439px, 52.412% 138.731%);
 }
 
 .pearl_of_kamchatka {
-  @include main-photo-settings($pearl_of_kamchatka-url, Main.$shop-gray);
+  @include main-photo-settings($pearl_of_kamchatka-url);
+}
+
+.products-pearl_of_kamchatka {
+  @include photo-background(Main.$shop-gray);
 
   &_left {
     @include Main.position-and-size(-1467.36px -57.549px, 497.259% 229.712%);

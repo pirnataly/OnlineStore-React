@@ -1,12 +1,13 @@
-$snippet-min-width: 1104px;
+$products-description-min-width: 1104px;
+$catalog-description-min-width: 283px;
 $info-margin-right: 8px;
 $row-bottom-max-width: 1000px;
 $text-width: 1000px;
 $name-weight: 500;
 $name-size: 60px;
-$like-size: 45px;
 $rows-bottom: 10px;
-$margin-right: 10px;
+$products-description-margin-right: 10px;
+$catalog-description-margin-right: 4px;
 $name-height: 44px;
 $width: 100%;
 
@@ -41,9 +42,14 @@ $width: 100%;
   }
 }
 
-.snippet__description {
-  min-width: $snippet-min-width;
-  margin-right: $margin-right;
+.products__description {
+  min-width: $products-description-min-width;
+  margin-right: $products-description-margin-right;
+}
+
+.catalog__description {
+  min-width: $catalog-description-min-width;
+  margin-right: $catalog-description-margin-right;
 }
 
 .product-name {
@@ -52,18 +58,6 @@ $width: 100%;
   font-family: Main.$font;
   font-weight: $name-weight;
   line-height: $name-height;
-}
-
-.like {
-  width: calc($like-size + 1px);
-  height: $like-size;
-  background: url("../../../../../../../public/icons/heart.svg") no-repeat;
-
-  &:hover {
-    cursor: pointer;
-    background: url("../../../../../../../public/icons/heart-hover.svg")
-      no-repeat;
-  }
 }
 
 .text {

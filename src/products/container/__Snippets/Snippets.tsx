@@ -2,13 +2,18 @@ import React from "react";
 import { ProductItemWithType } from "../../../interfaces/types";
 import Snippet from "./__Snippet/Snippet";
 
-const Snippets = (props: { snippets: ProductItemWithType[] }) => {
+const Snippets = (props: {
+  blockClass: string;
+  snippets: ProductItemWithType[];
+}) => {
+  const { blockClass } = props;
+
   return (
-    <>
+    <div className={`${props.blockClass}-snippets`}>
       {props.snippets.map((snippet: ProductItemWithType) => (
-        <Snippet key={snippet.id} snippet={snippet} />
+        <Snippet key={snippet.id} blockClass={blockClass} snippet={snippet} />
       ))}
-    </>
+    </div>
   );
 };
 

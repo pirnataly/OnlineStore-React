@@ -2,15 +2,18 @@ import React from "react";
 import { ProductItemWithType } from "../../../../../../../interfaces/types";
 import "./Quarter.scss";
 
-const Quarter = (props: { snippet: ProductItemWithType }) => {
-  const { snippet } = props;
+const Quarter = (props: {
+  blockClass: string;
+  snippet: ProductItemWithType;
+}) => {
+  const { blockClass, snippet } = props;
   return (
     <div className={"quarter-photos"}>
       <div
-        className={`photo-quarter_left ${snippet.id} ${snippet.id}_left`}
+        className={`photo-quarter_left ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}}_left`}
       ></div>
       <div
-        className={`photo-quarter_right ${snippet.id} ${snippet.id}_right`}
+        className={`photo-quarter_right ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_right`}
       ></div>
     </div>
   );

@@ -1,0 +1,21 @@
+@use "../../../../../../../Main";
+$button-width: 294px;
+$button-mobile-width: 298px;
+
+.buy-button {
+  @include Main.flex-between();
+  align-items: center;
+  width: $button-width;
+  padding: 14px 24px 16px;
+  border-radius: Main.$button-border-radius;
+  background-color: Main.$button-color;
+
+  @media (max-width: Main.$mobile) {
+    width: $button-mobile-width;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: Main.$button-hover;
+  }
+}

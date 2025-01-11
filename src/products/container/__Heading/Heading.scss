@@ -1,13 +1,12 @@
 $heading-size: 163px;
 $heading-line-height: 80%;
 $heading-letter-spacing: -6.52px;
-$heading-container-height: 80px;
+$catalog-heading-height: 107px;
 
 @use "../../../Main";
 
 .heading {
   display: flex;
-  height: $heading-container-height;
 }
 
 .heading-text {
@@ -17,10 +16,18 @@ $heading-container-height: 80px;
   letter-spacing: $heading-letter-spacing;
 }
 
+.catalog__heading {
+  height: $catalog-heading-height;
+}
+
 .treasures-heading {
   font-family: Main.$font-doodle;
 }
 
 .sale-heading {
   font-family: Main.$font-beastly;
+}
+
+.home-heading {
+  font-family: Main.$font-rubik;
 }

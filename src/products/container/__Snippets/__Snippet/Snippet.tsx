@@ -1,16 +1,19 @@
 import React from "react";
-import { ComponentProps } from "../../../../interfaces/types";
+import { ProductItemWithType } from "../../../../interfaces/types";
 import "./Snippet.scss";
 import Info from "./__Info/Info";
 import Photos from "./__Photos/Photos";
 
-const Snippet = (props: ComponentProps) => {
-  const { snippet } = props;
+const Snippet = (props: {
+  blockClass: string;
+  snippet: ProductItemWithType;
+}) => {
+  const { blockClass, snippet } = props;
 
   return (
-    <div className={"snippet-container snippet"}>
-      <Photos snippet={snippet} />
-      <Info snippet={snippet} />
+    <div className={`${blockClass}-snippet-container snippet`}>
+      <Photos blockClass={blockClass} snippet={snippet} />
+      <Info blockClass={blockClass} snippet={snippet} />
     </div>
   );
 };

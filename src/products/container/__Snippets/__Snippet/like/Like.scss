@@ -1,0 +1,12 @@
+$like-size: 45px;
+
+.like {
+  width: calc($like-size + 1px);
+  height: $like-size;
+  background: url("../../../../../../public/icons/heart.svg") no-repeat;
+
+  &:hover {
+    cursor: pointer;
+    background: url("../../../../../../public/icons/heart-hover.svg") no-repeat;
+  }
+}

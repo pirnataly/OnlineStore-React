@@ -1,0 +1,32 @@
+@use "../../../../../../../../Main";
+@use "../../Buy";
+$proof-size: 16px;
+$proof-text-weight: 412;
+
+.proof-container {
+  @include Main.flex-column();
+  align-items: flex-end;
+}
+
+.proof {
+  display: flex;
+  align-items: flex-end;
+
+  &__text {
+    @include Buy.discount-typography($proof-size, $proof-text-weight);
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+    background-image: url("../../../../../../../../public/icons/black-star.svg");
+  }
+
+  &-star {
+    background-image: url("../../../../../../../../public/icons/black-star.svg");
+  }
+
+  &-like {
+    background-image: url("../../../../../../../../public/icons/black-heart.svg");
+  }
+}

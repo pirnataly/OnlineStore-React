@@ -4,12 +4,12 @@ import { ProductItemWithType } from "../../../../../interfaces/types";
 import Description from "./__Description/Description";
 import Buy from "./__Buy/Buy";
 
-const Info = (props: { snippet: ProductItemWithType }) => {
-  const { snippet } = props;
+const Info = (props: { blockClass: string; snippet: ProductItemWithType }) => {
+  const { snippet, blockClass } = props;
   return (
-    <div className={"info snippet-container__info"}>
-      <Description snippet={snippet} />
-      <Buy snippet={snippet} />
+    <div className={`info ${blockClass}-snippet-container__info`}>
+      <Description blockClass={blockClass} snippet={snippet} />
+      <Buy blockClass={blockClass} snippet={snippet} />
     </div>
   );
 };

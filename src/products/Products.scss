@@ -1,9 +1,10 @@
 @use "../Main";
-$container-bottom-gap: 10px;
+$container-bottom-gap: 100px;
 $padding-top: 54px;
 $mobile-padding-top: 36px;
 $products-heading-bottom-gap: 30px;
 $products-heading-text-left: 10px;
+$heading-container-height: 80px;
 
 .products {
   padding-top: $padding-top;
@@ -15,6 +16,7 @@ $products-heading-text-left: 10px;
   }
   &__heading {
     position: relative;
+    height: $heading-container-height;
     margin-bottom: $products-heading-bottom-gap;
   }
   &__heading-text {

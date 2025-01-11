@@ -13,7 +13,9 @@ export function getProductsWithType(
   config.forEach((item) => {
     const foundProduct = productsCopy.find((product) => product.id === item.id);
     if (foundProduct) {
-      const updatedProduct = Object.assign(foundProduct, { type: item.type });
+      const updatedProduct = Object.assign({}, foundProduct, {
+        type: item.type,
+      });
       updatedProducts.push(updatedProduct);
     }
   });

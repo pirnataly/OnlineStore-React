@@ -1,0 +1,5 @@
+@use "../../../../../../../Main";
+
+.price-proof {
+  @include Main.flex-between();
+}

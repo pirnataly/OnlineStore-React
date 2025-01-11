@@ -5,11 +5,16 @@ $text-size: 22px;
 @use "../../../../Main";
 
 $f: Main.$font-rubik;
+
+.catalog-snippets {
+  display: flex;
+}
+
 .snippet {
   @include Main.flex-column();
 }
 
-.snippet-container {
+.products-snippet-container {
   margin-bottom: $snippet-margin-bottom;
   padding: 0 4px;
 
@@ -19,12 +24,7 @@ $f: Main.$font-rubik;
   }
 }
 
-.hhhh {
-  font-family: Main.$font-doodle;
-  font-variant-numeric: ordinal;
-  font-size: 163px;
-  text-align: center;
-  color: #090909;
-  line-height: 80%; /* 130.4px */
-  letter-spacing: -6.52px;
+.catalog-snippet-container {
+  margin-bottom: 29px;
+  margin-right: 4px;
 }

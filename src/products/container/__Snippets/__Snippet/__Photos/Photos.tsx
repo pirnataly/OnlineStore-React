@@ -1,17 +1,24 @@
 import React from "react";
-import { ComponentKeys, ComponentProps } from "../../../../../interfaces/types";
+import {
+  ComponentKeys,
+  ProductItemWithType,
+} from "../../../../../interfaces/types";
 import "./Photos.scss";
 import Promo from "./__Promo/Promo";
 import { components } from "../../../../../data/constants/constants";
 
-const Photos = (props: ComponentProps) => {
+const Photos = (props: {
+  blockClass: string;
+  snippet: ProductItemWithType;
+}) => {
   const componentName: ComponentKeys = props.snippet.type;
   const SelectedComponent = components[componentName];
+  const { blockClass } = props;
 
   return (
-    <div className={`photos snippet__photos`}>
+    <div className={`photos ${blockClass}-photos snippet__photos`}>
       <SelectedComponent {...props} />
-      <Promo />
+      <Promo blockClass={blockClass} />
     </div>
   );
 };

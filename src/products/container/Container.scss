@@ -1,4 +1,23 @@
+$catalog-background-color:
+  linear-gradient(to bottom right, #00fbff 0%, #0051ff 50%) bottom right / 50%
+    50% no-repeat,
+  linear-gradient(to bottom left, #00fbff 0%, #0051ff 50%) bottom left / 50% 50%
+    no-repeat,
+  linear-gradient(to top left, #00fbff 0%, #0051ff 50%) top left / 50% 50%
+    no-repeat,
+  linear-gradient(to top right, #00fbff 0%, #0051ff 50%) top right / 50% 50%
+    no-repeat,
+  #090909;
+$catalog-border-radius: 12px;
+
+@use "../../Main";
 .container {
-  display: flex;
-  flex-direction: column;
+  @include Main.flex-column();
+}
+
+.catalog__container {
+  width: 100%;
+  padding: 32px 4px 3px;
+  border-radius: $catalog-border-radius;
+  background: $catalog-background-color;
 }

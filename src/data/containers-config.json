@@ -19,6 +19,26 @@
   },
   {
     "id": "2",
+    "blockClass": "catalog",
+    "snippets": [
+      {
+        "type": "card",
+        "id": "elder_stick_2_pcs"
+      },
+      {
+        "type": "card",
+        "id": "plasticine_rings"
+      },
+      {
+        "type": "card",
+        "id": "dinner_fork"
+      }
+    ],
+    "title": "Для дома",
+    "title_id": "home"
+  },
+  {
+    "id": "3",
     "blockClass": "products",
     "snippets": [
       {
@@ -51,7 +71,7 @@
   },
 
   {
-    "id": "3",
+    "id": "4",
     "blockClass": "products",
     "snippets": [
       {

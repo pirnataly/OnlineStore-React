@@ -1,0 +1,31 @@
+@use "../../Buy";
+@use "../../../../../../../../Main";
+$text-discount: 39px;
+$text-discount-weight: 700;
+$discount-size: 15px;
+$text-weight: 550;
+
+.price {
+  display: flex;
+  align-items: flex-end;
+
+  &__old-price {
+    margin-bottom: 6px;
+  }
+}
+
+.current-price {
+  text-align: center;
+  @include Buy.discount-typography($text-discount, $text-discount-weight);
+}
+
+.old-price {
+  font-style: normal;
+  @include Buy.discount-typography(
+    $discount-size,
+    $text-weight,
+    Main.$shop-gray
+  );
+  text-decoration: line-through;
+  align-self: flex-end;
+}

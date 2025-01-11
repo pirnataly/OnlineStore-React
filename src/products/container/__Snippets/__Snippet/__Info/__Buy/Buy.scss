@@ -1,12 +1,5 @@
 @use "../../../../../../Main";
-$button-width: 294px;
-$proof-size: 16px;
-$proof-text-weight: 412;
-$button-mobile-width: 298px;
-$text-discount: 39px;
-$text-discount-weight: 700;
-$discount-size: 15px;
-$text-weight: 550;
+$block-width: 294px;
 
 @mixin discount-typography($size, $weight, $color: Main.$shop-black) {
   color: $color;
@@ -28,84 +21,9 @@ $text-weight: 550;
 }
 
 .buy {
-  @include Main.flex-column();
-  width: $button-width;
-  margin-bottom: 6px;
-  justify-content: space-between;
-
-  &-button {
-    @include Main.flex-between();
-    align-items: center;
-    width: $button-width;
-    padding: 14px 24px 16px;
-    border-radius: Main.$button-border-radius;
-    background-color: Main.$button-color;
-    @media (max-width: Main.$mobile) {
-      width: $button-mobile-width;
-    }
-
-    &:hover {
-      cursor: pointer;
-      background: Main.$button-hover;
-    }
-  }
-
   &-text {
     color: Main.$white-color;
     text-align: center;
     @include Main.typography(Main.$white-color);
-  }
-}
-
-.price {
-  display: flex;
-  align-items: flex-end;
-
-  &-discount {
-    text-align: center;
-    @include discount-typography($text-discount, $text-discount-weight);
-  }
-
-  &__old-price {
-    margin-bottom: 6px;
-  }
-}
-
-.price-proof {
-  @include Main.flex-between();
-}
-
-.old-price {
-  font-style: normal;
-  @include discount-typography($discount-size, $text-weight, Main.$shop-gray);
-  text-decoration: line-through;
-  align-self: flex-end;
-}
-
-.proof-container {
-  @include Main.flex-column();
-  align-items: flex-end;
-}
-
-.proof {
-  display: flex;
-  align-items: flex-end;
-
-  &__text {
-    @include discount-typography($proof-size, $proof-text-weight);
-  }
-
-  &__icon {
-    width: 14px;
-    height: 14px;
-    background-image: url("../../../../../../../public/icons/black-star.svg");
-  }
-
-  &-star {
-    background-image: url("../../../../../../../public/icons/black-star.svg");
-  }
-
-  &-like {
-    background-image: url("../../../../../../../public/icons/black-heart.svg");
   }
 }

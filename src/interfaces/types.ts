@@ -18,10 +18,10 @@ export type ProductItem = {
   categories: string[];
   description: string;
   photo_url: string;
-  price: number;
-  discount_price: number;
-  likes: number;
-  review_rating: number;
+  full_price: string;
+  discount_price: string;
+  likes: string;
+  review_rating: string;
 };
 
 export type SnippetItemConfig = {
@@ -30,6 +30,7 @@ export type SnippetItemConfig = {
 };
 
 export type ComponentProps = {
+  blockClass: string;
   snippet: ProductItemWithType;
 };
 
