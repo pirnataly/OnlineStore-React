@@ -3,3 +3,7 @@
 .price-proof {
   @include Main.flex-between();
 }
+
+.catalog-price-proof {
+  align-items: flex-start;
+}

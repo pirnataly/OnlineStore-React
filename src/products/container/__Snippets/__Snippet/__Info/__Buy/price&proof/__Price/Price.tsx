@@ -6,13 +6,13 @@ const Price = (props: { blockClass: string; snippet: ProductItemWithType }) => {
   const { blockClass, snippet } = props;
   return (
     <div className={`price ${blockClass}-price`}>
-      <div className={"current-price"}>
+      <div className={`current-price ${blockClass}-current-price`}>
         {snippet.discount_price.length
-          ? snippet.discount_price + "₽"
-          : snippet.full_price + "₽"}
+          ? snippet.discount_price + " ₽"
+          : snippet.full_price + " ₽"}
       </div>
-      <div className={"old-price price__old-price"}>
-        {snippet.discount_price.length ? snippet.full_price + "₽" : null}
+      <div className={`old-price ${blockClass}-old-price `}>
+        {snippet.discount_price.length ? snippet.full_price + " ₽" : null}
       </div>
     </div>
   );

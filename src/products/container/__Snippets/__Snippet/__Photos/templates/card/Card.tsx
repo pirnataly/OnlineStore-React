@@ -8,6 +8,7 @@ const Card = (props: { blockClass: string; snippet: ProductItemWithType }) => {
     <div className={"card-photo"}>
       <div
         className={`photo-card ${snippet.id} ${blockClass}-${snippet.id}`}
+        style={{ backgroundImage: `url("/products/${snippet.photo_url}")` }}
       ></div>
     </div>
   );

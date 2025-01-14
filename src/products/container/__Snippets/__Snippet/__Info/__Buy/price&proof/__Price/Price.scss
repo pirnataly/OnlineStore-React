@@ -1,6 +1,7 @@
 @use "../../Buy";
 @use "../../../../../../../../Main";
 $text-discount: 39px;
+$card-text-discount: 40px;
 $text-discount-weight: 700;
 $discount-size: 15px;
 $text-weight: 550;
@@ -8,15 +9,28 @@ $text-weight: 550;
 .price {
   display: flex;
   align-items: flex-end;
-
-  &__old-price {
-    margin-bottom: 6px;
-  }
 }
 
 .current-price {
   text-align: center;
-  @include Buy.discount-typography($text-discount, $text-discount-weight);
+}
+
+.products-current-price {
+  @include Buy.discount-typography(
+    $text-discount,
+    $text-discount-weight,
+    Main.$black-color,
+    100%
+  );
+}
+
+.catalog-current-price {
+  @include Buy.discount-typography(
+    $card-text-discount,
+    $text-discount-weight,
+    Main.$white-color,
+    72%
+  );
 }
 
 .old-price {
@@ -24,8 +38,18 @@ $text-weight: 550;
   @include Buy.discount-typography(
     $discount-size,
     $text-weight,
-    Main.$shop-gray
+    Main.$shop-gray,
+    72%
   );
   text-decoration: line-through;
   align-self: flex-end;
+}
+
+.products-old-price {
+  color: Main.$shop-gray;
+  margin-bottom: 6px;
+}
+
+.catalog-old-price {
+  color: Main.$catalog-old-price-color;
 }

@@ -16,9 +16,9 @@
 
 @font-face {
   font-family: "Rubik Doodle triangles";
-  src: url("../public/fonts/RubikDoodleTriangles-Regular.ttf") format("opentype");
+  src: url("../public/fonts/RubikDoodleTriangles-Regular.ttf")
+    format("opentype");
   font-feature-settings: "dlig" on;
-
 }
 
 @font-face {
@@ -41,6 +41,7 @@ $white-color: #ffffff;
 $shop-black: #090909;
 $shop-gray: #bccdd1;
 $button-color: #f94233;
+$catalog-old-price-color: #87e0ff;
 $button-hover: linear-gradient(99deg, #fa0 -8.11%, #f94233 86.42%);
 $button-border-radius: 12px;
 $light-gray-color: #e1eced;
@@ -77,6 +78,20 @@ $light-gray-color: #e1eced;
 @mixin position-and-size($position, $size) {
   background-position: $position;
   background-size: $size;
+}
+
+@mixin small-medium() {
+  font-size: 15px;
+  font-family: $font;
+  font-weight: 550;
+  line-height: 15px;
+}
+
+@mixin medium() {
+  font-size: 60px;
+  font-family: $font;
+  font-weight: 500;
+  line-height: 44px;
 }
 
 * {

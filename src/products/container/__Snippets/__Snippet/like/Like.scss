@@ -1,12 +1,40 @@
-$like-size: 45px;
+$products-like-size: 45px;
+$catalog-like-size: 36px;
+$position-gap: 7px;
+$catalog-snippet-like-hover: "/icons/heart-small-hover.svg";
+$product-snippet-like-hover: "/icons/heart-hover.svg";
+$product-snippet-like: "/icons/heart.svg";
+$catalog-snippet-like: "/icons/heart-small.svg";
 
 .like {
-  width: calc($like-size + 1px);
-  height: $like-size;
-  background: url("../../../../../../public/icons/heart.svg") no-repeat;
+  cursor: pointer;
+}
+
+.products-like {
+  width: calc($products-like-size + 1px);
+  height: $products-like-size;
+  background-image: url($product-snippet-like);
+  background-repeat: no-repeat;
+  &:hover {
+    background: url($product-snippet-like-hover);
+  }
+}
+
+.catalog-like {
+  width: $catalog-like-size;
+  height: $catalog-like-size;
+  background: url($catalog-snippet-like) no-repeat;
+
+  position: absolute;
+  z-index: 1;
+  top: $position-gap;
+  right: $position-gap;
+  transform: rotate(10deg);
+  flex-shrink: 0;
+  box-shadow: 0 1.5px 4px 0 rgba(107, 149, 153, 0.2) inset;
+  backdrop-filter: blur(3px);
 
   &:hover {
-    cursor: pointer;
-    background: url("../../../../../../public/icons/heart-hover.svg") no-repeat;
+    background: url($catalog-snippet-like-hover) no-repeat;
   }
 }

@@ -30,6 +30,13 @@ $stradivarius_violin-url: "/products/Скрипка Страдивари.png";
 $dinner_fork-url: "/products/Столовая вилка.png";
 $pearl_of_kamchatka-url: "/products/Жемчужина Камчатки.png";
 $ring-third-url: "/products/image (3).png";
+$gin-url: "/products/Лампа с джином.png";
+$necklace-url: "/products/Ожерелье Серсеи Ланнистер.png";
+$carpet-url: "/products/Ковёр-самолёт.png";
+$sorting_hat-url: "/products/Распределяющая шляпа.png";
+$invisible_coat-url: "/products/Плащ-невидимка.png";
+$time_car-url: "/products/Машина времени Delorean DMC-12.png";
+$goosebumps_massager-url: "/products/Массажер «Мурашка».png";
 
 @use "../../../../../Main";
 
@@ -46,6 +53,7 @@ $ring-third-url: "/products/image (3).png";
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .products-photos {
@@ -316,4 +324,30 @@ $ring-third-url: "/products/image (3).png";
   &_right {
     @include Main.position-and-size(-417.482px 11.774px, 216.471% 100%);
   }
+}
+
+.gin {
+  @include main-photo-settings($gin-url);
+}
+
+.catalog-gin {
+  @include photo-background($shop-sunglasses-background);
+  @include Main.position-and-size(50%, cover);
+}
+
+.necklace {
+  @include main-photo-settings($necklace-url);
+}
+
+.catalog-necklace {
+  @include photo-background($shop-sunglasses-background);
+  @include Main.position-and-size(50%, cover);
+}
+
+.carpet {
+  @include main-photo-settings($carpet-url);
+}
+
+.catalog-carpet {
+  @include Main.position-and-size(50%, cover);
 }

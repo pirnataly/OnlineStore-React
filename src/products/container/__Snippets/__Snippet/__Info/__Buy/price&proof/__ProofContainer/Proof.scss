@@ -1,32 +1,59 @@
 @use "../../../../../../../../Main";
 @use "../../Buy";
+
 $proof-size: 16px;
 $proof-text-weight: 412;
+$products-snippet-star: "/icons/black-star.svg";
+$catalog-snippet-star: "/icons/white-star.svg";
+$products-snippet-heart: "/icons/black-heart.svg";
+$catalog-snippet-heart: "/icons/white-heart.svg";
 
 .proof-container {
   @include Main.flex-column();
   align-items: flex-end;
 }
+.catalog-proof-container {
+}
 
 .proof {
   display: flex;
-  align-items: flex-end;
-
-  &__text {
-    @include Buy.discount-typography($proof-size, $proof-text-weight);
-  }
 
   &__icon {
     width: 14px;
     height: 14px;
-    background-image: url("../../../../../../../../public/icons/black-star.svg");
   }
+}
 
-  &-star {
-    background-image: url("../../../../../../../../public/icons/black-star.svg");
-  }
+.products-proof-star {
+  background-image: url($products-snippet-star);
+}
 
-  &-like {
-    background-image: url("../../../../../../../../public/icons/black-heart.svg");
-  }
+.catalog-proof-star {
+  background-image: url($catalog-snippet-star);
+}
+
+.products-proof-like {
+  background-image: url($products-snippet-heart);
+}
+
+.catalog-proof-like {
+  background-image: url($catalog-snippet-heart);
+}
+
+.products-proof-text {
+  @include Buy.discount-typography(
+    $proof-size,
+    $proof-text-weight,
+    Main.$black-color,
+    100%
+  );
+}
+
+.catalog-proof-text {
+  @include Buy.discount-typography(
+    $proof-size,
+    $proof-text-weight,
+    Main.$white-color,
+    100%
+  );
 }

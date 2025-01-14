@@ -2,6 +2,7 @@ import React from "react";
 import { ProductItemWithType } from "../../../../../../interfaces/types";
 import "./Description.scss";
 import Like from "../../like/Like";
+import TextBlock from "./__TextBlock/TextBlock";
 
 const Description = (props: {
   blockClass: string;
@@ -11,14 +12,19 @@ const Description = (props: {
   return (
     <div className={`description ${blockClass}__description`}>
       <div className={"description-row description__up"}>
-        <div className={"product-name description-row__name"}>
-          {snippet.name}
-        </div>
-
+        <TextBlock
+          className={"product-name description-row__name"}
+          snippet={snippet}
+          snippetProperty={"name"}
+        />
         <Like blockClass={blockClass} />
       </div>
       <div className={"description-row description__bottom"}>
-        <div className={"text description__text"}>{snippet.description}</div>
+        <TextBlock
+          className={"text description__text"}
+          snippet={snippet}
+          snippetProperty={"description"}
+        />
       </div>
     </div>
   );

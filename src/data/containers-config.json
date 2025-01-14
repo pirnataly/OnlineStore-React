@@ -23,7 +23,15 @@
     "snippets": [
       {
         "type": "card",
+        "id": "dinner_fork"
+      },
+      {
+        "type": "card",
         "id": "elder_stick_2_pcs"
+      },
+      {
+        "type": "card",
+        "id": "gin"
       },
       {
         "type": "card",
@@ -31,7 +39,28 @@
       },
       {
         "type": "card",
-        "id": "dinner_fork"
+        "id": "necklace"
+      },
+      {
+        "type": "card",
+        "id": "carpet"
+      },
+
+      {
+        "type": "card",
+        "id": "sorting_hat"
+      },
+      {
+        "type": "card",
+        "id": "invisible_coat"
+      },
+      {
+        "type": "card",
+        "id": "time_car"
+      },
+      {
+        "type": "card",
+        "id": "goosebumps_massager"
       }
     ],
     "title": "Для дома",

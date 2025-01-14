@@ -10,7 +10,7 @@ const PriceProof = (props: {
 }) => {
   const { blockClass, snippet } = props;
   return (
-    <div className={"price-proof"}>
+    <div className={`price-proof ${blockClass}-price-proof`}>
       <Price blockClass={blockClass} snippet={snippet} />
       <ProofContainer blockClass={blockClass} snippet={snippet} />
     </div>

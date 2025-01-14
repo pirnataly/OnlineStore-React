@@ -1,3 +1,11 @@
+$catalog-info-max-width: 283px;
+
 .info {
   display: flex;
+}
+
+.catalog-snippet-container__info {
+  flex-direction: column;
+  max-width: $catalog-info-max-width;
+  padding: 0 12px;
 }

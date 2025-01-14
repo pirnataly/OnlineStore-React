@@ -1,21 +1,32 @@
 @use "../../../../../../../Main";
 $button-width: 294px;
 $button-mobile-width: 298px;
+$catalog-buy-button-width: 152px;
+$catalog-buy-button-width-mobile: 169px;
 
 .buy-button {
   @include Main.flex-between();
   align-items: center;
-  width: $button-width;
   padding: 14px 24px 16px;
   border-radius: Main.$button-border-radius;
   background-color: Main.$button-color;
-
-  @media (max-width: Main.$mobile) {
-    width: $button-mobile-width;
-  }
-
+  white-space: nowrap;
   &:hover {
     cursor: pointer;
     background: Main.$button-hover;
+  }
+}
+
+.products-buy-button {
+  width: $button-width;
+  @media (max-width: Main.$mobile) {
+    width: $button-mobile-width;
+  }
+}
+
+.catalog-buy-button {
+  width: $catalog-buy-button-width;
+  @media (max-width: Main.$mobile) {
+    width: $catalog-buy-button-width-mobile;
   }
 }

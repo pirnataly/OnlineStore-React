@@ -6,6 +6,7 @@ import {
 import "./Photos.scss";
 import Promo from "./__Promo/Promo";
 import { components } from "../../../../../data/constants/constants";
+import Like from "../like/Like";
 
 const Photos = (props: {
   blockClass: string;
@@ -19,6 +20,7 @@ const Photos = (props: {
     <div className={`photos ${blockClass}-photos snippet__photos`}>
       <SelectedComponent {...props} />
       <Promo blockClass={blockClass} />
+      {blockClass === "catalog" ? <Like blockClass={blockClass} /> : null}
     </div>
   );
 };

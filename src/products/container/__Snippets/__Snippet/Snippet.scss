@@ -1,6 +1,7 @@
 $snippet-margin-bottom: 49px;
 $info-width: 1104px;
 $text-size: 22px;
+$catalog-snippet-max-width: 283px;
 
 @use "../../../../Main";
 
@@ -8,6 +9,7 @@ $f: Main.$font-rubik;
 
 .catalog-snippets {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .snippet {
@@ -25,6 +27,7 @@ $f: Main.$font-rubik;
 }
 
 .catalog-snippet-container {
+  max-width: 283px;
   margin-bottom: 29px;
   margin-right: 4px;
 }
