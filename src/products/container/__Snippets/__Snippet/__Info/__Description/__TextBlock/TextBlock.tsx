@@ -8,7 +8,6 @@ const TextBlock = (props: {
   snippetProperty: "name" | "description";
 }) => {
   const { className, snippet, snippetProperty } = props;
-
   return <div className={className}>{snippet[snippetProperty]}</div>;
 };
 

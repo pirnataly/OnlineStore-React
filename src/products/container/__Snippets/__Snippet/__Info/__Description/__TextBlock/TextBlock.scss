@@ -1,8 +1,13 @@
 @use "../../../../../../../Main";
 
+.product-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .catalog-product-name {
   @include Main.small-medium();
-  overflow: hidden;
   color: Main.$white-color;
   font-variant-numeric: ordinal;
   font-feature-settings:
@@ -15,7 +20,5 @@
     "cv02" on,
     "cv03" on,
     "cv04" on;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   margin-bottom: 12px;
 }

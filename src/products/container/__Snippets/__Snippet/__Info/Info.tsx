@@ -21,7 +21,7 @@ const Info = (props: { blockClass: string; snippet: ProductItemWithType }) => {
         <>
           <PriceProof blockClass={blockClass} snippet={snippet} />
           <TextBlock
-            className={`${blockClass}-product-name`}
+            className={`product-name ${blockClass}-product-name `}
             snippet={snippet}
             snippetProperty={"name"}
           />
