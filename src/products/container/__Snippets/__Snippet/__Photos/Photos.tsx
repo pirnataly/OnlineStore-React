@@ -9,18 +9,20 @@ import { components } from "../../../../../data/constants/constants";
 import Like from "../like/Like";
 
 const Photos = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
   const componentName: ComponentKeys = props.snippet.type;
   const SelectedComponent = components[componentName];
-  const { blockClass } = props;
+  const { containerType } = props;
 
   return (
-    <div className={`photos ${blockClass}-photos snippet__photos`}>
+    <div className={`photos snippet__photos ${containerType}-snippet__photos `}>
       <SelectedComponent {...props} />
-      <Promo blockClass={blockClass} />
-      {blockClass === "catalog" ? <Like blockClass={blockClass} /> : null}
+      <Promo containerType={containerType} />
+      {containerType === "catalog" ? (
+        <Like containerType={containerType} />
+      ) : null}
     </div>
   );
 };

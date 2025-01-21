@@ -1,19 +1,28 @@
 import React from "react";
 import "./Double.scss";
-import { ProductItemWithType } from "../../../../../../../interfaces/types";
+import {
+  Indexed,
+  ProductItemWithType,
+} from "../../../../../../../interfaces/types";
+import { backgroundColors } from "../../../../../../../data/constants/constants";
+import { setBackgroundStyles } from "../../../../../../../utils/utils";
 
 const Double = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { blockClass, snippet } = props;
+  const { containerType, snippet } = props;
+  const colors = backgroundColors as Indexed;
+
   return (
     <div className={"double-photos"}>
       <div
-        className={`photo-double_left ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_left`}
+        className={`double-photos__photo double-photos__photo_left  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_left`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
       <div
-        className={`photo-double_right ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_right`}
+        className={`double-photos__photo double-photos__photo_right  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_right`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
     </div>
   );

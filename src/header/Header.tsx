@@ -15,7 +15,7 @@ const Header = () => {
       <div className={"header__search"}>
         <Search />
       </div>
-      <Menu items={menuItemsTop} blockClass={"header"} itemType={"header"} />
+      <Menu items={menuItemsTop} containerType={"header"} itemType={"header"} />
     </header>
   );
 };

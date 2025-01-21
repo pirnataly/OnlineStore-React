@@ -4,7 +4,7 @@ $catalog-info-max-width: 283px;
   display: flex;
 }
 
-.catalog-snippet-container__info {
+.catalog-snippet__info {
   flex-direction: column;
   max-width: $catalog-info-max-width;
   padding: 0 12px;

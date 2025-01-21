@@ -5,14 +5,14 @@ import Price from "./__Price/Price";
 import ProofContainer from "./__ProofContainer/ProofContainer";
 
 const PriceProof = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { blockClass, snippet } = props;
+  const { containerType, snippet } = props;
   return (
-    <div className={`price-proof ${blockClass}-price-proof`}>
-      <Price blockClass={blockClass} snippet={snippet} />
-      <ProofContainer blockClass={blockClass} snippet={snippet} />
+    <div className={`price-proof ${containerType}-price-proof`}>
+      <Price containerType={containerType} snippet={snippet} />
+      <ProofContainer containerType={containerType} snippet={snippet} />
     </div>
   );
 };

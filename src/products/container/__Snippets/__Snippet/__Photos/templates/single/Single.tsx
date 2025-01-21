@@ -1,16 +1,23 @@
 import React from "react";
 import "./Single.scss";
-import { ProductItemWithType } from "../../../../../../../interfaces/types";
+import {
+  Indexed,
+  ProductItemWithType,
+} from "../../../../../../../interfaces/types";
+import { setBackgroundStyles } from "../../../../../../../utils/utils";
+import { backgroundColors } from "../../../../../../../data/constants/constants";
 
 const Single = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { blockClass, snippet } = props;
+  const { containerType, snippet } = props;
+  const colors = backgroundColors as Indexed;
   return (
     <div className={"single-photo"}>
       <div
-        className={`photo-single ${snippet.id} ${blockClass}-${snippet.id}`}
+        className={`photo-single  single-photo__photo-single ${containerType}-${snippet.id}`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
     </div>
   );

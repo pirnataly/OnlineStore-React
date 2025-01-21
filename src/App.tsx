@@ -12,7 +12,7 @@ function App() {
       <Header />
       <BannerAndCategories />
       <Products />
-      <Menu items={menuItemsBottom} blockClass={"app"} itemType={"header"} />
+      <Menu items={menuItemsBottom} containerType={"app"} itemType={"header"} />
     </div>
   );
 }

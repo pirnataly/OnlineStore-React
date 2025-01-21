@@ -8,7 +8,7 @@ export type MenuItem = {
 
 export type MenuItemProps = {
   items: MenuItem[];
-  blockClass: string;
+  containerType: string;
   itemType: string;
 };
 
@@ -27,10 +27,11 @@ export type ProductItem = {
 export type SnippetItemConfig = {
   id: string;
   type: string;
+  background: string;
 };
 
 export type ComponentProps = {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 };
 
@@ -38,7 +39,7 @@ export type ProductItemWithType = ProductItem & SnippetItemConfig;
 
 export type ContainerConfig = {
   id: string;
-  blockClass: string;
+  containerType: string;
   snippets: SnippetItemConfig[];
   title?: string;
   title_id?: string;
@@ -54,3 +55,5 @@ export type ContainerConfigWithSnippetsTypes = ContainerConfigTruncated &
   ContainerSnippets;
 
 export type ComponentKeys = keyof typeof components;
+
+export type Indexed = { [k: string]: string };

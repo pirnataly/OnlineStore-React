@@ -2,6 +2,7 @@ import {
   SnippetItemConfig,
   ProductItem,
   ProductItemWithType,
+  Indexed,
 } from "../interfaces/types";
 
 export function getProductsWithType(
@@ -15,9 +16,20 @@ export function getProductsWithType(
     if (foundProduct) {
       const updatedProduct = Object.assign({}, foundProduct, {
         type: item.type,
+        background: item.background,
       });
       updatedProducts.push(updatedProduct);
     }
   });
   return updatedProducts;
+}
+
+export function setBackgroundStyles(
+  snippetItem: ProductItemWithType,
+  colors: Indexed,
+) {
+  return {
+    backgroundImage: `url("/products/${snippetItem.photo_url}")`,
+    backgroundColor: `${colors[snippetItem.background]}`,
+  };
 }

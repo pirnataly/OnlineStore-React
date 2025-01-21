@@ -8,14 +8,13 @@
   @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
     height: Photos.$photos-height-mobile;
   }
+  &__photo_left {
+    margin-right: 4px;
+  }
 }
 
-.photo-double_left {
-  margin-right: 4px;
-}
-
-.photo-double_left,
-.photo-double_right {
+.double-photos__photo {
+  background-repeat: no-repeat;
   width: 50%;
   max-width: Photos.$max-width-double;
   border-radius: Photos.$photo-border-radius;

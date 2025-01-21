@@ -5,10 +5,10 @@ import Menu from "../../header/__Menu/Menu";
 
 const Categories = (props: MenuItemProps) => {
   return (
-    <div className={`${props.blockClass}__categories categories`}>
+    <div className={`${props.containerType}__categories categories`}>
       <Menu
         items={props.items}
-        blockClass={"categories"}
+        containerType={"categories"}
         itemType={props.itemType}
       />
     </div>

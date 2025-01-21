@@ -16,7 +16,7 @@ $f: Main.$font-rubik;
   @include Main.flex-column();
 }
 
-.products-snippet-container {
+.products-snippet {
   margin-bottom: $snippet-margin-bottom;
   padding: 0 4px;
 
@@ -26,7 +26,7 @@ $f: Main.$font-rubik;
   }
 }
 
-.catalog-snippet-container {
+.catalog-snippet {
   max-width: 283px;
   margin-bottom: 29px;
   margin-right: 4px;

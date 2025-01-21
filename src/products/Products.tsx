@@ -12,15 +12,17 @@ const Products = () => {
 
   return (
     <section className={"products"}>
-      {containersArray.map(({ id, blockClass, snippets, title, title_id }) => (
-        <Container
-          key={id}
-          blockClass={blockClass}
-          snippets={getProductsWithType(productsItems, snippets)}
-          title={title}
-          title_id={title_id}
-        />
-      ))}
+      {containersArray.map(
+        ({ id, containerType, snippets, title, title_id }) => (
+          <Container
+            key={id}
+            containerType={containerType}
+            snippets={getProductsWithType(productsItems, snippets)}
+            title={title}
+            title_id={title_id}
+          />
+        ),
+      )}
     </section>
   );
 };

@@ -3,21 +3,23 @@ import "./Proof.scss";
 import { ProductItemWithType } from "../../../../../../../../interfaces/types";
 
 const ProofContainer = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { blockClass, snippet } = props;
+  const { containerType, snippet } = props;
   return (
-    <div className={`proof-container ${blockClass}-proof-container`}>
+    <div className={`proof-container ${containerType}-proof-container`}>
       <div className={"proof"}>
         <div
-          className={`${blockClass}-proof-text`}
+          className={`${containerType}-proof-text`}
         >{`${snippet.review_rating}`}</div>
-        <div className={`proof__icon ${blockClass}-proof-star`}></div>
+        <div className={`proof__icon ${containerType}-proof-star`}></div>
       </div>
       <div className={"proof"}>
-        <div className={`${blockClass}-proof-text`}>{`${snippet.likes}`}</div>
-        <div className={`proof__icon ${blockClass}-proof-like`}></div>
+        <div
+          className={`${containerType}-proof-text`}
+        >{`${snippet.likes}`}</div>
+        <div className={`proof__icon ${containerType}-proof-like`}></div>
       </div>
     </div>
   );

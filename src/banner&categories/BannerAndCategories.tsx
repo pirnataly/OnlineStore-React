@@ -13,7 +13,7 @@ const BannerAndCategories = () => {
       <Banner />
       <Categories
         items={categoryItems}
-        blockClass={"main"}
+        containerType={"main"}
         itemType={"category"}
       />
     </main>

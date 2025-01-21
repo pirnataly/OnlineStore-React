@@ -51,3 +51,10 @@ export const components: { [k: string]: React.FC<ComponentProps> } = {
   quarter: (props) => <Quarter {...props} />,
   card: (props) => <Card {...props} />,
 };
+
+export const backgroundColors = {
+  red: "#f94233",
+  gray: "#bccdd1",
+  yellow: "#ffaa00",
+  blue: "#2e09e5",
+};

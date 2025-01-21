@@ -1,25 +1,35 @@
 import React from "react";
-import { ProductItemWithType } from "../../../../../../../interfaces/types";
+import {
+  Indexed,
+  ProductItemWithType,
+} from "../../../../../../../interfaces/types";
 import "./Quadro.scss";
+import { setBackgroundStyles } from "../../../../../../../utils/utils";
+import { backgroundColors } from "../../../../../../../data/constants/constants";
 
 const Quadro = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { blockClass, snippet } = props;
+  const { containerType, snippet } = props;
+  const colors = backgroundColors as Indexed;
   return (
     <div className={"quadro-photos"}>
       <div
-        className={`photo-quadro_first ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_first`}
+        className={`quadro-photos__photo quadro-photos__photo_first ${containerType}-${snippet.id} ${containerType}-${snippet.id}_first`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
       <div
-        className={`photo-quadro_second ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_second`}
+        className={`quadro-photos__photo quadro-photos__photo_second  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_second`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
       <div
-        className={`photo-quadro_third ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_third`}
+        className={`quadro-photos__photo quadro-photos__photo_third  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_third`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
       <div
-        className={`photo-double_fourth ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_fourth`}
+        className={`quadro-photos__photo quadro-photos__photo_fourth ${containerType}-${snippet.id} ${containerType}-${snippet.id}_fourth`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
     </div>
   );

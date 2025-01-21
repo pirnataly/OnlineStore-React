@@ -5,15 +5,15 @@ import Info from "./__Info/Info";
 import Photos from "./__Photos/Photos";
 
 const Snippet = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { blockClass, snippet } = props;
+  const { containerType, snippet } = props;
 
   return (
-    <div className={`${blockClass}-snippet-container snippet`}>
-      <Photos blockClass={blockClass} snippet={snippet} />
-      <Info blockClass={blockClass} snippet={snippet} />
+    <div className={`snippet ${containerType}-snippet`}>
+      <Photos containerType={containerType} snippet={snippet} />
+      <Info containerType={containerType} snippet={snippet} />
     </div>
   );
 };

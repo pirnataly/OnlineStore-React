@@ -7,25 +7,28 @@ import PriceProof from "./__Buy/price&proof/PriceProof";
 import TextBlock from "./__Description/__TextBlock/TextBlock";
 import BuyButton from "./__Buy/__BuyButton/BuyButton";
 
-const Info = (props: { blockClass: string; snippet: ProductItemWithType }) => {
-  const { snippet, blockClass } = props;
+const Info = (props: {
+  containerType: string;
+  snippet: ProductItemWithType;
+}) => {
+  const { snippet, containerType } = props;
   return (
-    <div className={`info ${blockClass}-snippet-container__info`}>
-      {blockClass === "products" ? (
+    <div className={`info ${containerType}-snippet__info`}>
+      {containerType === "products" ? (
         <>
           {" "}
-          <Description blockClass={blockClass} snippet={snippet} />
-          <Buy blockClass={blockClass} snippet={snippet} />
+          <Description containerType={containerType} snippet={snippet} />
+          <Buy containerType={containerType} snippet={snippet} />
         </>
       ) : (
         <>
-          <PriceProof blockClass={blockClass} snippet={snippet} />
+          <PriceProof containerType={containerType} snippet={snippet} />
           <TextBlock
-            className={`product-name ${blockClass}-product-name `}
+            className={`product-name ${containerType}-product-name `}
             snippet={snippet}
             snippetProperty={"name"}
           />
-          <BuyButton blockClass={blockClass} />
+          <BuyButton containerType={containerType} />
         </>
       )}
     </div>

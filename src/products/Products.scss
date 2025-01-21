@@ -13,15 +13,16 @@ $heading-container-height: 80px;
   }
   &__container {
     margin-bottom: $container-bottom-gap;
-  }
-  &__heading {
-    height: $heading-container-height;
-    margin-bottom: $products-heading-bottom-gap;
-  }
-  &__heading-text {
-    color: Main.$shop-black;
-    position: absolute;
-    left: $products-heading-text-left;
-    z-index: 1;
+
+    &__heading {
+      height: $heading-container-height;
+      margin-bottom: $products-heading-bottom-gap;
+    }
+    &__heading-text {
+      color: Main.$shop-black;
+      position: absolute;
+      left: $products-heading-text-left;
+      z-index: 1;
+    }
   }
 }

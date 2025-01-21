@@ -5,19 +5,19 @@ import Like from "../../like/Like";
 import TextBlock from "./__TextBlock/TextBlock";
 
 const Description = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { snippet, blockClass } = props;
+  const { snippet, containerType } = props;
   return (
-    <div className={`description ${blockClass}__description`}>
+    <div className={`description ${containerType}__description`}>
       <div className={"description-row description__up"}>
         <TextBlock
           className={"product-name description-row__name"}
           snippet={snippet}
           snippetProperty={"name"}
         />
-        <Like blockClass={blockClass} />
+        <Like containerType={containerType} />
       </div>
       <div className={"description-row description__bottom"}>
         <TextBlock

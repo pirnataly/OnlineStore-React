@@ -4,12 +4,15 @@ import { ProductItemWithType } from "../../../../../../interfaces/types";
 import BuyButton from "./__BuyButton/BuyButton";
 import PriceProof from "./price&proof/PriceProof";
 
-const Buy = (props: { blockClass: string; snippet: ProductItemWithType }) => {
-  const { blockClass, snippet } = props;
+const Buy = (props: {
+  containerType: string;
+  snippet: ProductItemWithType;
+}) => {
+  const { containerType, snippet } = props;
   return (
     <div className={"buy"}>
-      <PriceProof blockClass={blockClass} snippet={snippet} />
-      <BuyButton blockClass={blockClass} />
+      <PriceProof containerType={containerType} snippet={snippet} />
+      <BuyButton containerType={containerType} />
     </div>
   );
 };

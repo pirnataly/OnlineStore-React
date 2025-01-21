@@ -1,66 +1,79 @@
 [
   {
     "id": "1",
-    "blockClass": "products",
+    "containerType": "products",
     "snippets": [
       {
         "type": "double",
-        "id": "anonymous_mask"
+        "id": "anonymous_mask",
+        "background": "gray"
       },
       {
         "type": "single",
-        "id": "sunglasses"
+        "id": "sunglasses",
+        "background": "blue"
       },
       {
         "type": "double",
-        "id": "thomas_shelbick_cap"
+        "id": "thomas_shelbick_cap",
+        "background": "yellow"
       }
     ]
   },
   {
     "id": "2",
-    "blockClass": "catalog",
+    "containerType": "catalog",
     "snippets": [
       {
         "type": "card",
-        "id": "dinner_fork"
+        "id": "dinner_fork",
+        "background": "yellow"
       },
       {
         "type": "card",
-        "id": "elder_stick_2_pcs"
+        "id": "elder_stick_2_pcs",
+        "background": "gray"
       },
       {
         "type": "card",
-        "id": "gin"
+        "id": "gin",
+        "background": "blue"
       },
       {
         "type": "card",
-        "id": "plasticine_rings"
+        "id": "plasticine_rings",
+        "background": "gray"
       },
       {
         "type": "card",
-        "id": "necklace"
+        "id": "necklace",
+        "background": "blue"
       },
       {
         "type": "card",
-        "id": "carpet"
+        "id": "carpet",
+        "background": "yellow"
       },
 
       {
         "type": "card",
-        "id": "sorting_hat"
+        "id": "sorting_hat",
+        "background": "blue"
       },
       {
         "type": "card",
-        "id": "invisible_coat"
+        "id": "invisible_coat",
+        "background": "gray"
       },
       {
         "type": "card",
-        "id": "time_car"
+        "id": "time_car",
+        "background": "yellow"
       },
       {
         "type": "card",
-        "id": "goosebumps_massager"
+        "id": "goosebumps_massager",
+        "background": "blue"
       }
     ],
     "title": "Для дома",
@@ -68,31 +81,37 @@
   },
   {
     "id": "3",
-    "blockClass": "products",
+    "containerType": "products",
     "snippets": [
       {
         "type": "quarter",
-        "id": "philosopher_stone"
+        "id": "philosopher_stone",
+        "background": "red"
       },
       {
         "type": "single",
-        "id": "egyptian_power"
+        "id": "egyptian_power",
+        "background": "blue"
       },
       {
         "type": "quadro",
-        "id": "elder_stick_2_pcs"
+        "id": "elder_stick_2_pcs",
+        "background": "gray"
       },
       {
         "type": "double",
-        "id": "merch_with_john_travolta"
+        "id": "merch_with_john_travolta",
+        "background": "yellow"
       },
       {
         "type": "single",
-        "id": "lost_ark"
+        "id": "lost_ark",
+        "background": "red"
       },
       {
         "type": "double",
-        "id": "plasticine_rings"
+        "id": "plasticine_rings",
+        "background": "gray"
       }
     ],
     "title": "Sale",
@@ -100,48 +119,58 @@
   },
   {
     "id": "4",
-    "blockClass": "catalog",
+    "containerType": "catalog",
     "snippets": [
       {
         "type": "card",
-        "id": "dinner_fork"
+        "id": "dinner_fork",
+        "background": "yellow"
       },
       {
         "type": "card",
-        "id": "elder_stick_2_pcs"
+        "id": "elder_stick_2_pcs",
+        "background": "gray"
       },
       {
         "type": "card",
-        "id": "gin"
+        "id": "gin",
+        "background": "blue"
       },
       {
         "type": "card",
-        "id": "plasticine_rings"
+        "id": "plasticine_rings",
+        "background": "gray"
       },
       {
         "type": "card",
-        "id": "necklace"
+        "id": "necklace",
+        "background": "blue"
       },
       {
         "type": "card",
-        "id": "carpet"
+        "id": "carpet",
+        "background": "yellow"
       },
 
       {
         "type": "card",
-        "id": "sorting_hat"
+        "id": "sorting_hat",
+        "background": "blue"
       },
       {
         "type": "card",
-        "id": "invisible_coat"
+        "id": "invisible_coat",
+        "background": "gray"
       },
       {
         "type": "card",
-        "id": "time_car"
+        "id": "time_car",
+        "background": "yellow"
       },
       {
         "type": "card",
-        "id": "goosebumps_massager"
+        "id": "goosebumps_massager",
+        "background": "blue"
       }
     ],
     "title": "Для сна",
@@ -150,31 +179,37 @@
 
   {
     "id": "5",
-    "blockClass": "products",
+    "containerType": "products",
     "snippets": [
       {
         "type": "quarter",
-        "id": "fur_coat"
+        "id": "fur_coat",
+        "background": "red"
       },
       {
         "type": "single",
-        "id": "tournament_cup"
+        "id": "tournament_cup",
+        "background": "yellow"
       },
       {
         "type": "quadro",
-        "id": "the_same_ring"
+        "id": "the_same_ring",
+        "background": "gray"
       },
       {
         "type": "double",
-        "id": "stradivarius_violin"
+        "id": "stradivarius_violin",
+        "background": "blue"
       },
       {
         "type": "single",
-        "id": "dinner_fork"
+        "id": "dinner_fork",
+        "background": "red"
       },
       {
         "type": "double",
-        "id": "pearl_of_kamchatka"
+        "id": "pearl_of_kamchatka",
+        "background": "gray"
       }
     ],
     "title": "Сокровища",

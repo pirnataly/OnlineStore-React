@@ -1,19 +1,27 @@
 import React from "react";
-import { ProductItemWithType } from "../../../../../../../interfaces/types";
+import {
+  Indexed,
+  ProductItemWithType,
+} from "../../../../../../../interfaces/types";
 import "./Quarter.scss";
+import { setBackgroundStyles } from "../../../../../../../utils/utils";
+import { backgroundColors } from "../../../../../../../data/constants/constants";
 
 const Quarter = (props: {
-  blockClass: string;
+  containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { blockClass, snippet } = props;
+  const { containerType, snippet } = props;
+  const colors = backgroundColors as Indexed;
   return (
     <div className={"quarter-photos"}>
       <div
-        className={`photo-quarter_left ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}}_left`}
+        className={`quarter-photos__photo quarter-photos__photo_left  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_left`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
       <div
-        className={`photo-quarter_right ${snippet.id} ${blockClass}-${snippet.id} ${blockClass}-${snippet.id}_right`}
+        className={`quarter-photos__photo quarter-photos__photo_right  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_right`}
+        style={setBackgroundStyles(snippet, colors)}
       ></div>
     </div>
   );

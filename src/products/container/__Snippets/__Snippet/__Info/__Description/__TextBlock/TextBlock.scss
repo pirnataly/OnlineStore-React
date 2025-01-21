@@ -1,9 +1,17 @@
 @use "../../../../../../../Main";
+$name-weight: 500;
+$name-size: 60px;
+$name-height: 91%;
 
 .product-name {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: Main.$black-color;
+  font-size: $name-size;
+  font-family: Main.$font;
+  font-weight: $name-weight;
+  line-height: $name-height;
 }
 
 .catalog-product-name {

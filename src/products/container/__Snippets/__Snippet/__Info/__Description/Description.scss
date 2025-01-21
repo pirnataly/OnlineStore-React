@@ -3,13 +3,11 @@ $catalog-description-min-width: 283px;
 $info-margin-right: 8px;
 $row-bottom-max-width: 1000px;
 $text-width: 1000px;
-$name-weight: 500;
-$name-size: 60px;
 $rows-bottom: 10px;
 $products-description-margin-right: 10px;
 $catalog-description-margin-right: 4px;
-$name-height: 44px;
 $width: 100%;
+$description-max-width: 1050px;
 
 @use "../../../../../../Main";
 
@@ -22,12 +20,9 @@ $width: 100%;
     width: $width;
 
     &__name {
+      max-width: $description-max-width;
       margin-right: $info-margin-right;
     }
-  }
-
-  &__up {
-    margin-bottom: $rows-bottom;
   }
 
   &__bottom {
@@ -50,14 +45,6 @@ $width: 100%;
 .catalog__description {
   min-width: $catalog-description-min-width;
   margin-right: $catalog-description-margin-right;
-}
-
-.product-name {
-  color: Main.$black-color;
-  font-size: $name-size;
-  font-family: Main.$font;
-  font-weight: $name-weight;
-  line-height: $name-height;
 }
 
 .text {

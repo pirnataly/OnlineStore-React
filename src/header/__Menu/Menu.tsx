@@ -5,8 +5,8 @@ import Category from "../../banner&categories/__Categories/__Category/Category";
 
 const Menu = (props: MenuItemProps) => {
   return (
-    <nav className={`${props.blockClass}__navigation`}>
-      <menu className={`menu ${props.blockClass}__menu`}>
+    <nav className={`${props.containerType}__navigation`}>
+      <menu className={`menu ${props.containerType}__menu`}>
         {props.items.map((item) => (
           <li
             key={item.id}

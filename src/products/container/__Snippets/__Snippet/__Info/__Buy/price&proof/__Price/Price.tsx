@@ -2,16 +2,19 @@ import React from "react";
 import "./Price.scss";
 import { ProductItemWithType } from "../../../../../../../../interfaces/types";
 
-const Price = (props: { blockClass: string; snippet: ProductItemWithType }) => {
-  const { blockClass, snippet } = props;
+const Price = (props: {
+  containerType: string;
+  snippet: ProductItemWithType;
+}) => {
+  const { containerType, snippet } = props;
   return (
-    <div className={`price ${blockClass}-price`}>
-      <div className={`current-price ${blockClass}-current-price`}>
+    <div className={`price ${containerType}-price`}>
+      <div className={`current-price ${containerType}-current-price`}>
         {snippet.discount_price.length
           ? snippet.discount_price + " ₽"
           : snippet.full_price + " ₽"}
       </div>
-      <div className={`old-price ${blockClass}-old-price `}>
+      <div className={`old-price ${containerType}-old-price `}>
         {snippet.discount_price.length ? snippet.full_price + " ₽" : null}
       </div>
     </div>
