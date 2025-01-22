@@ -7,11 +7,6 @@ $name-height: 91%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: Main.$black-color;
-  font-size: $name-size;
-  font-family: Main.$font;
-  font-weight: $name-weight;
-  line-height: $name-height;
 }
 
 .catalog-product-name {
@@ -29,4 +24,18 @@ $name-height: 91%;
     "cv03" on,
     "cv04" on;
   margin-bottom: 12px;
+}
+
+.products-product-name {
+  color: Main.$black-color;
+  font-size: $name-size;
+  font-family: Main.$font;
+  font-weight: $name-weight;
+  line-height: $name-height;
+  @media (max-width: 1050px) {
+    font-size: 48px;
+  }
+  @media (min-width: Main.$tablet) and (max-width: 1049px) {
+    font-size: 36px;
+  }
 }

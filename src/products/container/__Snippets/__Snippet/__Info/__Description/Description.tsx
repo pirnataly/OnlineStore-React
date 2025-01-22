@@ -13,7 +13,7 @@ const Description = (props: {
     <div className={`description ${containerType}__description`}>
       <div className={"description-row description__up"}>
         <TextBlock
-          className={"product-name description-row__name"}
+          className={`product-name ${containerType}-product-name description-row__name`}
           snippet={snippet}
           snippetProperty={"name"}
         />

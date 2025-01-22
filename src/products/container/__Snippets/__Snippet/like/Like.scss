@@ -15,6 +15,7 @@ $catalog-snippet-like: "/icons/heart-small.svg";
   height: $products-like-size;
   background-image: url($product-snippet-like);
   background-repeat: no-repeat;
+  flex-shrink: 0;
   &:hover {
     background: url($product-snippet-like-hover);
   }

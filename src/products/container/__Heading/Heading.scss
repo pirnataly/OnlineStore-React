@@ -15,6 +15,9 @@ $catalog-heading-height: 107px;
   font-size: $heading-size;
   line-height: $heading-line-height;
   letter-spacing: $heading-letter-spacing;
+  @media (min-width: Main.$tablet) and (max-width: 1050px) {
+    font-size: 15vw;
+  }
 }
 
 .catalog__container__heading {

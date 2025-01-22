@@ -2,6 +2,7 @@ $catalog-info-max-width: 283px;
 
 .info {
   display: flex;
+  justify-content: space-between;
 }
 
 .catalog-snippet__info {

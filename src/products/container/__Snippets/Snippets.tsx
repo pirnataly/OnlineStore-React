@@ -1,6 +1,7 @@
 import React from "react";
 import { ProductItemWithType } from "../../../interfaces/types";
 import Snippet from "./__Snippet/Snippet";
+import "./Snippets.scss";
 
 const Snippets = (props: {
   containerType: string;

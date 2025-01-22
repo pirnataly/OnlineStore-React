@@ -8,6 +8,7 @@ $products-description-margin-right: 10px;
 $catalog-description-margin-right: 4px;
 $width: 100%;
 $description-max-width: 1050px;
+$products-description-tablet-width: 313px;
 
 @use "../../../../../../Main";
 
@@ -40,6 +41,9 @@ $description-max-width: 1050px;
 .products__description {
   min-width: $products-description-min-width;
   margin-right: $products-description-margin-right;
+  @media (min-width: Main.$tablet) and (max-width: Main.$desktop - 1px) {
+    min-width: $products-description-tablet-width;
+  }
 }
 
 .catalog__description {
