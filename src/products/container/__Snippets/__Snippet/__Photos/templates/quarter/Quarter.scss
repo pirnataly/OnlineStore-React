@@ -17,10 +17,12 @@ $photo-right-width: 25%;
 
 .quarter-photos__photo {
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   border-radius: Photos.$photo-border-radius;
 }
 
-.quarter-photos__photo_left {
+.quarter-photos__photo_1 {
   width: $photo-left-width;
   min-width: $photo-left-width;
   max-width: $quarter-left-max-width;
@@ -32,7 +34,7 @@ $photo-right-width: 25%;
   }
 }
 
-.quarter-photos__photo_right {
+.quarter-photos__photo_2 {
   width: $photo-right-width;
   max-width: $quarter-right-max-width;
 

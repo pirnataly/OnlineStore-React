@@ -16,7 +16,6 @@ const Info = (props: {
     <div className={`info ${containerType}-snippet__info`}>
       {containerType === "products" ? (
         <>
-          {" "}
           <Description containerType={containerType} snippet={snippet} />
           <Buy containerType={containerType} snippet={snippet} />
         </>

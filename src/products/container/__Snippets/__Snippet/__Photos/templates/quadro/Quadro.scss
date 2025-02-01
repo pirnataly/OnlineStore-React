@@ -7,6 +7,7 @@ $quadro-min-width: 275px;
   width: 100%;
   height: Photos.$photos-height;
   display: flex;
+  overflow: hidden;
   @media (min-width: Main.$mobile - 10px) and (max-width: Main.$tablet - 1px) {
     height: Photos.$photos-height-mobile;
   }
@@ -14,6 +15,8 @@ $quadro-min-width: 275px;
 
 .quadro-photos__photo {
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   width: 25%;
   min-width: $quadro-min-width;
   max-width: Photos.$max-width-quadro;
@@ -21,8 +24,8 @@ $quadro-min-width: 275px;
   margin-right: 4px;
 }
 
-.quadro-photos__photo_first,
-.quadro-photos__photo_second {
+.quadro-photos__photo_1,
+.quadro-photos__photo_2 {
   @media (min-width: Photos.$second-invisible-point + 1px) and (max-width: Photos.$first-invisible-point) {
     width: 33%;
   }
@@ -33,7 +36,7 @@ $quadro-min-width: 275px;
   }
 }
 
-.quadro-photos__photo_third {
+.quadro-photos__photo_3 {
   @media (min-width: Photos.$second-invisible-point + 1px) and (max-width: Photos.$first-invisible-point) {
     width: 33%;
   }
@@ -42,7 +45,7 @@ $quadro-min-width: 275px;
   }
 }
 
-.quadro-photos__photo_fourth {
+.quadro-photos__photo_4 {
   @media (max-width: Photos.$first-invisible-point) {
     display: none;
   }

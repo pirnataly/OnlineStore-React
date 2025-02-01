@@ -27,9 +27,10 @@ export function getProductsWithType(
 export function setBackgroundStyles(
   snippetItem: ProductItemWithType,
   colors: Indexed,
+  imageUrl: string,
 ) {
   return {
-    backgroundImage: `url("/products/${snippetItem.photo_url}")`,
+    backgroundImage: `url("/products/${snippetItem.id}/${imageUrl}")`,
     backgroundColor: `${colors[snippetItem.background]}`,
   };
 }

@@ -11,19 +11,20 @@ const Double = (props: {
   containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { containerType, snippet } = props;
+  const { snippet } = props;
   const colors = backgroundColors as Indexed;
+  let Urls = snippet.photo_url.slice(0, 2) as Array<string>;
+  Urls = Urls.length < 2 ? new Array(2).fill(Urls).flat(1) : Urls;
 
   return (
     <div className={"double-photos"}>
-      <div
-        className={`double-photos__photo double-photos__photo_left  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_left`}
-        style={setBackgroundStyles(snippet, colors)}
-      ></div>
-      <div
-        className={`double-photos__photo double-photos__photo_right  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_right`}
-        style={setBackgroundStyles(snippet, colors)}
-      ></div>
+      {Urls.map((photoUrl: string, index: number) => (
+        <div
+          key={`${snippet.id}_${index}`}
+          className={`double-photos__photo double-photos__photo_${index + 1}`}
+          style={setBackgroundStyles(snippet, colors, photoUrl)}
+        ></div>
+      ))}
     </div>
   );
 };

@@ -13,12 +13,14 @@ const Single = (props: {
 }) => {
   const { containerType, snippet } = props;
   const colors = backgroundColors as Indexed;
+
   return (
     <div className={"single-photo"}>
       <div
         className={`photo-single  single-photo__photo-single ${containerType}-${snippet.id}`}
-        style={setBackgroundStyles(snippet, colors)}
+        style={setBackgroundStyles(snippet, colors, snippet.photo_url[0])}
       ></div>
+      )
     </div>
   );
 };

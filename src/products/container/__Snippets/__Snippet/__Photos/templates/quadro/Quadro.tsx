@@ -11,26 +11,20 @@ const Quadro = (props: {
   containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { containerType, snippet } = props;
+  const { snippet } = props;
   const colors = backgroundColors as Indexed;
+  let Urls = snippet.photo_url.slice(0, 4) as Array<string>;
+  Urls = Urls.length < 2 ? new Array(4).fill(Urls).flat(1) : Urls;
+
   return (
     <div className={"quadro-photos"}>
-      <div
-        className={`quadro-photos__photo quadro-photos__photo_first ${containerType}-${snippet.id} ${containerType}-${snippet.id}_first`}
-        style={setBackgroundStyles(snippet, colors)}
-      ></div>
-      <div
-        className={`quadro-photos__photo quadro-photos__photo_second  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_second`}
-        style={setBackgroundStyles(snippet, colors)}
-      ></div>
-      <div
-        className={`quadro-photos__photo quadro-photos__photo_third  ${containerType}-${snippet.id} ${containerType}-${snippet.id}_third`}
-        style={setBackgroundStyles(snippet, colors)}
-      ></div>
-      <div
-        className={`quadro-photos__photo quadro-photos__photo_fourth ${containerType}-${snippet.id} ${containerType}-${snippet.id}_fourth`}
-        style={setBackgroundStyles(snippet, colors)}
-      ></div>
+      {Urls.map((photoUrl: string, index: number) => (
+        <div
+          key={`${snippet.id}_${index}`}
+          className={`quadro-photos__photo quadro-photos__photo_${index + 1}`}
+          style={setBackgroundStyles(snippet, colors, photoUrl)}
+        ></div>
+      ))}
     </div>
   );
 };

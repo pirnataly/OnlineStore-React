@@ -5,20 +5,31 @@
   width: 100%;
   @include Main.flex-between();
   height: Photos.$photos-height;
-  @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+  @media (max-width: Main.$tablet - 1px) {
     height: Photos.$photos-height-mobile;
   }
-  &__photo_left {
-    margin-right: 4px;
-  }
-}
 
-.double-photos__photo {
-  background-repeat: no-repeat;
-  width: 50%;
-  max-width: Photos.$max-width-double;
-  border-radius: Photos.$photo-border-radius;
-  @media (max-width: Main.$mobile) {
-    max-width: Photos.$max-width-double-mobile;
+  &__photo {
+    background-repeat: no-repeat;
+    width: 50%;
+    max-width: Photos.$max-width-double;
+    border-radius: Photos.$photo-border-radius;
+    background-size: contain;
+    background-position: center;
+    @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
+      max-height: 240px;
+      background-size: cover;
+    }
+    @media (max-width: Main.$mobile + 1px) {
+      max-width: Photos.$max-width-double-mobile;
+      background-position: bottom;
+    }
+
+    &_1 {
+      margin-right: 4px;
+    }
+
+    &_2 {
+    }
   }
 }

@@ -1,5 +1,6 @@
 @use "../../Photos";
 @use "../../../../../../../Main";
+
 $height-mobile-single: 488px;
 
 .single-photo {
@@ -15,4 +16,9 @@ $height-mobile-single: 488px;
   width: 100%;
   height: 100%;
   border-radius: Photos.$photo-border-radius;
+  background-position: center;
+  background-size: contain;
+  @media (max-width: Main.$mobile + 1px) {
+    background-position: bottom;
+  }
 }

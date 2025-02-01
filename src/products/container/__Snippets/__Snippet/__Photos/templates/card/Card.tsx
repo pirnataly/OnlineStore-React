@@ -10,14 +10,14 @@ const Card = (props: {
   containerType: string;
   snippet: ProductItemWithType;
 }) => {
-  const { containerType, snippet } = props;
+  const { snippet } = props;
   const colors = backgroundColors as Indexed;
   return (
     <div className={"card-photo"}>
       <div
-        className={`card-photo__photo ${containerType}-${snippet.id}`}
+        className={`card-photo__photo`}
         style={{
-          backgroundImage: `url("/products/${snippet.photo_url}")`,
+          backgroundImage: `url("/products/${snippet.id}/${snippet.photo_url[0]}")`,
           backgroundColor: `${colors[snippet.background]}`,
         }}
       ></div>

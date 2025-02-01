@@ -17,7 +17,7 @@ export type ProductItem = {
   name: string;
   categories: string[];
   description: string;
-  photo_url: string;
+  photo_url: Array<string>;
   full_price: string;
   discount_price: string;
   likes: string;
