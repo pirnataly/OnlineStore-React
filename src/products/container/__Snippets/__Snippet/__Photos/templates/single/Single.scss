@@ -8,6 +8,7 @@ $height-mobile-single: 488px;
   height: Photos.$photos-height;
   @media (max-width: Main.$mobile + 1px) {
     height: $height-mobile-single;
+    margin-bottom: 8px;
   }
 }
 

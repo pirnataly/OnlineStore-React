@@ -1,9 +1,12 @@
 @use "../Main";
+
 $container-bottom-gap: 50px;
+$container-bottom-gap-mobile: 28px;
 $padding-top: 54px;
 $mobile-padding-top: 36px;
 $products-heading-bottom-gap: 30px;
 $products-heading-text-left: 10px;
+$products-heading-text-left-mobile: 6px;
 $heading-container-height: 80px;
 
 .products {
@@ -11,18 +14,35 @@ $heading-container-height: 80px;
   @media (max-width: Main.$mobile) {
     padding-top: $mobile-padding-top;
   }
+
   &__container {
     margin-bottom: $container-bottom-gap;
+    @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+      margin-bottom: Main.set-new-value(
+        $container-bottom-gap,
+        $container-bottom-gap-mobile,
+        Main.$desktop - 1px,
+        Main.$mobile
+      );
+    }
 
     &__heading {
       height: $heading-container-height;
       margin-bottom: $products-heading-bottom-gap;
+      @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+        height: 36px;
+        margin-bottom: 0;
+      }
     }
+
     &__heading-text {
       color: Main.$shop-black;
       position: absolute;
       left: $products-heading-text-left;
       z-index: 1;
+      @media (max-width: Main.$mobile + 1px) {
+        left: $products-heading-text-left-mobile;
+      }
     }
   }
 }

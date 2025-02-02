@@ -31,20 +31,25 @@ $desktop: 1440px;
 $tablet: 690px;
 $mobile: 375px;
 $menu-size: 176px;
-$app-background: #ffffff;
 $font: "Inter Variable", sans-serif;
 $font-rubik: "Rubik Dirt", sans-serif;
 $font-doodle: "Rubik Doodle triangles", sans-serif;
 $font-beastly: "Rubik Beastly", sans-serif;
 $black-color: #000000;
-$white-color: #ffffff;
+$shop-yellow: #ffaa00;
+$shop-star-yellow: #ffcc00;
+$shop-almost-white: #f2f7f7;
+$shop-white: #ffffff;
 $shop-black: #090909;
+$shop-blue: #2e09e5;
 $shop-gray: #bccdd1;
-$button-color: #f94233;
+$shop-red: #f94233;
 $catalog-old-price-color: #87e0ff;
-$button-hover: linear-gradient(99deg, #fa0 -8.11%, #f94233 86.42%);
+$shop-fire: linear-gradient(99deg, #fa0 -8.11%, #f94233 86.42%);
 $button-border-radius: 12px;
-$light-gray-color: #e1eced;
+$shop-light-gray: #e1eced;
+
+//mixins
 
 @mixin flex-column() {
   display: flex;
@@ -56,7 +61,23 @@ $light-gray-color: #e1eced;
   justify-content: space-between;
 }
 
+@mixin medium-style {
+  font-family: $font;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 550;
+  line-height: 100%;
+}
+
+@mixin small-regular {
+  font-family: $font;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 412;
+  line-height: 100%;
+}
 @mixin typography($color: $shop-black) {
+  @include medium-style;
   color: $color;
   font-variant-numeric: ordinal;
   font-feature-settings:
@@ -67,17 +88,6 @@ $light-gray-color: #e1eced;
     "cv02" on,
     "cv03" on,
     "cv04" on;
-
-  font-family: $font;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 550;
-  line-height: 100%;
-}
-
-@mixin position-and-size($position, $size) {
-  background-position: $position;
-  background-size: $size;
 }
 
 @mixin small-medium() {
@@ -87,11 +97,21 @@ $light-gray-color: #e1eced;
   line-height: 15px;
 }
 
-@mixin medium() {
-  font-size: 60px;
-  font-family: $font;
-  font-weight: 500;
-  line-height: 44px;
+//functions
+
+@function find-difference($max, $min) {
+  @return calc(($max - $min) / 1);
+}
+
+@function set-new-value($old-value, $new-value, $max-viewport, $min-viewport) {
+  $sizes-difference: find-difference($old-value, $new-value);
+  $viewport-difference: find-difference($max-viewport, $min-viewport);
+  @return calc(
+    (
+      $old-value -
+        (($max-viewport - 100vw) * ($sizes-difference / $viewport-difference))
+    )
+  );
 }
 
 * {

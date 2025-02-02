@@ -1,0 +1,14 @@
+@use "../../../../../../Main";
+$margin-top: 8px;
+
+.buttons {
+  display: flex;
+}
+
+.info__buttons {
+  margin-top: $margin-top;
+  display: none;
+  @media (max-width: Main.$tablet) {
+    display: flex;
+  }
+}

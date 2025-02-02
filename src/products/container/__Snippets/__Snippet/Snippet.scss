@@ -1,6 +1,9 @@
 $snippet-margin-bottom: 49px;
+$snippet-margin-bottom-mobile: 28px;
 $text-size: 22px;
 $catalog-snippet-max-width: 283px;
+$catalog-snippet-height-mobile: 353px;
+$catalog-snippet-max-width-mobile: 181px;
 
 @use "../../../../Main";
 
@@ -13,14 +16,33 @@ $f: Main.$font-rubik;
 .products-snippet {
   margin-bottom: $snippet-margin-bottom;
   padding: 0 4px;
+  @media (max-width: Main.$mobile + 1px) {
+    margin-bottom: $snippet-margin-bottom-mobile;
+  }
 
   &__info {
     padding: 4px 12px 0;
+    @media (max-width: Main.$tablet) {
+      padding: 4px 6px 0;
+      flex-direction: column-reverse;
+    }
   }
 }
 
 .catalog-snippet {
-  max-width: 283px;
-  margin-bottom: 29px;
+  max-width: $catalog-snippet-max-width;
+  margin-bottom: calc($snippet-margin-bottom-mobile + 1px);
   margin-right: 4px;
+  @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+    max-width: Main.set-new-value(
+      $catalog-snippet-max-width,
+      $catalog-snippet-max-width-mobile,
+      Main.$desktop - 1px,
+      Main.$mobile
+    );
+    margin-bottom: $snippet-margin-bottom-mobile;
+  }
+  @media (max-width: Main.$mobile + 1px) {
+    height: $catalog-snippet-height-mobile;
+  }
 }

@@ -1,4 +1,5 @@
 @use "../../../../../../../Main";
+
 $button-width: 294px;
 $button-mobile-width: 298px;
 $catalog-buy-button-width: 152px;
@@ -9,24 +10,42 @@ $catalog-buy-button-width-mobile: 169px;
   align-items: center;
   padding: 14px 24px 16px;
   border-radius: Main.$button-border-radius;
-  background-color: Main.$button-color;
+  background-color: Main.$shop-red;
   white-space: nowrap;
-  &:hover {
-    cursor: pointer;
-    background: Main.$button-hover;
+
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      background: Main.$shop-fire;
+    }
   }
 }
 
 .products-buy-button {
   width: $button-width;
-  @media (max-width: Main.$mobile) {
+
+  @media (max-width: Main.$tablet) {
     width: $button-mobile-width;
+  }
+}
+
+.buy__buy-button {
+  @media (max-width: Main.$tablet) {
+    display: none;
+  }
+}
+
+.info__buy-button {
+  display: none;
+  @media (max-width: Main.$tablet) {
+    display: initial;
   }
 }
 
 .catalog-buy-button {
   width: $catalog-buy-button-width;
-  @media (max-width: Main.$mobile) {
+  @media (max-width: Main.$mobile + 1px) {
+    margin-top: 8px;
     width: $catalog-buy-button-width-mobile;
   }
 }

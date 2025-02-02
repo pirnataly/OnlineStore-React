@@ -24,6 +24,9 @@ $second-invisible-point: 841px;
 
 .products-snippet__photos {
   margin-bottom: $photos-bottom;
+  @media (max-width: Main.$mobile + 1px) {
+    margin-bottom: 0;
+  }
 }
 
 .catalog-snippet__photos {

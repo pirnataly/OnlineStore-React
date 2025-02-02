@@ -35,6 +35,8 @@ $products-description-tablet-width: 313px;
   &__text {
     align-self: flex-start;
     max-width: $text-width;
+    @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+    }
   }
 }
 
@@ -43,6 +45,11 @@ $products-description-tablet-width: 313px;
   margin-right: $products-description-margin-right;
   @media (min-width: Main.$tablet) and (max-width: Main.$desktop - 1px) {
     min-width: $products-description-tablet-width;
+  }
+  @media (max-width: Main.$tablet) {
+    max-width: 355px;
+    min-width: 100%;
+    margin-right: 0;
   }
 }
 
@@ -60,4 +67,15 @@ $products-description-tablet-width: 313px;
   overflow: hidden;
   text-overflow: ellipsis;
   @include Main.typography();
+  @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+    font-size: Main.set-new-value(
+      22px,
+      16px,
+      Main.$desktop - 1px,
+      Main.$mobile
+    );
+  }
+  @media (max-width: Main.$mobile) {
+    @include Main.small-regular;
+  }
 }

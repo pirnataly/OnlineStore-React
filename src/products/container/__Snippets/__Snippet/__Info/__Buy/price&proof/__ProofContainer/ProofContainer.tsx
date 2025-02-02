@@ -5,11 +5,14 @@ import { ProductItemWithType } from "../../../../../../../../interfaces/types";
 const ProofContainer = (props: {
   containerType: string;
   snippet: ProductItemWithType;
+  extraClass: string;
 }) => {
-  const { containerType, snippet } = props;
+  const { containerType, snippet, extraClass } = props;
   return (
-    <div className={`proof-container ${containerType}-proof-container`}>
-      <div className={"proof"}>
+    <div
+      className={`proof-container ${containerType}-proof-container ${extraClass}__${containerType}-proof-container`}
+    >
+      <div className={`proof ${containerType}-proof`}>
         <div
           className={`${containerType}-proof-text`}
         >{`${snippet.review_rating}`}</div>

@@ -12,7 +12,7 @@ const Buy = (props: {
   return (
     <div className={"buy"}>
       <PriceProof containerType={containerType} snippet={snippet} />
-      <BuyButton containerType={containerType} />
+      <BuyButton containerType={containerType} extraClass={"buy"} />
     </div>
   );
 };

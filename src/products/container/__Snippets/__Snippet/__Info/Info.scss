@@ -1,4 +1,5 @@
 $catalog-info-max-width: 283px;
+@use "../../../../../Main";
 
 .info {
   display: flex;
@@ -9,4 +10,7 @@ $catalog-info-max-width: 283px;
   flex-direction: column;
   max-width: $catalog-info-max-width;
   padding: 0 12px;
+  @media (max-width: Main.$mobile + 1px) {
+    padding: 0 6px;
+  }
 }

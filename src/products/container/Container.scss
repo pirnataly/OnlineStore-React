@@ -10,6 +10,7 @@ $catalog-background-color:
   #090909;
 $catalog-border-radius: 12px;
 $container-gap: 100px;
+$container-gap-mobile: 28px;
 
 @use "../../Main";
 .container {
@@ -22,4 +23,17 @@ $container-gap: 100px;
   border-radius: $catalog-border-radius;
   background: $catalog-background-color;
   margin-bottom: $container-gap;
+  @media (min-width: Main.$mobile + 1px) and (max-width: Main.$desktop - 1px) {
+    padding: 12px 0 0 4px;
+    margin-bottom: Main.set-new-value(
+      $container-gap,
+      $container-gap-mobile,
+      Main.$desktop - 1px,
+      Main.$mobile
+    );
+  }
+  @media (max-width: Main.$mobile +1px) {
+    padding: 12px 0 0 4px;
+    margin-bottom: $container-gap-mobile;
+  }
 }

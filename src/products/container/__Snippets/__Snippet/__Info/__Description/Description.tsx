@@ -17,7 +17,7 @@ const Description = (props: {
           snippet={snippet}
           snippetProperty={"name"}
         />
-        <Like containerType={containerType} />
+        <Like containerType={containerType} extraClass={"description"} />
       </div>
       <div className={"description-row description__bottom"}>
         <TextBlock

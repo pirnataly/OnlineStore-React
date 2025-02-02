@@ -11,7 +11,7 @@ $name-height: 91%;
 
 .catalog-product-name {
   @include Main.small-medium();
-  color: Main.$white-color;
+  color: Main.$shop-white;
   font-variant-numeric: ordinal;
   font-feature-settings:
     "dlig" on,
@@ -24,6 +24,9 @@ $name-height: 91%;
     "cv03" on,
     "cv04" on;
   margin-bottom: 12px;
+  @media (max-width: Main.$mobile + 1px) {
+    margin-bottom: 0;
+  }
 }
 
 .products-product-name {
@@ -32,10 +35,13 @@ $name-height: 91%;
   font-family: Main.$font;
   font-weight: $name-weight;
   line-height: $name-height;
-  @media (max-width: 1050px) {
-    font-size: 48px;
-  }
-  @media (min-width: Main.$tablet) and (max-width: 1049px) {
-    font-size: 36px;
+  @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+    @include Main.typography();
+    font-size: Main.set-new-value(
+      $name-size,
+      22px,
+      Main.$desktop - 1px,
+      Main.$mobile
+    );
   }
 }

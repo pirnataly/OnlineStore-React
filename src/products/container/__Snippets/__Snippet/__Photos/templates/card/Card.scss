@@ -1,12 +1,25 @@
 $card-background: #f6f6fa;
+$card-height: 376px;
+$card-height-mobile: 240px;
+$card-width: 283px;
 
 @use "../../Photos";
+@use "../../../../../../../Main";
 
 .card-photo {
   width: 283px;
-  height: 376px;
+  height: $card-height;
   background-color: $card-background;
   border-radius: Photos.$photo-border-radius-mobile;
+  @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+    width: 100%;
+    height: Main.set-new-value(
+      $card-height,
+      $card-height-mobile,
+      Main.$desktop - 1px,
+      Main.$mobile
+    );
+  }
 }
 
 .card-photo__photo {

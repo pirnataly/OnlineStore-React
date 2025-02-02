@@ -1,10 +1,14 @@
 $products-like-size: 45px;
 $catalog-like-size: 36px;
+$products-like-size-mobile: 54px;
 $position-gap: 7px;
 $catalog-snippet-like-hover: "/icons/heart-small-hover.svg";
 $product-snippet-like-hover: "/icons/heart-hover.svg";
 $product-snippet-like: "/icons/heart.svg";
 $catalog-snippet-like: "/icons/heart-small.svg";
+$product-snippet-like-mobile: "/icons/heart-mobile.svg";
+$product-snippet-like-mobile-hover: "/icons/heart-mobile-hover.svg";
+@use "../../../../../Main";
 
 .like {
   cursor: pointer;
@@ -16,8 +20,30 @@ $catalog-snippet-like: "/icons/heart-small.svg";
   background-image: url($product-snippet-like);
   background-repeat: no-repeat;
   flex-shrink: 0;
-  &:hover {
-    background: url($product-snippet-like-hover);
+  @media (max-width: Main.$tablet) {
+    background-image: url($product-snippet-like-mobile);
+    width: $products-like-size-mobile;
+    height: $products-like-size-mobile;
+    background-repeat: no-repeat;
+  }
+  @media (hover: hover) {
+    &:hover {
+      background: url($product-snippet-like-hover);
+    }
+  }
+}
+
+.description__like {
+  @media (max-width: Main.$tablet) {
+    display: none;
+  }
+}
+
+.info__like {
+  @media (hover: hover) {
+    &:hover {
+      background: url($product-snippet-like-mobile-hover);
+    }
   }
 }
 
@@ -34,8 +60,9 @@ $catalog-snippet-like: "/icons/heart-small.svg";
   flex-shrink: 0;
   box-shadow: 0 1.5px 4px 0 rgba(107, 149, 153, 0.2) inset;
   backdrop-filter: blur(3px);
-
-  &:hover {
-    background: url($catalog-snippet-like-hover) no-repeat;
+  @media (hover: hover) {
+    &:hover {
+      background: url($catalog-snippet-like-hover) no-repeat;
+    }
   }
 }

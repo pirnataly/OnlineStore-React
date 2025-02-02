@@ -1,6 +1,7 @@
 @use "../../Buy";
 @use "../../../../../../../../Main";
 $text-discount: 39px;
+$price-discount-mobile: 22px;
 $card-text-discount: 40px;
 $text-discount-weight: 700;
 $discount-size: 15px;
@@ -22,15 +23,30 @@ $text-weight: 550;
     Main.$black-color,
     100%
   );
+  @media (max-width: Main.$mobile + 1px) {
+    line-height: 36px;
+  }
 }
 
 .catalog-current-price {
   @include Buy.discount-typography(
     $card-text-discount,
     $text-discount-weight,
-    Main.$white-color,
+    Main.$shop-white,
     72%
   );
+  @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+    font-size: Main.set-new-value(
+      $card-text-discount,
+      $price-discount-mobile,
+      Main.$desktop - 1px,
+      Main.$mobile
+    );
+  }
+  @media (max-width: Main.$mobile + 1px) {
+    @include Main.medium-style;
+    line-height: 21px;
+  }
 }
 
 .old-price {

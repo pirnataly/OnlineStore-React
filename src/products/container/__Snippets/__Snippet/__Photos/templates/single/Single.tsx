@@ -20,7 +20,6 @@ const Single = (props: {
         className={`photo-single  single-photo__photo-single ${containerType}-${snippet.id}`}
         style={setBackgroundStyles(snippet, colors, snippet.photo_url[0])}
       ></div>
-      )
     </div>
   );
 };

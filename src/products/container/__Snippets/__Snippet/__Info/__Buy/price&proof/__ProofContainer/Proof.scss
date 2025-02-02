@@ -13,6 +13,17 @@ $catalog-snippet-heart: "/icons/white-heart.svg";
   align-items: flex-end;
 }
 .catalog-proof-container {
+  @media (max-width: Main.$mobile + 1px) {
+    display: none;
+  }
+}
+
+.info__catalog-proof-container {
+  display: none;
+  @media (max-width: Main.$mobile +1px) {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .proof {
@@ -21,6 +32,12 @@ $catalog-snippet-heart: "/icons/white-heart.svg";
   &__icon {
     width: 14px;
     height: 14px;
+  }
+}
+
+.catalog-proof {
+  @media (max-width: Main.$mobile + 1px) {
+    margin-right: 7px;
   }
 }
 
@@ -53,7 +70,7 @@ $catalog-snippet-heart: "/icons/white-heart.svg";
   @include Buy.discount-typography(
     $proof-size,
     $proof-text-weight,
-    Main.$white-color,
+    Main.$shop-white,
     100%
   );
 }

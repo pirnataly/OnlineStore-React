@@ -22,9 +22,9 @@ $block-width: 294px;
 
 .buy {
   &-text {
-    color: Main.$white-color;
+    color: Main.$shop-white;
     text-align: center;
-    @include Main.typography(Main.$white-color);
+    @include Main.typography(Main.$shop-white);
   }
 }
 

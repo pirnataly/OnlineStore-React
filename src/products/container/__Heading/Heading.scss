@@ -9,19 +9,22 @@ $catalog-heading-height: 107px;
   display: flex;
   position: relative;
 }
-
 .heading-text {
   transform: rotate(-5deg);
   font-size: $heading-size;
   line-height: $heading-line-height;
   letter-spacing: $heading-letter-spacing;
-  @media (min-width: Main.$tablet) and (max-width: 1050px) {
-    font-size: 15vw;
+  @media (min-width: Main.$mobile) and (max-width: 1050px) {
+    font-size: Main.set-new-value($heading-size, 60px, 1050px, Main.$mobile);
   }
 }
 
 .catalog__container__heading {
   height: $catalog-heading-height;
+  @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
+    height: 36px;
+    padding: 0 70.435px 0 6px;
+  }
 
   &-text {
     color: Main.$shop-black;
