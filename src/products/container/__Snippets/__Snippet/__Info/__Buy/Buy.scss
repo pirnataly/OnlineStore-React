@@ -1,33 +1,16 @@
 @use "../../../../../../Main";
-$block-width: 294px;
 
-@mixin discount-typography($size, $weight, $color, $lineHeight) {
-  color: $color;
-  font-variant-numeric: ordinal;
-  font-feature-settings:
-    "dlig" on,
-    "ss01" on,
-    "ss04" on,
-    "ss07" on,
-    "ss08" on,
-    "cv01" on,
-    "cv02" on,
-    "cv03" on,
-    "cv04" on;
-  font-family: Main.$font;
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $lineHeight;
-}
+$block-width: 294px;
+$buy-text-line-height: 72%;
 
 .buy {
   &-text {
     color: Main.$shop-white;
-    text-align: center;
+    margin: 0 auto;
     @include Main.typography(Main.$shop-white);
   }
 }
 
 .catalog-buy-text {
-  line-height: 72%;
+  line-height: $buy-text-line-height;
 }

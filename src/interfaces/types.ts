@@ -22,6 +22,7 @@ export type ProductItem = {
   discount_price: string;
   likes: string;
   review_rating: string;
+  promo: string;
 };
 
 export type SnippetItemConfig = {
@@ -36,6 +37,10 @@ export type ComponentProps = {
 };
 
 export type ProductItemWithType = ProductItem & SnippetItemConfig;
+
+export type ProductItemWithTypeKeys = keyof ProductItemWithType;
+
+export type ProofSigns = "star" | "like";
 
 export type ContainerConfig = {
   id: string;
@@ -57,3 +62,5 @@ export type ContainerConfigWithSnippetsTypes = ContainerConfigTruncated &
 export type ComponentKeys = keyof typeof components;
 
 export type Indexed = { [k: string]: string };
+
+export type FunctionType = () => void;

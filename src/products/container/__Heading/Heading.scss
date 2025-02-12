@@ -1,7 +1,12 @@
 $heading-size: 163px;
+$heading-size-mobile: 60px;
 $heading-line-height: 80%;
 $heading-letter-spacing: -6.52px;
+$heading-letter-spacing-mobile: -2.4px;
 $catalog-heading-height: 107px;
+$catalog-heading-height-mobile: 36px;
+$medium-font-size: 90px;
+$medium-viewport: 1050px;
 
 @use "../../../Main";
 
@@ -10,27 +15,47 @@ $catalog-heading-height: 107px;
   position: relative;
 }
 .heading-text {
+  position: absolute;
+  top: -5px;
+  z-index: 1;
   transform: rotate(-5deg);
   font-size: $heading-size;
   line-height: $heading-line-height;
   letter-spacing: $heading-letter-spacing;
-  @media (min-width: Main.$mobile) and (max-width: 1050px) {
-    font-size: Main.set-new-value($heading-size, 60px, 1050px, Main.$mobile);
+  @media (min-width: Main.$tablet + 1px) and (max-width: $medium-viewport) {
+    letter-spacing: $heading-letter-spacing-mobile;
+    font-size: Main.set-new-value(
+      $heading-size,
+      $medium-font-size,
+      $medium-viewport,
+      Main.$tablet + 1px
+    );
+  }
+  @media (min-width: Main.$mobile) and (max-width: Main.$tablet + 1px) {
+    letter-spacing: $heading-letter-spacing-mobile;
+    font-size: Main.set-new-value(
+      $medium-font-size,
+      $heading-size-mobile,
+      Main.$tablet + 1px,
+      Main.$mobile
+    );
   }
 }
 
 .catalog__container__heading {
   height: $catalog-heading-height;
   @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
-    height: 36px;
-    padding: 0 70.435px 0 6px;
+    height: Main.set-new-value(
+      $catalog-heading-height,
+      $catalog-heading-height-mobile,
+      Main.$desktop - 1px,
+      Main.$mobile
+    );
+    padding: 0 70px 0 6px;
   }
 
   &-text {
     color: Main.$shop-black;
-    position: absolute;
-    top: -10px;
-    z-index: 1;
   }
 }
 

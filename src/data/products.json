@@ -19,7 +19,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "thomas_shelbick_cap",
@@ -30,7 +31,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
 
   {
@@ -42,7 +44,8 @@
     "full_price": "1448",
     "discount_price": "",
     "likes": "7113",
-    "review_rating": "5.0"
+    "review_rating": "5.0",
+    "promo": "free_goods"
   },
   {
     "id": "gin",
@@ -53,7 +56,8 @@
     "full_price": "7599",
     "discount_price": "3599",
     "likes": "5587",
-    "review_rating": "3.1"
+    "review_rating": "3.1",
+    "promo": "autumn_sale"
   },
   {
     "id": "necklace",
@@ -64,7 +68,8 @@
     "full_price": "18998",
     "discount_price": "14699",
     "likes": "2951",
-    "review_rating": "4.2"
+    "review_rating": "4.2",
+    "promo": "black_friday"
   },
   {
     "id": "carpet",
@@ -75,7 +80,8 @@
     "full_price": "49999",
     "discount_price": "",
     "likes": "2444",
-    "review_rating": "4.0"
+    "review_rating": "4.0",
+    "promo": "autumn_sale"
   },
   {
     "id": "sorting_hat",
@@ -86,7 +92,8 @@
     "full_price": "470",
     "discount_price": "47",
     "likes": "2193",
-    "review_rating": "5.0"
+    "review_rating": "5.0",
+    "promo": "autumn_sale"
   },
   {
     "id": "invisible_coat",
@@ -97,7 +104,8 @@
     "full_price": "18998",
     "discount_price": "0",
     "likes": "2224",
-    "review_rating": "5.0"
+    "review_rating": "5.0",
+    "promo": "free_goods"
   },
   {
     "id": "time_car",
@@ -108,7 +116,8 @@
     "full_price": "19890",
     "discount_price": "",
     "likes": "2035",
-    "review_rating": "4.5"
+    "review_rating": "4.5",
+    "promo": "autumn_sale"
   },
   {
     "id": "goosebumps_massager",
@@ -119,7 +128,8 @@
     "full_price": "18998",
     "discount_price": "0",
     "likes": "1835",
-    "review_rating": "3.1"
+    "review_rating": "3.1",
+    "promo": "black_friday"
   },
 
   {
@@ -131,7 +141,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "tournament_cup",
@@ -142,7 +153,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "the_same_ring",
@@ -153,7 +165,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "stradivarius_violin",
@@ -164,7 +177,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "dinner_fork",
@@ -175,7 +189,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "pearl_of_kamchatka",
@@ -186,7 +201,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "philosopher_stone",
@@ -197,7 +213,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
 
   {
@@ -209,7 +226,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "merch_with_john_travolta",
@@ -220,7 +238,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "lost_ark",
@@ -231,7 +250,8 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   },
   {
     "id": "plasticine_rings",
@@ -242,6 +262,7 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "promo": "autumn_sale"
   }
 ]

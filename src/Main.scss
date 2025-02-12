@@ -48,8 +48,8 @@ $catalog-old-price-color: #87e0ff;
 $shop-fire: linear-gradient(99deg, #fa0 -8.11%, #f94233 86.42%);
 $button-border-radius: 12px;
 $shop-light-gray: #e1eced;
-
-//mixins
+$medium-font-size: 22px;
+$small-medium-font-size: 16px;
 
 @mixin flex-column() {
   display: flex;
@@ -63,7 +63,7 @@ $shop-light-gray: #e1eced;
 
 @mixin medium-style {
   font-family: $font;
-  font-size: 22px;
+  font-size: $medium-font-size;
   font-style: normal;
   font-weight: 550;
   line-height: 100%;
@@ -71,7 +71,7 @@ $shop-light-gray: #e1eced;
 
 @mixin small-regular {
   font-family: $font;
-  font-size: 16px;
+  font-size: $small-medium-font-size;
   font-style: normal;
   font-weight: 412;
   line-height: 100%;
@@ -90,14 +90,31 @@ $shop-light-gray: #e1eced;
     "cv04" on;
 }
 
+@mixin discount-typography($size, $weight, $color, $lineHeight) {
+  color: $color;
+  font-variant-numeric: ordinal;
+  font-feature-settings:
+    "dlig" on,
+    "ss01" on,
+    "ss04" on,
+    "ss07" on,
+    "ss08" on,
+    "cv01" on,
+    "cv02" on,
+    "cv03" on,
+    "cv04" on;
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lineHeight;
+}
+
 @mixin small-medium() {
   font-size: 15px;
   font-family: $font;
   font-weight: 550;
   line-height: 15px;
 }
-
-//functions
 
 @function find-difference($max, $min) {
   @return calc(($max - $min) / 1);

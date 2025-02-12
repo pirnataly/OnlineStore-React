@@ -10,7 +10,7 @@ $search-width-mobile: 351px;
     width: 78%;
     max-width: $search-width-desktop;
 
-    @media (max-width: Main.$mobile) {
+    @media (max-width: Main.$mobile + 1px) {
       display: none;
     }
   }
@@ -34,13 +34,13 @@ $search-width-mobile: 351px;
 
   &__search-button {
     display: none;
-    @media (max-width: Main.$mobile) {
+    @media (max-width: Main.$mobile + 1px) {
       display: block;
     }
   }
 
   @media (max-width: 690px) {
-    padding: 8px 12px;
+    padding: 15px 12px 8px;
     justify-content: space-between;
     align-items: center;
   }

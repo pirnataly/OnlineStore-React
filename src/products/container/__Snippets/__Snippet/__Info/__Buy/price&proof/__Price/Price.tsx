@@ -15,7 +15,10 @@ const Price = (props: {
           : snippet.full_price + " ₽"}
       </div>
       <div className={`old-price ${containerType}-old-price `}>
-        {snippet.discount_price.length ? snippet.full_price + " ₽" : null}
+        <span>
+          {snippet.discount_price.length ? snippet.full_price + " ₽" : null}
+        </span>
+        <div className={`strikeout ${containerType}__strikeout`}></div>
       </div>
     </div>
   );

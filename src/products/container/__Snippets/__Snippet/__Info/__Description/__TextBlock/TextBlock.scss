@@ -1,6 +1,8 @@
 @use "../../../../../../../Main";
+
 $name-weight: 500;
 $name-size: 60px;
+$name-size-mobile: 22px;
 $name-height: 91%;
 
 .product-name {
@@ -39,7 +41,7 @@ $name-height: 91%;
     @include Main.typography();
     font-size: Main.set-new-value(
       $name-size,
-      22px,
+      $name-size-mobile,
       Main.$desktop - 1px,
       Main.$mobile
     );

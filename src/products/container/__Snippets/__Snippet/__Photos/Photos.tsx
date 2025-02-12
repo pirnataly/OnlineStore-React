@@ -14,15 +14,15 @@ const Photos = (props: {
 }) => {
   const componentName: ComponentKeys = props.snippet.type;
   const SelectedComponent = components[componentName];
-  const { containerType } = props;
+  const { containerType, snippet } = props;
 
   return (
     <div className={`photos snippet__photos ${containerType}-snippet__photos `}>
-      <SelectedComponent {...props} />
-      <Promo containerType={containerType} />
+      <Promo containerType={containerType} snippet={snippet} />
       {containerType === "catalog" ? (
-        <Like containerType={containerType} />
+        <Like containerType={containerType} extraClass={"card"} />
       ) : null}
+      <SelectedComponent {...props} />
     </div>
   );
 };

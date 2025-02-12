@@ -8,7 +8,7 @@ $categories-wrapper-width: 1282px;
   &__categories {
     max-width: $categories-wrapper-width;
     padding: 0 16px;
-    @media (max-width: Main.$mobile) {
+    @media (max-width: Main.$mobile + 1px) {
       padding: 0;
     }
   }

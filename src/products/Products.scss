@@ -1,17 +1,17 @@
 @use "../Main";
-
 $container-bottom-gap: 50px;
-$container-bottom-gap-mobile: 28px;
+$container-bottom-gap-mobile: 0px;
 $padding-top: 54px;
 $mobile-padding-top: 36px;
 $products-heading-bottom-gap: 30px;
-$products-heading-text-left: 10px;
+$products-heading-text-left: 30px;
 $products-heading-text-left-mobile: 6px;
 $heading-container-height: 80px;
+$heading-height: 36px;
 
 .products {
   padding-top: $padding-top;
-  @media (max-width: Main.$mobile) {
+  @media (max-width: Main.$mobile + 1px) {
     padding-top: $mobile-padding-top;
   }
 
@@ -30,17 +30,15 @@ $heading-container-height: 80px;
       height: $heading-container-height;
       margin-bottom: $products-heading-bottom-gap;
       @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
-        height: 36px;
+        height: $heading-height;
         margin-bottom: 0;
       }
     }
 
     &__heading-text {
       color: Main.$shop-black;
-      position: absolute;
       left: $products-heading-text-left;
-      z-index: 1;
-      @media (max-width: Main.$mobile + 1px) {
+      @media (min-width: Main.$mobile) and (max-width: Main.$tablet) {
         left: $products-heading-text-left-mobile;
       }
     }

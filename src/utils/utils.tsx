@@ -34,3 +34,8 @@ export function setBackgroundStyles(
     backgroundColor: `${colors[snippetItem.background]}`,
   };
 }
+
+export function getPhotos(array: Array<string>, countOfPhotos: number) {
+  const arr = array.slice(0, countOfPhotos) as Array<string>;
+  return arr.length < 2 ? new Array(countOfPhotos).fill(arr).flat(1) : arr;
+}

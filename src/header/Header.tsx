@@ -5,7 +5,6 @@ import Search from "./__Search/Search";
 import Menu from "./__Menu/Menu";
 import { menuItemsTop } from "../data/constants/constants";
 import SearchButton from "./__SearchButton/SearchButton";
-import "./Header.scss";
 
 const Header = () => {
   return (

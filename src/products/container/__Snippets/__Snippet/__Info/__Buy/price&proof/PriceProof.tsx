@@ -12,7 +12,11 @@ const PriceProof = (props: {
   return (
     <div className={`price-proof ${containerType}-price-proof`}>
       <Price containerType={containerType} snippet={snippet} />
-      <ProofContainer containerType={containerType} snippet={snippet} />
+      <ProofContainer
+        containerType={containerType}
+        snippet={snippet}
+        extraClass={"buy"}
+      />
     </div>
   );
 };

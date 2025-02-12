@@ -1,5 +1,7 @@
+$button-width: 32px;
+
 .search-button {
-  width: 32px;
-  height: 32px;
+  width: $button-width;
+  height: $button-width;
   background-image: url("icons/search.svg");
 }

@@ -1,0 +1,19 @@
+@use "../../../../../../../../Main";
+
+.proof-container {
+  @include Main.flex-column();
+  align-items: flex-end;
+}
+.catalog-proof-container {
+  @media (max-width: Main.$mobile + 1px) {
+    display: none;
+  }
+}
+
+.info__catalog-proof-container {
+  display: none;
+  @media (max-width: Main.$mobile + 1px) {
+    display: flex;
+    flex-direction: row;
+  }
+}

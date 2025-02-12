@@ -1,0 +1,72 @@
+@use "../Main";
+$media-width: 132px;
+$media-item-width: 32px;
+$network-container-width: 354px;
+
+.footer {
+  @include Main.flex-between();
+  padding: 22px 16px;
+  border-radius: 12px 12px 0 0;
+  background-color: Main.$shop-almost-white;
+  width: 100%;
+  @media (max-width: Main.$tablet) {
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 22px 16px 144px 16px;
+  }
+  &__text-container {
+    display: flex;
+  }
+  &__homepage {
+    @media (max-width: Main.$tablet) {
+      margin-bottom: 13px;
+    }
+  }
+}
+
+.homepage-item {
+  @include Main.typography(Main.$shop-gray);
+}
+
+.social-networks {
+  @include Main.flex-between;
+  width: $network-container-width;
+  align-items: center;
+  @media (max-width: Main.$tablet) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.email {
+  @include Main.typography(Main.$shop-gray);
+  @media (max-width: Main.$tablet) {
+    margin-bottom: 26px;
+  }
+}
+
+.media {
+  @include Main.flex-between;
+  width: $media-width;
+  &-item {
+    width: $media-item-width;
+    height: $media-item-width;
+  }
+}
+
+.telegram {
+  background-image: url("/icons/tg.svg");
+  background-repeat: no-repeat;
+}
+
+.dzen {
+  background-image: url("/icons/dzen.svg");
+  background-repeat: no-repeat;
+}
+
+.youtube {
+  width: 38px;
+  background-image: url("/icons/yt.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}

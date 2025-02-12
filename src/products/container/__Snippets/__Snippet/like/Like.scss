@@ -1,13 +1,17 @@
 $products-like-size: 45px;
 $catalog-like-size: 36px;
 $products-like-size-mobile: 54px;
-$position-gap: 7px;
+$top-gap: 7px;
+$top-gap-hover: 8px;
 $catalog-snippet-like-hover: "/icons/heart-small-hover.svg";
+$catalog-snippet-like-active: "/icons/heart-small-active.svg";
 $product-snippet-like-hover: "/icons/heart-hover.svg";
 $product-snippet-like: "/icons/heart.svg";
 $catalog-snippet-like: "/icons/heart-small.svg";
 $product-snippet-like-mobile: "/icons/heart-mobile.svg";
 $product-snippet-like-mobile-hover: "/icons/heart-mobile-hover.svg";
+$product-snippet-like-active: "/icons/heart-active.svg";
+$product-snippet-like-active-mobile: "/icons/heart-active-mobile.svg";
 @use "../../../../../Main";
 
 .like {
@@ -31,6 +35,14 @@ $product-snippet-like-mobile-hover: "/icons/heart-mobile-hover.svg";
       background: url($product-snippet-like-hover);
     }
   }
+  &:active {
+    background: url($product-snippet-like-active);
+  }
+  @media (max-width: Main.$tablet) {
+    &:active {
+      background: url($product-snippet-like-active-mobile) no-repeat;
+    }
+  }
 }
 
 .description__like {
@@ -51,18 +63,23 @@ $product-snippet-like-mobile-hover: "/icons/heart-mobile-hover.svg";
   width: $catalog-like-size;
   height: $catalog-like-size;
   background: url($catalog-snippet-like) no-repeat;
-
+  box-shadow: 0 1.5px 4px 0 rgba(107, 149, 153, 0.2) inset;
+  backdrop-filter: blur(2.999999523162842px);
   position: absolute;
   z-index: 1;
-  top: $position-gap;
-  right: $position-gap;
-  transform: rotate(10deg);
+  top: $top-gap;
+  right: $top-gap;
   flex-shrink: 0;
-  box-shadow: 0 1.5px 4px 0 rgba(107, 149, 153, 0.2) inset;
-  backdrop-filter: blur(3px);
+
   @media (hover: hover) {
     &:hover {
+      top: $top-gap-hover;
+      right: $top-gap-hover;
+      transform: rotate(10deg);
       background: url($catalog-snippet-like-hover) no-repeat;
     }
+  }
+
+  &:active {
   }
 }

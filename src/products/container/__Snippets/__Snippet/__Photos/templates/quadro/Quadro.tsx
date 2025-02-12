@@ -4,7 +4,10 @@ import {
   ProductItemWithType,
 } from "../../../../../../../interfaces/types";
 import "./Quadro.scss";
-import { setBackgroundStyles } from "../../../../../../../utils/utils";
+import {
+  getPhotos,
+  setBackgroundStyles,
+} from "../../../../../../../utils/utils";
 import { backgroundColors } from "../../../../../../../data/constants/constants";
 
 const Quadro = (props: {
@@ -13,8 +16,7 @@ const Quadro = (props: {
 }) => {
   const { snippet } = props;
   const colors = backgroundColors as Indexed;
-  let Urls = snippet.photo_url.slice(0, 4) as Array<string>;
-  Urls = Urls.length < 2 ? new Array(4).fill(Urls).flat(1) : Urls;
+  const Urls = getPhotos(snippet.photo_url, 4);
 
   return (
     <div className={"quadro-photos"}>

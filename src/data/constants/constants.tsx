@@ -1,4 +1,4 @@
-import { ComponentProps, MenuItem } from "../../interfaces/types";
+import { ComponentProps, Indexed, MenuItem } from "../../interfaces/types";
 import React from "react";
 import Double from "../../products/container/__Snippets/__Snippet/__Photos/templates/double/Double";
 import Single from "../../products/container/__Snippets/__Snippet/__Photos/templates/single/Single";
@@ -57,4 +57,27 @@ export const backgroundColors = {
   gray: "#bccdd1",
   yellow: "#ffaa00",
   blue: "#2e09e5",
+};
+
+export const object: { [k: string]: Indexed } = {
+  autumn_sale: {
+    discount: " -50%",
+    background: `url("/tags/autumn_huge.png") no-repeat`,
+    background_mobile: `url("/tags/autumn_normal.png") no-repeat`,
+  },
+  hot_discounts: {
+    discount: " -60%",
+    background: `url("/tags/hot_discounts_huge.png) no-repeat`,
+    background_mobile: `url("/tags/hot_discounts_normal.png) no-repeat`,
+  },
+  black_friday: {
+    discount: " -70%",
+    background: `url("/tags/black_friday_huge.png) no-repeat`,
+    background_mobile: `url("/tags/black_friday_normal.png) no-repeat`,
+  },
+  free_goods: {
+    discount: " -100%",
+    background: `url("/tags/free_items_huge.png") no-repeat`,
+    background_mobile: `url("/tags/free_items_normal.png") no-repeat`,
+  },
 };

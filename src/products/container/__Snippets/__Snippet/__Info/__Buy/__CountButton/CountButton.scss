@@ -1,0 +1,33 @@
+@use "../../../../../../../Main";
+
+.count-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: Main.$button-border-radius;
+  background-color: Main.$shop-light-gray;
+}
+
+.buy__minus {
+  width: 16px;
+  height: 16px;
+  background: url("/icons/minus.svg") no-repeat;
+  @media (hover: hover) {
+    cursor: pointer;
+  }
+}
+
+.buy-text_count {
+  @include Main.typography;
+}
+
+.buy__plus {
+  display: block;
+  width: 17px;
+  height: 16px;
+  background: url("/icons/plus.svg") no-repeat;
+  @media (hover: hover) {
+    cursor: pointer;
+  }
+}

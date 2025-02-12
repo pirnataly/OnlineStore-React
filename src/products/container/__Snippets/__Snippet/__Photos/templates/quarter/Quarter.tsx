@@ -4,14 +4,16 @@ import {
   ProductItemWithType,
 } from "../../../../../../../interfaces/types";
 import "./Quarter.scss";
-import { setBackgroundStyles } from "../../../../../../../utils/utils";
+import {
+  getPhotos,
+  setBackgroundStyles,
+} from "../../../../../../../utils/utils";
 import { backgroundColors } from "../../../../../../../data/constants/constants";
 
 const Quarter = (props: { snippet: ProductItemWithType }) => {
   const { snippet } = props;
   const colors = backgroundColors as Indexed;
-  let Urls = snippet.photo_url.slice(0, 2) as Array<string>;
-  Urls = Urls.length < 2 ? new Array(2).fill(Urls).flat(1) : Urls;
+  const Urls = getPhotos(snippet.photo_url, 2);
 
   return (
     <div className={"quarter-photos"}>

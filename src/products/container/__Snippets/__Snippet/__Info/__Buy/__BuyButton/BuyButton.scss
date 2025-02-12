@@ -6,13 +6,14 @@ $catalog-buy-button-width: 152px;
 $catalog-buy-button-width-mobile: 169px;
 
 .buy-button {
+  display: flex;
+  border: none;
   @include Main.flex-between();
   align-items: center;
-  padding: 14px 24px 16px;
+
   border-radius: Main.$button-border-radius;
   background-color: Main.$shop-red;
   white-space: nowrap;
-
   @media (hover: hover) {
     &:hover {
       cursor: pointer;
@@ -22,8 +23,8 @@ $catalog-buy-button-width-mobile: 169px;
 }
 
 .products-buy-button {
+  padding: 14px 24px 16px;
   width: $button-width;
-
   @media (max-width: Main.$tablet) {
     width: $button-mobile-width;
   }
@@ -38,11 +39,12 @@ $catalog-buy-button-width-mobile: 169px;
 .info__buy-button {
   display: none;
   @media (max-width: Main.$tablet) {
-    display: initial;
+    display: flex;
   }
 }
 
 .catalog-buy-button {
+  padding: 12px 24px;
   width: $catalog-buy-button-width;
   @media (max-width: Main.$mobile + 1px) {
     margin-top: 8px;

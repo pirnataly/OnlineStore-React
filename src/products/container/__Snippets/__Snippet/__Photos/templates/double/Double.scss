@@ -1,6 +1,8 @@
 @use "../../../../../../../Main";
 @use "../../Photos";
 
+$snippet-height-mobile: 240px;
+
 .double-photos {
   width: 100%;
   @include Main.flex-between();
@@ -17,7 +19,7 @@
     background-size: contain;
     background-position: center;
     @media (min-width: Main.$mobile) and (max-width: Main.$tablet - 1px) {
-      max-height: 240px;
+      max-height: $snippet-height-mobile;
       background-size: cover;
     }
     @media (max-width: Main.$mobile + 1px) {
@@ -27,9 +29,6 @@
 
     &_1 {
       margin-right: 4px;
-    }
-
-    &_2 {
     }
   }
 }

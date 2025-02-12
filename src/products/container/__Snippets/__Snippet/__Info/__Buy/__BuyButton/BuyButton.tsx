@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./BuyButton.scss";
+import CountButton from "../__CountButton/CountButton";
 
 const BuyButton = (props: { containerType: string; extraClass: string }) => {
+  const [count, setCount] = useState(0);
   const { containerType, extraClass } = props;
-  const extraClassName = extraClass ? `${extraClass}__buy-button` : null;
 
-  return (
-    <div className={`buy-button ${containerType}-buy-button ${extraClassName}`}>
-      <div className={"buy__minus"}></div>
-      <div className={`buy-text ${containerType}-buy-text`}>{"В корзину"}</div>
-      <div className={"buy__plus"}></div>
-    </div>
+  function increment() {
+    setCount((count) => count + 1);
+  }
+
+  function decrement() {
+    setCount((count) => count - 1);
+  }
+  const extraClassName = `${extraClass}__buy-button`;
+
+  return count === 0 ? (
+    <button
+      className={`buy-button ${containerType}-buy-button ${extraClassName}`}
+      onClick={increment}
+    >
+      <div className="buy-text">{"В корзину"}</div>
+    </button>
+  ) : (
+    <CountButton
+      containerType={containerType}
+      count={count}
+      functions={[increment, decrement]}
+      extraClass={extraClassName}
+    />
   );
 };
 

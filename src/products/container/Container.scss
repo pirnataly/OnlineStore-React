@@ -32,7 +32,7 @@ $container-gap-mobile: 28px;
       Main.$mobile
     );
   }
-  @media (max-width: Main.$mobile +1px) {
+  @media (max-width: Main.$mobile + 1px) {
     padding: 12px 0 0 4px;
     margin-bottom: $container-gap-mobile;
   }
