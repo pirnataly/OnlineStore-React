@@ -1,10 +1,18 @@
+@use "../../Main";
+
 .categories {
   display: flex;
   width: 100%;
   overflow: hidden;
 
+  @media (max-width: Main.$tablet + 1px) {
+    overflow: auto;
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
   &__navigation {
-    overflow: hidden;
     width: 100%;
   }
 
@@ -12,4 +20,8 @@
     justify-content: space-between;
     overflow: hidden;
   }
+}
+
+.searching-panel__categories {
+  margin-bottom: 16px;
 }

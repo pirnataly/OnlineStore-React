@@ -1,7 +1,10 @@
-@use "../../Main" as Main;
+@use "../../../Main" as Main;
+
 $ico-width: 32px;
 $input-font-size: 22px;
 $input-font-weight: 412;
+$margin-bottom-mobile: 16px;
+$border-radius: 16px;
 
 .search {
   display: flex;
@@ -9,6 +12,7 @@ $input-font-weight: 412;
   border-radius: 0 0 16px 16px;
   background-color: Main.$shop-almost-white;
   width: 100%;
+
   &:hover,
   & *:hover {
     cursor: pointer;
@@ -25,9 +29,23 @@ $input-font-weight: 412;
   }
 
   &-input {
-    border: none;
+    width: 100%;
     background-color: Main.$shop-almost-white;
     display: block;
+    border: none;
+    @include Main.regular(Main.$shop-black);
+    @media (max-width: Main.$mobile + 1px) {
+      max-width: 287px;
+    }
+
+    &:active,
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  ::placeholder {
     width: 100%;
     color: Main.$shop-gray;
     font-family: Main.$font;
@@ -44,10 +62,19 @@ $input-font-weight: 412;
       "cv03" on,
       "cv04" on,
       "calt" off;
-    &:active,
-    &:focus {
-      border: none;
-      outline: none;
-    }
   }
+
+  @media (max-width: Main.$mobile + 1px) {
+    padding: 8px 12px 10px 12px;
+    border-radius: $border-radius;
+    margin-bottom: $margin-bottom-mobile;
+  }
+}
+
+.popup-open {
+  overflow: hidden;
+}
+
+.searching-panel__search {
+  margin-bottom: 16px;
 }

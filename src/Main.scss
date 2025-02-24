@@ -69,6 +69,25 @@ $small-medium-font-size: 16px;
   line-height: 100%;
 }
 
+@mixin regular($color) {
+  color: $color;
+  font-feature-settings:
+    "case" on,
+    "cpsp" on,
+    "ss01" on,
+    "ss04" on,
+    "cv01" on,
+    "cv02" on,
+    "cv03" on,
+    "cv04" on,
+    "calt" off;
+  font-family: $font;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 412;
+  line-height: 100%;
+}
+
 @mixin small-regular {
   font-family: $font;
   font-size: $small-medium-font-size;
@@ -134,6 +153,5 @@ $small-medium-font-size: 16px;
 * {
   margin: 0;
   padding: 0;
-  font-weight: normal;
   box-sizing: border-box;
 }

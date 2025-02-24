@@ -28,3 +28,14 @@
 .likes {
   background-image: url("../../../public/icons/likes.svg");
 }
+
+.searching-panel__navigation {
+  width: 100%;
+}
+
+.searching-panel__menu {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  cursor: grab;
+  user-select: none;
+}

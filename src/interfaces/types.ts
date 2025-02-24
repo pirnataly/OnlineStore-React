@@ -10,6 +10,7 @@ export type MenuItemProps = {
   items: MenuItem[];
   containerType: string;
   itemType: string;
+  value?: string;
 };
 
 export type ProductItem = {
@@ -63,4 +64,14 @@ export type ComponentKeys = keyof typeof components;
 
 export type Indexed = { [k: string]: string };
 
-export type FunctionType = () => void;
+export type FunctionTypeVoid = () => void;
+
+export type HistoryProp = {
+  item: string;
+  key: string;
+};
+
+export type HistoryProps = {
+  historyArray: HistoryProp[];
+  value: string;
+};

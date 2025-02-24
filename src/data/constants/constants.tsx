@@ -81,3 +81,11 @@ export const object: { [k: string]: Indexed } = {
     background_mobile: `url("/tags/free_items_normal.png") no-repeat`,
   },
 };
+
+export const popularStuff = [
+  { item: "Ветровка", key: String(new Date("01.01.1970").getTime()) },
+  { item: "Шапка", key: String(new Date("02.01.1970").getTime()) },
+  { item: "Валенки", key: String(new Date("03.01.1970").getTime()) },
+  { item: "Лыжи", key: String(new Date("04.01.1970").getTime()) },
+  { item: "Санки", key: String(new Date("05.01.1970").getTime()) },
+];

@@ -24,4 +24,7 @@
       background-color: Main.$shop-white;
     }
   }
+  &_overlay {
+    overflow: hidden;
+  }
 }

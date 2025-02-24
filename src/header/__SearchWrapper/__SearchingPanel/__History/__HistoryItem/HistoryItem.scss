@@ -1,0 +1,28 @@
+@use "../../../../../Main";
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 16px 8px 20px;
+  border-bottom: 1px solid Main.$shop-light-gray;
+  background: Main.$shop-white;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.history-item__text {
+  @include Main.regular(Main.$shop-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+.delete-ico {
+  width: 24px;
+  height: 24px;
+  background: url("/icons/cross-ico.svg") no-repeat center;
+}

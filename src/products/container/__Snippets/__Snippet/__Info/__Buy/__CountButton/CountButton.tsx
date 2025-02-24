@@ -1,11 +1,11 @@
 import React, { SyntheticEvent } from "react";
 import "./CountButton.scss";
-import { FunctionType } from "../../../../../../../interfaces/types";
+import { FunctionTypeVoid } from "../../../../../../../interfaces/types";
 
 const CountButton = (props: {
   count: number;
   containerType: string;
-  functions: FunctionType[];
+  functions: FunctionTypeVoid[];
   extraClass: string;
 }) => {
   const { count, containerType, functions, extraClass } = props;

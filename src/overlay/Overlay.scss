@@ -1,0 +1,27 @@
+@use "../Main";
+
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.6;
+  background: Main.$shop-black;
+
+  &__searching-panel {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    //@media (min-width: Main.$tablet) and (max-width: Main.$desktop - 1px) {
+    //  left: 126px;
+    //}
+    //@media (max-width: Main.$mobile + 1px) {
+    //  left: 0;
+    //}
+  }
+}

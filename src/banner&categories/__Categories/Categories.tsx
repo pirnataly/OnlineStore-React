@@ -8,8 +8,9 @@ const Categories = (props: MenuItemProps) => {
     <div className={`${props.containerType}__categories categories`}>
       <Menu
         items={props.items}
-        containerType={"categories"}
+        containerType={props.containerType}
         itemType={props.itemType}
+        value={props.value}
       />
     </div>
   );

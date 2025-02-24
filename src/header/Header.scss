@@ -1,5 +1,6 @@
-$search-width-desktop: 1080px;
+$search-width-desktop: 1084px;
 $search-width-mobile: 351px;
+
 @use "../Main";
 
 .header {
@@ -7,11 +8,13 @@ $search-width-mobile: 351px;
   padding: 0 16px 16px;
   justify-content: space-between;
   &__search {
+    position: relative;
     width: 78%;
+    min-height: 60px;
     max-width: $search-width-desktop;
-
     @media (max-width: Main.$mobile + 1px) {
-      display: none;
+      width: auto;
+      min-height: auto;
     }
   }
 
@@ -30,13 +33,6 @@ $search-width-mobile: 351px;
   &-item {
     width: 32px;
     height: 32px;
-  }
-
-  &__search-button {
-    display: none;
-    @media (max-width: Main.$mobile + 1px) {
-      display: block;
-    }
   }
 
   @media (max-width: 690px) {
