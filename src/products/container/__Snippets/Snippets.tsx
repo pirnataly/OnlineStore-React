@@ -6,8 +6,9 @@ import "./Snippets.scss";
 const Snippets = (props: {
   containerType: string;
   snippets: ProductItemWithType[];
+  parent: string;
 }) => {
-  const { containerType } = props;
+  const { containerType, parent } = props;
 
   return (
     <div className={`${props.containerType}-snippets`}>
@@ -16,6 +17,7 @@ const Snippets = (props: {
           key={snippet.id}
           containerType={containerType}
           snippet={snippet}
+          parent={parent}
         />
       ))}
     </div>

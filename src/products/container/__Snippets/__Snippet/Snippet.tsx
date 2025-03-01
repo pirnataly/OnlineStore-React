@@ -7,13 +7,14 @@ import Photos from "./__Photos/Photos";
 const Snippet = (props: {
   containerType: string;
   snippet: ProductItemWithType;
+  parent: string;
 }) => {
-  const { containerType, snippet } = props;
+  const { containerType, snippet, parent } = props;
 
   return (
     <div className={`snippet ${containerType}-snippet`}>
-      <Photos containerType={containerType} snippet={snippet} />
-      <Info containerType={containerType} snippet={snippet} />
+      <Photos containerType={containerType} snippet={snippet} parent={parent} />
+      <Info containerType={containerType} snippet={snippet} parent={parent} />
     </div>
   );
 };

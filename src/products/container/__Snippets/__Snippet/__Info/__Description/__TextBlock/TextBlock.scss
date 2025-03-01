@@ -31,6 +31,11 @@ $name-height: 91%;
   }
 }
 
+.catalog__catalog-product-name {
+  @include Main.small-medium;
+  color: Main.$shop-black;
+}
+
 .products-product-name {
   color: Main.$black-color;
   font-size: $name-size;

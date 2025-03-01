@@ -11,13 +11,20 @@ const Proof = (props: {
   snippet: ProductItemWithType;
   snippetKey: ProductItemWithTypeKeys;
   proofSign: ProofSigns;
+  parent: string;
 }) => {
-  const { containerType, snippet, snippetKey, proofSign } = props;
+  const { containerType, snippet, snippetKey, proofSign, parent } = props;
 
   return (
     <div className={`proof ${containerType}-proof`}>
-      <div className={`${containerType}-proof-text`}>{snippet[snippetKey]}</div>
-      <div className={`proof__icon ${containerType}-proof-${proofSign}`}></div>
+      <div
+        className={`proof-text ${containerType}-proof-text ${parent}__${containerType}-proof-text`}
+      >
+        {snippet[snippetKey]}
+      </div>
+      <div
+        className={`proof__icon ${parent}__${containerType}-proof-${proofSign}`}
+      ></div>
     </div>
   );
 };

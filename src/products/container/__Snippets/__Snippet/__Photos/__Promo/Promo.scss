@@ -7,8 +7,6 @@ $tag-up-radius: 4px;
   @include Main.flex-column();
   bottom: 9px;
   left: 12px;
-  height: 77px;
-  max-width: 82px;
   justify-content: space-between;
   padding-top: 10px;
   @media (max-width: Main.$mobile + 1px) {
@@ -24,33 +22,65 @@ $tag-up-radius: 4px;
   }
 }
 
-.tag {
-  display: flex;
-  justify-content: center;
-
-  &-up {
-    @include Main.typography();
-    border-radius: $tag-up-radius;
-    transform: rotate(-15deg);
-    padding: 2px 6px 3px 6px;
-    background-color: Main.$shop-light-gray;
-    @media (max-width: Main.$mobile + 1px) {
-      @include Main.discount-typography(15px, 550, Main.$shop-black, 100%);
-      padding: 2px 3px 2px;
-    }
-  }
-
-  &-bottom {
-    width: 160px;
-    height: 26px;
-    border-radius: 4px;
-    @media (max-width: Main.$mobile + 1px) {
-      width: 110px;
-      height: 21px;
-    }
-  }
+.products-snippet-container__promo {
+  height: 77px;
+  max-width: 82px;
 }
 
 .catalog-snippet-container__promo {
+  height: 62px;
+  max-width: 59px;
+  left: 8px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+}
+.products-tag-up {
+  @include Main.typography();
+  border-radius: $tag-up-radius;
+  transform: rotate(-15deg);
+  padding: 2px 6px 3px 6px;
+  background-color: Main.$shop-light-gray;
+  @media (max-width: Main.$mobile + 1px) {
+    @include Main.discount-typography;
+    font-size: 15px;
+    font-weight: 550;
+    color: Main.$shop-black;
+    line-height: 100%;
+    padding: 2px 3px 2px;
+  }
+}
+
+.products-tag-bottom {
+  width: 160px;
+  height: 26px;
+  border-radius: 4px;
+  @media (max-width: Main.$mobile + 1px) {
+    width: 110px;
+    height: 21px;
+  }
+}
+
+.catalog-tag-up {
+  @include Main.discount-typography;
+  border-radius: $tag-up-radius;
+  transform: rotate(-15deg);
+  background-color: Main.$shop-light-gray;
+  font-size: 15px;
+  font-weight: 550;
+  color: Main.$shop-black;
+  line-height: 100%;
+  padding: 2px 3px 2px;
+}
+
+.catalog-tag-bottom {
+  border-radius: 4px;
+  width: 110px;
+  height: 21px;
+}
+
+.main__catalog-snippet-container__promo {
   display: none;
 }

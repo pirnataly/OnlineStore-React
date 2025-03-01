@@ -90,3 +90,10 @@ export function findWordsStartingWith(
     word.toLowerCase().startsWith(value.toLowerCase()),
   );
 }
+
+export function getSnippetsWithTypeCard(snippets: ProductItem[]) {
+  const result = snippets.map((snippet) => {
+    return Object.assign(snippet, { type: "card" }) as ProductItemWithType;
+  });
+  return result;
+}

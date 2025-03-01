@@ -7,15 +7,17 @@ import ProofContainer from "./__ProofContainer/ProofContainer";
 const PriceProof = (props: {
   containerType: string;
   snippet: ProductItemWithType;
+  parent: string;
 }) => {
-  const { containerType, snippet } = props;
+  const { containerType, snippet, parent } = props;
   return (
     <div className={`price-proof ${containerType}-price-proof`}>
-      <Price containerType={containerType} snippet={snippet} />
+      <Price containerType={containerType} snippet={snippet} parent={parent} />
       <ProofContainer
         containerType={containerType}
         snippet={snippet}
         extraClass={"buy"}
+        parent={parent}
       />
     </div>
   );

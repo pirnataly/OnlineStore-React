@@ -59,26 +59,26 @@ export const backgroundColors = {
   blue: "#2e09e5",
 };
 
-export const object: { [k: string]: Indexed } = {
+export const promoObject: { [k: string]: Indexed } = {
   autumn_sale: {
     discount: " -50%",
-    background: `url("/tags/autumn_huge.png") no-repeat`,
-    background_mobile: `url("/tags/autumn_normal.png") no-repeat`,
+    background: `url("/tags/autumn_huge.png") 0px 0px/100% 100% no-repeat`,
+    background_mobile: `url("/tags/autumn_normal.png") 0px 0px/100% 100% no-repeat`,
   },
   hot_discounts: {
     discount: " -60%",
-    background: `url("/tags/hot_discounts_huge.png) no-repeat`,
-    background_mobile: `url("/tags/hot_discounts_normal.png) no-repeat`,
+    background: `url("/tags/hot_discounts_huge.png") 0px 0px/100% 100% no-repeat`,
+    background_mobile: `url("/tags/hot_discounts_normal.png")0px 0px/100% 100% no-repeat`,
   },
   black_friday: {
     discount: " -70%",
-    background: `url("/tags/black_friday_huge.png) no-repeat`,
-    background_mobile: `url("/tags/black_friday_normal.png) no-repeat`,
+    background: `url("/tags/black_friday_huge.png") 0px 0px/100% 100% no-repeat`,
+    background_mobile: `url("/tags/black_friday_normal.png") 0px 0px/100% 100% no-repeat`,
   },
   free_goods: {
     discount: " -100%",
-    background: `url("/tags/free_items_huge.png") no-repeat`,
-    background_mobile: `url("/tags/free_items_normal.png") no-repeat`,
+    background: `url("/tags/free_items_huge.png") 0px 0px/100% 100% no-repeat`,
+    background_mobile: `url("/tags/free_items _normal.png") 0px 0px/100% 100% no-repeat`,
   },
 };
 

@@ -7,11 +7,16 @@ import PriceProof from "./price&proof/PriceProof";
 const Buy = (props: {
   containerType: string;
   snippet: ProductItemWithType;
+  parent: string;
 }) => {
-  const { containerType, snippet } = props;
+  const { containerType, snippet, parent } = props;
   return (
     <div className={"buy"}>
-      <PriceProof containerType={containerType} snippet={snippet} />
+      <PriceProof
+        containerType={containerType}
+        snippet={snippet}
+        parent={parent}
+      />
       <BuyButton containerType={containerType} extraClass={"buy"} />
     </div>
   );

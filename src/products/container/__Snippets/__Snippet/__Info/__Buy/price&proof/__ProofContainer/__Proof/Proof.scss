@@ -23,36 +23,40 @@ $catalog-snippet-heart: "/icons/white-heart.svg";
   }
 }
 
-.products-proof-star {
+.main__products-proof-star,
+.catalog__catalog-proof-star {
   background-image: url($products-snippet-star);
 }
 
-.catalog-proof-star {
+.main__catalog-proof-star {
   background-image: url($catalog-snippet-star);
 }
 
-.products-proof-like {
+.main__products-proof-like,
+.catalog__catalog-proof-like {
   background-image: url($products-snippet-heart);
 }
 
-.catalog-proof-like {
+.main__catalog-proof-like {
   background-image: url($catalog-snippet-heart);
 }
 
+.proof-text {
+  @include Main.discount-typography;
+}
+
 .products-proof-text {
-  @include Main.discount-typography(
-    $proof-size,
-    $proof-text-weight,
-    Main.$black-color,
-    100%
-  );
+  @include Main.small-regular;
+}
+
+.main__products-proof-text {
+  color: Main.$shop-black;
 }
 
 .catalog-proof-text {
-  @include Main.discount-typography(
-    $proof-size,
-    $proof-text-weight,
-    Main.$shop-white,
-    100%
-  );
+  @include Main.small-medium;
+}
+
+.main__catalog-proof-text {
+  color: Main.$shop-white;
 }

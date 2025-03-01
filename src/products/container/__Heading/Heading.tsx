@@ -7,9 +7,9 @@ const Heading = (props: {
   title_id: string;
 }) => {
   return (
-    <h1 className={`heading ${props.containerType}__container__heading`}>
+    <h1 className={`heading ${props.containerType}-container__heading`}>
       <span
-        className={`heading-text ${props.containerType}__container__heading-text ${props.title_id}-heading`}
+        className={`heading-text ${props.containerType}-container__heading-text ${props.title_id}-heading`}
       >
         {props.title}
       </span>

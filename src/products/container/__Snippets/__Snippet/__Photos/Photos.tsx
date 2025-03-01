@@ -11,14 +11,15 @@ import Like from "../like/Like";
 const Photos = (props: {
   containerType: string;
   snippet: ProductItemWithType;
+  parent: string;
 }) => {
   const componentName: ComponentKeys = props.snippet.type;
   const SelectedComponent = components[componentName];
-  const { containerType, snippet } = props;
+  const { containerType, snippet, parent } = props;
 
   return (
     <div className={`photos snippet__photos ${containerType}-snippet__photos `}>
-      <Promo containerType={containerType} snippet={snippet} />
+      <Promo containerType={containerType} snippet={snippet} parent={parent} />
       {containerType === "catalog" ? (
         <Like containerType={containerType} extraClass={"card"} />
       ) : null}

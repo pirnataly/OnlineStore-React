@@ -109,8 +109,8 @@ $small-medium-font-size: 16px;
     "cv04" on;
 }
 
-@mixin discount-typography($size, $weight, $color, $lineHeight) {
-  color: $color;
+@mixin discount-typography() {
+  font-family: $font;
   font-variant-numeric: ordinal;
   font-feature-settings:
     "dlig" on,
@@ -122,10 +122,6 @@ $small-medium-font-size: 16px;
     "cv02" on,
     "cv03" on,
     "cv04" on;
-  font-family: $font;
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $lineHeight;
 }
 
 @mixin small-medium() {
@@ -133,6 +129,21 @@ $small-medium-font-size: 16px;
   font-family: $font;
   font-weight: 550;
   line-height: 15px;
+}
+
+@mixin price() {
+  font-family: $font;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 72%;
+}
+
+@mixin H2() {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
 }
 
 @function find-difference($max, $min) {

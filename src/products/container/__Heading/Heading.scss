@@ -22,6 +22,7 @@ $medium-viewport: 1050px;
   font-size: $heading-size;
   line-height: $heading-line-height;
   letter-spacing: $heading-letter-spacing;
+  font-weight: normal;
   @media (min-width: Main.$tablet + 1px) and (max-width: $medium-viewport) {
     letter-spacing: $heading-letter-spacing-mobile;
     font-size: Main.set-new-value(
@@ -42,7 +43,7 @@ $medium-viewport: 1050px;
   }
 }
 
-.catalog__container__heading {
+.catalog-container__heading {
   height: $catalog-heading-height;
   @media (min-width: Main.$mobile) and (max-width: Main.$desktop - 1px) {
     height: Main.set-new-value(

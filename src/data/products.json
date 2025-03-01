@@ -8,7 +8,9 @@
     "full_price": "8998",
     "discount_price": "4499",
     "likes": "8492",
-    "review_rating": "4.8"
+    "review_rating": "4.8",
+    "background": "gray",
+    "promo": "autumn_sale"
   },
   {
     "id": "sunglasses",
@@ -20,7 +22,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "blue"
   },
   {
     "id": "thomas_shelbick_cap",
@@ -32,7 +35,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "yellow"
   },
 
   {
@@ -45,7 +49,8 @@
     "discount_price": "",
     "likes": "7113",
     "review_rating": "5.0",
-    "promo": "free_goods"
+    "promo": "free_goods",
+    "background": "gray"
   },
   {
     "id": "gin",
@@ -57,7 +62,8 @@
     "discount_price": "3599",
     "likes": "5587",
     "review_rating": "3.1",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "blue"
   },
   {
     "id": "necklace",
@@ -69,7 +75,8 @@
     "discount_price": "14699",
     "likes": "2951",
     "review_rating": "4.2",
-    "promo": "black_friday"
+    "promo": "black_friday",
+    "background": "blue"
   },
   {
     "id": "carpet",
@@ -81,7 +88,8 @@
     "discount_price": "",
     "likes": "2444",
     "review_rating": "4.0",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "gray"
   },
   {
     "id": "sorting_hat",
@@ -93,7 +101,8 @@
     "discount_price": "47",
     "likes": "2193",
     "review_rating": "5.0",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "blue"
   },
   {
     "id": "invisible_coat",
@@ -105,7 +114,8 @@
     "discount_price": "0",
     "likes": "2224",
     "review_rating": "5.0",
-    "promo": "free_goods"
+    "promo": "free_goods",
+    "background": "gray"
   },
   {
     "id": "time_car",
@@ -117,7 +127,8 @@
     "discount_price": "",
     "likes": "2035",
     "review_rating": "4.5",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "blue"
   },
   {
     "id": "goosebumps_massager",
@@ -129,7 +140,8 @@
     "discount_price": "0",
     "likes": "1835",
     "review_rating": "3.1",
-    "promo": "black_friday"
+    "promo": "black_friday",
+    "background": "blue"
   },
 
   {
@@ -142,7 +154,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "red"
   },
   {
     "id": "tournament_cup",
@@ -154,7 +167,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "yellow"
   },
   {
     "id": "the_same_ring",
@@ -166,7 +180,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "red"
   },
   {
     "id": "stradivarius_violin",
@@ -178,7 +193,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "blue"
   },
   {
     "id": "dinner_fork",
@@ -190,7 +206,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "red"
   },
   {
     "id": "pearl_of_kamchatka",
@@ -202,7 +219,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "gray"
   },
   {
     "id": "philosopher_stone",
@@ -214,7 +232,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "red"
   },
 
   {
@@ -227,7 +246,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "blue"
   },
   {
     "id": "merch_with_john_travolta",
@@ -239,7 +259,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "yellow"
   },
   {
     "id": "lost_ark",
@@ -251,7 +272,8 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "red"
   },
   {
     "id": "plasticine_rings",
@@ -263,6 +285,7 @@
     "discount_price": "4499",
     "likes": "8492",
     "review_rating": "4.8",
-    "promo": "autumn_sale"
+    "promo": "autumn_sale",
+    "background": "gray"
   }
 ]

@@ -12,8 +12,9 @@ const Card = (props: {
 }) => {
   const { snippet } = props;
   const colors = backgroundColors as Indexed;
+
   return (
-    <div className={"card-photo"}>
+    <div className={`card-photo`}>
       <div
         className={`card-photo__photo`}
         style={{

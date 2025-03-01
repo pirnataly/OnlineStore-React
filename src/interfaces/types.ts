@@ -24,6 +24,7 @@ export type ProductItem = {
   likes: string;
   review_rating: string;
   promo: string;
+  background: string;
 };
 
 export type SnippetItemConfig = {
@@ -57,8 +58,9 @@ type ContainerSnippets = {
   snippets: ProductItemWithType[];
 };
 
-export type ContainerConfigWithSnippetsTypes = ContainerConfigTruncated &
-  ContainerSnippets;
+export type ContainerConfigWithSnippetsTypes = ContainerConfigTruncated & {
+  parent: string;
+} & ContainerSnippets;
 
 export type ComponentKeys = keyof typeof components;
 
@@ -74,4 +76,14 @@ export type HistoryProp = {
 export type HistoryProps = {
   historyArray: HistoryProp[];
   value: string;
+};
+
+export enum Pages {
+  catalog = "catalog",
+  main = "main",
+}
+
+export type PageHeadingProps = {
+  text: string;
+  page: Pages;
 };

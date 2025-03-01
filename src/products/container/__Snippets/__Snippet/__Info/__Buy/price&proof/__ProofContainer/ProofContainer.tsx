@@ -7,8 +7,9 @@ const ProofContainer = (props: {
   containerType: string;
   snippet: ProductItemWithType;
   extraClass: string;
+  parent: string;
 }) => {
-  const { containerType, snippet, extraClass } = props;
+  const { containerType, snippet, extraClass, parent } = props;
   return (
     <div
       className={`proof-container ${containerType}-proof-container ${extraClass}__${containerType}-proof-container`}
@@ -18,12 +19,14 @@ const ProofContainer = (props: {
         snippet={snippet}
         snippetKey={"review_rating"}
         proofSign={"star"}
+        parent={parent}
       />
       <Proof
         containerType={containerType}
         snippet={snippet}
         snippetKey={"likes"}
         proofSign={"like"}
+        parent={parent}
       />
     </div>
   );

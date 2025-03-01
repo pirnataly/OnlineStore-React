@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { promoObject } from "../../../../../../data/constants/constants";
 import "./Promo.scss";
 import { ProductItemWithType } from "../../../../../../interfaces/types";
-import { object } from "../../../../../../data/constants/constants";
 
 const Promo = (props: {
   containerType: string;
   snippet: ProductItemWithType;
+  parent: string;
 }) => {
-  const { containerType, snippet } = props;
+  const { containerType, snippet, parent } = props;
   const [background, setBackground] = useState(getBackground());
 
   function getBackground() {
-    if (snippet.promo) {
+    if (snippet.promo && parent === "main") {
       return window.innerWidth > 376
-        ? `${object[snippet.promo].background}`
-        : `${object[snippet.promo].background_mobile}`;
+        ? `${promoObject[snippet.promo].background}`
+        : `${promoObject[snippet.promo].background_mobile}`;
+    }
+    if (snippet.promo && parent === "catalog") {
+      return `${promoObject[snippet.promo].background_mobile}`;
     }
     return null;
   }
@@ -30,12 +34,16 @@ const Promo = (props: {
 
   if (snippet.promo) {
     return (
-      <div className={`promo ${containerType}-snippet-container__promo`}>
-        <div className={"tag tag-up promo__up"}>
-          {object[snippet.promo].discount}
+      <div
+        className={`promo ${containerType}-snippet-container__promo ${parent}__${containerType}-snippet-container__promo`}
+      >
+        <div
+          className={`tag ${containerType}-tag-up ${parent}__${containerType}-tag-up promo__up`}
+        >
+          {promoObject[snippet.promo].discount}
         </div>
         <div
-          className={"tag tag-bottom promo__bottom"}
+          className={`tag ${containerType}-tag-bottom  promo__bottom`}
           style={
             background ? { background: background } : { background: "none" }
           }

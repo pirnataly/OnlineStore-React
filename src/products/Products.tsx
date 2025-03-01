@@ -6,7 +6,7 @@ import { getProductsWithType } from "../utils/utils";
 import "./Products.scss";
 import Container from "./container/Container";
 
-const Products = () => {
+const Products = (props: { parent: string }) => {
   const productsItems = products as ProductItem[];
   const containersArray = containers as ContainerConfig[];
 
@@ -20,6 +20,7 @@ const Products = () => {
             snippets={getProductsWithType(productsItems, snippets)}
             title={title}
             title_id={title_id}
+            parent={props.parent}
           />
         ),
       )}

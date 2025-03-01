@@ -1,0 +1,10 @@
+@use "../../../../Main" as Main;
+
+.page-heading {
+  @include Main.discount-typography;
+  @include Main.H2;
+}
+
+.catalog__page-heading {
+  margin-right: 10px;
+}

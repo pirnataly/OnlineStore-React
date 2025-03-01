@@ -6,7 +6,7 @@ import Heading from "./__Heading/Heading";
 
 const Container = (props: ContainerConfigWithSnippetsTypes) => {
   return (
-    <div className={`container ${props.containerType}__container`}>
+    <div className={`container  ${props.containerType}-container`}>
       {props.title && props.title_id && (
         <Heading
           title={props.title}
@@ -14,7 +14,11 @@ const Container = (props: ContainerConfigWithSnippetsTypes) => {
           containerType={props.containerType}
         />
       )}
-      <Snippets containerType={props.containerType} snippets={props.snippets} />
+      <Snippets
+        containerType={props.containerType}
+        snippets={props.snippets}
+        parent={props.parent}
+      />
     </div>
   );
 };

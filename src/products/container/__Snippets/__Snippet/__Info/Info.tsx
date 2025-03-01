@@ -12,21 +12,30 @@ import ProofContainer from "./__Buy/price&proof/__ProofContainer/ProofContainer"
 const Info = (props: {
   containerType: string;
   snippet: ProductItemWithType;
+  parent: string;
 }) => {
-  const { snippet, containerType } = props;
+  const { snippet, containerType, parent } = props;
   return (
     <div className={`info ${containerType}-snippet__info`}>
       {containerType === "products" ? (
         <>
           <Buttons containerType={"products"} />
           <Description containerType={containerType} snippet={snippet} />
-          <Buy containerType={containerType} snippet={snippet} />
+          <Buy
+            containerType={containerType}
+            snippet={snippet}
+            parent={parent}
+          />
         </>
       ) : (
         <>
-          <PriceProof containerType={containerType} snippet={snippet} />
+          <PriceProof
+            containerType={containerType}
+            snippet={snippet}
+            parent={parent}
+          />
           <TextBlock
-            className={`product-name ${containerType}-product-name `}
+            className={`product-name ${containerType}-product-name ${parent}__${containerType}-product-name`}
             snippet={snippet}
             snippetProperty={"name"}
           />
@@ -34,6 +43,7 @@ const Info = (props: {
             containerType={containerType}
             snippet={snippet}
             extraClass={"info"}
+            parent={parent}
           />
           <BuyButton
             containerType={containerType}

@@ -15,13 +15,13 @@ $container-gap-mobile: 28px;
 @use "../../Main";
 .container {
   @include Main.flex-column();
+  width: 100%;
 }
 
-.catalog__container {
-  width: 100%;
+.catalog-container {
+  background: $catalog-background-color;
   padding: 32px 0 3px 4px;
   border-radius: $catalog-border-radius;
-  background: $catalog-background-color;
   margin-bottom: $container-gap;
   @media (min-width: Main.$mobile + 1px) and (max-width: Main.$desktop - 1px) {
     padding: 12px 0 0 4px;
