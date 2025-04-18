@@ -2,4 +2,5 @@
 
 .amount {
   @include Main.typography(Main.$shop-gray);
+  line-height: 72%;
 }

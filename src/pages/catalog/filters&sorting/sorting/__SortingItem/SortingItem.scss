@@ -1,0 +1,27 @@
+@use "../../../../../Main" as Main;
+
+.sorting-item {
+  list-style: none;
+  margin-right: 14px;
+  @include Main.discount-typography;
+  @include Main.small-medium;
+  color: black;
+  white-space: nowrap;
+  @media (hover: hover) {
+    &:not(&_active):hover {
+      cursor: pointer;
+      color: Main.$shop-red;
+    }
+    &:active {
+      color: Main.$shop-red;
+    }
+  }
+  @media (max-width: Main.$filters-sorting-change-point) {
+    padding: 8px 10px 9px;
+    margin-right: 0;
+  }
+
+  &_active {
+    color: Main.$shop-red;
+  }
+}

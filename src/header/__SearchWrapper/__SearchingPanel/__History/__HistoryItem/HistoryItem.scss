@@ -11,6 +11,12 @@
   &:last-child {
     border-bottom: none;
   }
+  @media (hover: hover) {
+    cursor: pointer;
+  }
+  @media (max-width: Main.$mobile + 1) {
+    padding: 16px 0 20px;
+  }
 }
 
 .history-item__text {

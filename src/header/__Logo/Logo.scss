@@ -22,4 +22,7 @@ $logo-line-height: 28px;
   font-weight: $font-wight;
   color: $logo-text-color;
   font-family: Main.$font;
+  @media (max-width: Main.$mobile + 1px) {
+    @include Main.H2;
+  }
 }

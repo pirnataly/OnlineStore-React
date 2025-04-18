@@ -10,7 +10,8 @@ const SearchButton = (props: { onClickHandler: FunctionTypeVoid }) => {
   }
 
   return (
-    <div
+    <button
+      type={"button"}
       className={"search-button header__search-button"}
       onClick={onClickSearchHandler}
     />

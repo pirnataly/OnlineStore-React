@@ -19,6 +19,9 @@ $border-radius: 16px;
   }
 
   &-ico {
+    display: block;
+    outline: none;
+    border: none;
     width: $ico-width;
     height: $ico-width;
     background: url("icons/search-pale.svg") no-repeat;

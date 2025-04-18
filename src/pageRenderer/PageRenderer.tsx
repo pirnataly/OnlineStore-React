@@ -1,27 +1,16 @@
 import React from "react";
-import BannerAndCategories from "../banner&categories/BannerAndCategories";
-import Products from "../products/Products";
-import Catalog from "../pages/catalog/Catalog";
-import { Pages } from "../interfaces/types";
+import { PageRendererType } from "../interfaces/types";
+import CatalogPage from "../pages/catalog/CatalogPage";
+import MainPage from "../pages/main/MainPage";
 
-const PageRenderer = (props: { page: Pages; text: string }) => {
+const PageRenderer = (props: PageRendererType) => {
   switch (props.page) {
     case "main":
-      return (
-        <>
-          <BannerAndCategories />
-          <Products parent={props.page} />
-        </>
-      );
+      return <MainPage {...props} />;
     case "catalog":
-      return <Catalog page={props.page} text={"Магия"} />;
+      return <CatalogPage {...props} />;
     default:
-      return (
-        <>
-          <BannerAndCategories />
-          <Products parent={props.page} />
-        </>
-      );
+      return <MainPage {...props} />;
   }
 };
 

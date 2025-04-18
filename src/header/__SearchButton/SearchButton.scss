@@ -1,6 +1,10 @@
 $button-width: 32px;
 
+@use "../../Main" as Main;
+
 .search-button {
+  display: block;
+  background-color: transparent;
   width: $button-width;
   height: $button-width;
   background-image: url("icons/search.svg");

@@ -1,18 +1,16 @@
 import React from "react";
 import "./Logo.scss";
+import { LogoProps, Pages } from "../../interfaces/types";
 
-const Logo = ({
-  text,
-  changePage,
-  parent,
-}: {
-  text: string;
-  changePage: (str: string) => void;
-  parent: string;
-}) => {
+const Logo = ({ logoText, changePage, parent }: LogoProps) => {
   return (
-    <div className={`logo ${parent}__logo`} onClick={() => changePage("main")}>
-      <span className={"logo__text"}>{text}</span>
+    <div
+      className={`logo ${parent}__logo`}
+      onClick={() => {
+        changePage(Pages.main);
+      }}
+    >
+      <span className={"logo__text"}>{logoText}</span>
     </div>
   );
 };

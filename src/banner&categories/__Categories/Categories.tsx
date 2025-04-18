@@ -11,6 +11,7 @@ const Categories = (props: MenuItemProps) => {
         containerType={props.containerType}
         itemType={props.itemType}
         value={props.value}
+        func={props.func}
       />
     </div>
   );

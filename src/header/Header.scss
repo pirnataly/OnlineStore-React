@@ -1,7 +1,7 @@
 $search-width-desktop: 1084px;
 $search-width-mobile: 351px;
 
-@use "../Main";
+@use "../Main" as Main;
 
 .header {
   display: flex;

@@ -2,19 +2,17 @@ import React, { SyntheticEvent, useEffect, useState } from "react";
 import Overlay from "../../overlay/Overlay";
 import Search from "./__Search/Search";
 import SearchButton from "../__SearchButton/SearchButton";
+import { SearchWrapperProps } from "../../interfaces/types";
 
-const SearchWrapper = () => {
+const SearchWrapper = (props: SearchWrapperProps) => {
+  const {
+    changePageDueToValue,
+    changeCategoryFunc,
+    inputValue,
+    setInputValue,
+    viewportWidth,
+  } = props;
   const [isOpen, setIsOpen] = useState(false);
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    function handleOnResize() {
-      setViewportWidth(window.innerWidth);
-    }
-
-    window.addEventListener("resize", handleOnResize);
-    return () => window.removeEventListener("resize", handleOnResize);
-  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -22,7 +20,6 @@ const SearchWrapper = () => {
     } else {
       document.body.classList.remove("popup-open");
     }
-
     return () => {
       document.body.classList.remove("popup-open");
     };
@@ -33,30 +30,55 @@ const SearchWrapper = () => {
   }
 
   function handleClick(e: SyntheticEvent) {
-    if ((e.target as HTMLElement).closest(".searching-panel")) {
+    const target = e.target as HTMLElement;
+    if (
+      target.closest(".searching-panel") &&
+      !(
+        target.closest(".category-item") ||
+        (target.closest(".history-item") &&
+          !target.classList.contains("delete-ico"))
+      )
+    ) {
       return;
     } else {
       setIsOpen(false);
     }
   }
 
-  const component =
-    viewportWidth > 376 ? (
-      <Search
-        onFocusHandler={handleFocus}
-        parent="header"
-        create={() => {}}
-        value=""
-      />
-    ) : (
-      <SearchButton onClickHandler={handleFocus} />
-    );
+  const component = window.matchMedia("(max-width: 376px)").matches ? (
+    <SearchButton onClickHandler={handleFocus} />
+  ) : (
+    <Search
+      onFocusHandler={handleFocus}
+      parent="header"
+      create={() => {}}
+      inputValue={inputValue}
+      setInputValue={setInputValue}
+      changeInputFunc={() => setIsOpen(false)}
+      changeSearchValueFunc={changePageDueToValue}
+    />
+  );
+
+  function changeInputHandler() {
+    if (inputValue !== "") {
+      setIsOpen(false);
+    }
+  }
 
   return (
     <div className={"search-wrapper header__search"}>
       {component}
       {isOpen && (
-        <Overlay onClickHandler={handleClick} onFocusHandler={handleFocus} />
+        <Overlay
+          changePageDueToValue={changePageDueToValue}
+          onClickHandler={handleClick}
+          onFocusHandler={handleFocus}
+          changeCategoryFunc={changeCategoryFunc}
+          changeInputHandler={changeInputHandler}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          viewportWidth={viewportWidth}
+        />
       )}
     </div>
   );

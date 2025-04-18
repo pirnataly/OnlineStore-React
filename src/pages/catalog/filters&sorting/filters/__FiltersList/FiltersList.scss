@@ -1,0 +1,11 @@
+@use "../../../../../Main" as Main;
+
+.filters__list {
+  display: flex;
+  width: 509px;
+  @media (max-width: Main.$filters-sorting-change-point) {
+    display: none;
+    flex-direction: column;
+    width: auto;
+  }
+}

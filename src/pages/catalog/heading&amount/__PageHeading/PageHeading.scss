@@ -3,6 +3,7 @@
 .page-heading {
   @include Main.discount-typography;
   @include Main.H2;
+  line-height: 72%;
 }
 
 .catalog__page-heading {

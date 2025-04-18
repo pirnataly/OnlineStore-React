@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./SearchingPanel.scss";
-import { FunctionTypeVoid, MenuItem } from "../../../interfaces/types";
+import { MenuItem, SearchingPanelProps } from "../../../interfaces/types";
 import Search from "../__Search/Search";
 import History from "./__History/History";
 import Categories from "../../../banner&categories/__Categories/Categories";
@@ -11,44 +11,65 @@ import {
 } from "../../../utils/utils";
 import { popularStuff } from "../../../data/constants/constants";
 
-const SearchingPanel = (props: { onFocusHandler: FunctionTypeVoid }) => {
-  const [valueFromInput, setValueFromInput] = useState("");
-  const { onFocusHandler } = props;
-  const [categoryItems, setCategoryItems] = useState(
-    categories.length !== 0 ? (categories as MenuItem[]) : [],
-  );
+const SearchingPanel = (props: SearchingPanelProps) => {
+  const {
+    onFocusHandler,
+    inputValue,
+    setInputValue,
+    changeInputHandler,
+    changePageDueToValue,
+    changeCategoryFunc,
+    onClickHandler,
+  } = props;
+
+  const [categoryItems, setCategoryItems] = useState(categories as MenuItem[]);
   const historyArray = normalizeLocalStorageArray(
     "historySearch",
     popularStuff,
   );
 
   useEffect(() => {
-    const filteredCategories = categories.filter((item) =>
-      findWordsStartingWith(item.description, valueFromInput),
+    const filteredCategories = [...categories].filter((item) =>
+      findWordsStartingWith(item.description, inputValue.trim()),
     );
-    return filteredCategories.length !== 0
-      ? setCategoryItems(filteredCategories as MenuItem[])
-      : setCategoryItems(categoryItems);
-  }, [valueFromInput, categoryItems]);
+
+    if (filteredCategories.length !== 0) {
+      setCategoryItems(filteredCategories as MenuItem[]);
+    } else {
+      setCategoryItems(categories as MenuItem[]);
+    }
+  }, [inputValue]);
 
   function createValue(newValue: string) {
-    setValueFromInput(newValue);
+    setInputValue(newValue);
   }
 
   return (
-    <div className={"searching-panel overlay__searching-panel"}>
+    <div
+      className={"searching-panel overlay__searching-panel"}
+      onClick={onClickHandler}
+    >
       <Search
         onFocusHandler={onFocusHandler}
         parent="searching-panel"
         create={createValue}
-        value={valueFromInput}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        changeInputFunc={changeInputHandler}
+        changeSearchValueFunc={changePageDueToValue}
       />
-      <History historyArray={historyArray} value={valueFromInput} />
+      <History
+        createValue={createValue}
+        historyArray={historyArray}
+        value={inputValue}
+        changeSearchValueFunc={changePageDueToValue}
+      />
       <Categories
         items={categoryItems}
         containerType={"searching-panel"}
         itemType={"category"}
-        value={valueFromInput}
+        value={inputValue}
+        func={changeCategoryFunc}
       />
     </div>
   );

@@ -1,0 +1,42 @@
+@use "../../../../Main" as Main;
+
+.sorting {
+  display: flex;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  padding: 7px 10px 9px 12px;
+  border-radius: 8px;
+  background-color: Main.$shop-almost-white;
+
+  &__list {
+    display: none;
+
+    &_active {
+      position: absolute;
+      z-index: 2;
+      border-radius: 8px;
+      display: flex;
+      top: 42px;
+      left: 0;
+    }
+  }
+}
+
+.sort-text {
+  margin-right: 14px;
+  @include Main.small-medium;
+  @include Main.discount-typography();
+  color: black;
+}
+
+.dropdown-arrow {
+  width: 12px;
+  height: 18px;
+  background-image: url("icons/dropdown.svg");
+}

@@ -8,6 +8,11 @@ import Card from "../../products/container/__Snippets/__Snippet/__Photos/templat
 
 export const menuItemsTop: MenuItem[] = [
   {
+    id: 0,
+    name: "home",
+  },
+
+  {
     id: 1,
     name: "cart",
   },
@@ -83,9 +88,24 @@ export const promoObject: { [k: string]: Indexed } = {
 };
 
 export const popularStuff = [
-  { item: "Ветровка", key: String(new Date("01.01.1970").getTime()) },
-  { item: "Шапка", key: String(new Date("02.01.1970").getTime()) },
-  { item: "Валенки", key: String(new Date("03.01.1970").getTime()) },
-  { item: "Лыжи", key: String(new Date("04.01.1970").getTime()) },
+  { item: "Ковёр", key: String(new Date("01.01.1970").getTime()) },
+  { item: "Самолёт", key: String(new Date("02.01.1970").getTime()) },
+  { item: "Шампунь", key: String(new Date("03.01.1970").getTime()) },
+  { item: "Ожерелье", key: String(new Date("04.01.1970").getTime()) },
   { item: "Санки", key: String(new Date("05.01.1970").getTime()) },
+];
+
+export const filters: string[] = [
+  "Категория",
+  "Цена",
+  "Бренд",
+  "Стиль",
+  "Цвет",
+];
+
+export const sorting: string[] = [
+  "Популярные",
+  "С высоким рейтингом",
+  "Подешевле",
+  "Подороже",
 ];

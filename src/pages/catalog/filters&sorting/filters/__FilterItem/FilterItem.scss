@@ -1,0 +1,30 @@
+@use "../../../../../Main";
+
+.filter-item {
+  position: relative;
+  list-style: none;
+  display: flex;
+  padding: 7px 8px 9px 7px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+  border-radius: 8px;
+  background-color: Main.$shop-almost-white;
+
+  &__text {
+    @include Main.discount-typography;
+    @include Main.small-medium;
+    color: Main.$black-color;
+    margin-right: 16px;
+  }
+
+  &__dropdown-ico {
+    @media (max-width: Main.$filters-sorting-change-point) {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      cursor: pointer;
+    }
+  }
+}

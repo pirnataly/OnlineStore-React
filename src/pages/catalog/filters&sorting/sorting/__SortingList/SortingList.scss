@@ -1,0 +1,12 @@
+@use "../../../../../Main" as Main;
+
+.sorting__list {
+  display: flex;
+  width: 487px;
+  @media (max-width: Main.$filters-sorting-change-point) {
+    border-radius: 8px;
+    flex-direction: column;
+    width: auto;
+    background-color: Main.$shop-almost-white;
+  }
+}

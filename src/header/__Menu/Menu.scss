@@ -29,11 +29,13 @@
   background-image: url("../../../public/icons/likes.svg");
 }
 
-.searching-panel__navigation {
+.searching-panel__navigation,
+.main__navigation {
   width: 100%;
 }
 
-.searching-panel__menu {
+.searching-panel__menu,
+.main__menu {
   overflow-x: auto;
   scroll-behavior: smooth;
   cursor: grab;

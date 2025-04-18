@@ -4,6 +4,8 @@ import {
   ProductItemWithType,
   Indexed,
   HistoryProp,
+  CategoryType,
+  SearchItemValue,
 } from "../interfaces/types";
 
 export function getProductsWithType(
@@ -67,18 +69,33 @@ export function normalizeLocalStorageArray(
   return popularThings.slice(0, 5);
 }
 
-export function setSearchToLocalStorage(
+export function addSearchToLocalStorage(
   key: string,
-  value: { item: string; key: string },
+  searchItem: SearchItemValue,
 ) {
   const fromLocalStorage = getFromLocalStorage(key);
-  if (fromLocalStorage && value.item.length) {
+  if (fromLocalStorage && searchItem.item.length) {
     const result = JSON.parse(fromLocalStorage);
-    result.unshift(value);
+    result.unshift(searchItem);
     localStorage.setItem(key, JSON.stringify(result));
-  } else if (value.item.length) {
-    localStorage.setItem(key, JSON.stringify(Array.of(value)));
+  } else if (searchItem.item.length) {
+    localStorage.setItem(key, JSON.stringify(Array.of(searchItem)));
   } else return;
+}
+
+export function removeSearchFromLocalStorage(
+  key: string,
+  searchItem: SearchItemValue,
+) {
+  const fromLocalStorage = getFromLocalStorage(key);
+  if (fromLocalStorage) {
+    const result = JSON.parse(fromLocalStorage);
+    const filteredArray = result.filter(
+      (item: SearchItemValue) => item.item !== searchItem.item,
+    );
+    localStorage.setItem(key, JSON.stringify(filteredArray));
+  }
+  return;
 }
 
 export function findWordsStartingWith(
@@ -96,4 +113,45 @@ export function getSnippetsWithTypeCard(snippets: ProductItem[]) {
     return Object.assign(snippet, { type: "card" }) as ProductItemWithType;
   });
   return result;
+}
+
+export function getEndOfAmount(str: string): string {
+  let result: string;
+  switch (str[str.length - 1]) {
+    case "1":
+      result = "товар";
+      break;
+    case "2":
+    case "3":
+    case "4":
+      result = "товара";
+      break;
+    default:
+      result = "товаров";
+  }
+  return result;
+}
+
+export function selectProducts(
+  originProducts: ProductItem[],
+  category: CategoryType | null,
+  value: string | null,
+) {
+  return originProducts.filter((item) => {
+    if (category) {
+      return item.categories.includes(category.name);
+    } else if (value) {
+      const arrayOfWords = value.split(" ");
+      const tempArray = arrayOfWords.filter((word) =>
+        item.name.toLowerCase().includes(word.toLowerCase()),
+      );
+      return tempArray.length === arrayOfWords.length;
+    } else {
+      return originProducts;
+    }
+  });
+}
+
+export function capitalize(str: string) {
+  return str[0].toUpperCase() + str.slice(1);
 }

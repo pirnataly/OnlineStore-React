@@ -1,8 +1,11 @@
 @use "Main";
 
 .app {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: Main.$desktop;
+  height: 100vh;
   background-color: Main.$shop-white;
 
   &__navigation {

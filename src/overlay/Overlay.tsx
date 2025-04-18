@@ -1,17 +1,23 @@
-import React, { SyntheticEvent } from "react";
+import React from "react";
 import "./Overlay.scss";
-import { FunctionTypeVoid } from "../interfaces/types";
+import { OverlayProps } from "../interfaces/types";
 import SearchingPanel from "../header/__SearchWrapper/__SearchingPanel/SearchingPanel";
 
-const Overlay = (props: {
-  onClickHandler: (e: SyntheticEvent) => void;
-  onFocusHandler: FunctionTypeVoid;
-}) => {
-  const { onClickHandler, onFocusHandler } = props;
+const Overlay = (props: OverlayProps) => {
+  const { onClickHandler, onFocusHandler, viewportWidth } = props;
 
   return (
     <>
-      <SearchingPanel onFocusHandler={onFocusHandler} />
+      <SearchingPanel
+        onFocusHandler={onFocusHandler}
+        changePageDueToValue={props.changePageDueToValue}
+        changeCategoryFunc={props.changeCategoryFunc}
+        changeInputHandler={props.changeInputHandler}
+        onClickHandler={onClickHandler}
+        inputValue={props.inputValue}
+        setInputValue={props.setInputValue}
+        viewportWidth={viewportWidth}
+      />
       <div className="overlay" onClick={onClickHandler}></div>
     </>
   );

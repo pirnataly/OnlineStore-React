@@ -1,41 +1,58 @@
-import React, { SyntheticEvent, useState } from "react";
+import React, { SyntheticEvent } from "react";
 import "./Search.scss";
-import { setSearchToLocalStorage } from "../../../utils/utils";
+import { addSearchToLocalStorage } from "../../../utils/utils";
+import { SearchProps } from "../../../interfaces/types";
 
-const Search = (props: {
-  onFocusHandler: () => void;
-  parent: string;
-  create: (val: string) => void;
-  value: string;
-}) => {
-  const { onFocusHandler, parent } = props;
-  const [value, setValue] = useState("");
+const Search = (props: SearchProps) => {
+  const {
+    onFocusHandler,
+    parent,
+    setInputValue,
+    inputValue,
+    changeInputFunc,
+    changeSearchValueFunc,
+    create,
+  } = props;
 
   return (
     <form
       className={`search ${parent}-search`}
       onSubmit={(event) => {
         event.preventDefault();
-        const submitValue = { item: value.trim(), key: String(Date.now()) };
-        setSearchToLocalStorage("historySearch", submitValue);
+        const submitValue = {
+          item: inputValue.trim(),
+          key: String(Date.now()),
+        };
+        if (submitValue.item.length) {
+          addSearchToLocalStorage("historySearch", submitValue);
+          changeInputFunc();
+          changeSearchValueFunc(inputValue);
+        }
       }}
     >
-      <div className={"search-ico search__search-ico"} />
+      <button
+        type="button"
+        className={"search-ico search__search-ico"}
+        onClick={onFocusHandler}
+      />
       {parent !== "searching-panel" ? (
         <input
+          value={inputValue}
           className={`search-input`}
           placeholder={"Поиск товаров"}
           onFocus={onFocusHandler}
+          readOnly={true}
         />
       ) : (
         <input
           className={`search-input`}
           autoFocus
           placeholder={"Поиск товаров"}
-          value={value}
+          value={inputValue}
           onChange={(event: SyntheticEvent) => {
-            setValue((event.target as HTMLInputElement).value);
-            props.create((event.target as HTMLInputElement).value);
+            const target = event.target as HTMLInputElement;
+            setInputValue(target.value);
+            create(target.value);
           }}
         />
       )}

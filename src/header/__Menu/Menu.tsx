@@ -48,6 +48,7 @@ const Menu = (props: MenuItemProps) => {
                 name={item.name}
                 description={item.description}
                 value={props.value}
+                func={props.func}
               />
             ) : null}
           </li>
