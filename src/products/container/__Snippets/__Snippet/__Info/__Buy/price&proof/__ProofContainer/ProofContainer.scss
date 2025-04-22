@@ -15,5 +15,6 @@
   @media (max-width: Main.$mobile + 1px) {
     display: flex;
     flex-direction: row;
+    padding-top: 4px;
   }
 }

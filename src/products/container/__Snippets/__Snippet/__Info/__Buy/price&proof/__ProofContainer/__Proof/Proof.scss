@@ -26,6 +26,9 @@ $catalog-snippet-heart: "/icons/white-heart.svg";
 .main__products-proof-star,
 .catalog__catalog-proof-star {
   background-image: url($products-snippet-star);
+  @media (max-width: Main.$mobile + 1px) {
+    margin-right: 2px;
+  }
 }
 
 .main__catalog-proof-star {
