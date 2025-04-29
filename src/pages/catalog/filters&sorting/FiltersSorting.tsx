@@ -5,14 +5,20 @@ import { filters, sorting } from "../../../data/constants/constants";
 import Sorting from "./sorting/Sorting";
 import { FiltersSortingProps } from "../../../interfaces/types";
 
-const FiltersSorting = ({ viewportWidth }: FiltersSortingProps) => {
-  const filtersArray = filters;
-  const sortingArray = sorting;
-
+const FiltersSorting = ({
+  viewportWidth,
+  activeSort,
+  setActiveSort,
+}: FiltersSortingProps) => {
   return (
     <div className={`filters-sorting`}>
-      <Filters filters={filtersArray} viewportWidth={viewportWidth} />
-      <Sorting sorting={sortingArray} viewportWidth={viewportWidth} />
+      <Filters filters={filters} viewportWidth={viewportWidth} />
+      <Sorting
+        sorting={sorting}
+        viewportWidth={viewportWidth}
+        activeSort={activeSort}
+        setActiveSort={setActiveSort}
+      />
     </div>
   );
 };

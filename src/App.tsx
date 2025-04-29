@@ -14,6 +14,7 @@ function App() {
   const [selectedText, setSelectedText] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [activeSort, setActiveSort] = useState("Популярные");
 
   useEffect(() => {
     function handleOnResize() {
@@ -28,17 +29,23 @@ function App() {
     setPage(newValue);
   }
 
+  function setActiveState(str: string) {
+    setActiveSort(str);
+  }
+
   function changeCategories(category: CategoryType) {
     setSearchValue("");
     setProductsList(selectProducts(products, category, null));
     setSelectedText(category.description);
     changePage(Pages.catalog);
+    setActiveState("Популярные");
   }
 
   function changeSearchValue(valueFromInput: string) {
     setProductsList(selectProducts(products, null, valueFromInput));
     setSelectedText(valueFromInput);
     changePage(Pages.catalog);
+    setActiveState("Популярные");
   }
 
   return (
@@ -53,6 +60,8 @@ function App() {
         inputValue={searchValue}
         setInputValue={setSearchValue}
         viewportWidth={viewportWidth}
+        activeSort={activeSort}
+        setActiveSort={setActiveState}
       />
       <Footer />
       <Menu

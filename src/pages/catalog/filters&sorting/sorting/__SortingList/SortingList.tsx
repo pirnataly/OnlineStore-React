@@ -6,13 +6,13 @@ import { SortingListProps } from "../../../../../interfaces/types";
 const SortingList = ({
   sorting,
   changeActiveState,
-  active,
+  activeSort,
 }: SortingListProps) => {
   return (
     <ul className={`sorting__list`}>
       {sorting.map((sortingName) => (
         <SortingItem
-          active={active}
+          activeSort={activeSort}
           func={changeActiveState}
           name={sortingName}
           key={sortingName}

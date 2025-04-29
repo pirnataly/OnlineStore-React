@@ -3,8 +3,12 @@ import "./Sorting.scss";
 import { SortingProps } from "../../../../interfaces/types";
 import SortingList from "./__SortingList/SortingList";
 
-const Sorting = ({ sorting, viewportWidth }: SortingProps) => {
-  const [active, setActive] = useState("Популярные");
+const Sorting = ({
+  sorting,
+  viewportWidth,
+  activeSort,
+  setActiveSort,
+}: SortingProps) => {
   const [dropOpen, setDropOpen] = useState(false);
 
   useEffect(() => {
@@ -24,7 +28,7 @@ const Sorting = ({ sorting, viewportWidth }: SortingProps) => {
   }, []);
 
   function changeActiveState(nameOfSortingItem: string) {
-    setActive(nameOfSortingItem);
+    setActiveSort(nameOfSortingItem);
   }
 
   return (
@@ -47,17 +51,17 @@ const Sorting = ({ sorting, viewportWidth }: SortingProps) => {
             <SortingList
               sorting={sorting}
               changeActiveState={changeActiveState}
-              active={active}
+              activeSort={activeSort}
             />
           </div>
-          <span className={"sort-text"}>{active}</span>
+          <span className={"sort-text"}>{activeSort}</span>
           <div className={"dropdown-arrow"}></div>
         </button>
       ) : (
         <SortingList
           sorting={sorting}
           changeActiveState={changeActiveState}
-          active={active}
+          activeSort={activeSort}
         />
       )}
     </div>

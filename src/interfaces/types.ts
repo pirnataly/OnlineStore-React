@@ -115,20 +115,24 @@ export type FiltersListProps = { filters: string[] };
 export type SortingListProps = {
   sorting: string[];
   changeActiveState: (str: string) => void;
-  active: string;
+  activeSort: string;
 };
 
-export type FiltersSortingProps = { viewportWidth: number };
+export type FiltersSortingProps = {
+  viewportWidth: number;
+  activeSort: string;
+  setActiveSort: (str: string) => void;
+};
 
 export type FiltersProps = { filters: string[]; viewportWidth: number };
 
-export type SortingProps = { sorting: string[]; viewportWidth: number };
+export type SortingProps = { sorting: string[] } & FiltersSortingProps;
 
 export type FilterItemName = { name: string };
 
 export type SortingItemName = Pick<FilterItemName, "name"> & {
   func: FunctionStringVoid;
-  active: string;
+  activeSort: string;
 };
 
 export type LogoProps = {
@@ -154,6 +158,8 @@ export type HeaderProps = HeaderPropsHandlers &
   UseStateInput & { logoText: string; viewportWidth: number };
 
 export type CatalogProps = {
+  activeSort: string;
+  setActiveSort: (str: string) => void;
   page: Pages;
   text: string;
   viewportWidth: number;

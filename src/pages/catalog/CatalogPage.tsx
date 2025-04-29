@@ -14,6 +14,8 @@ const CatalogPage = (props: PageRendererType) => {
     text,
     products,
     viewportWidth,
+    activeSort,
+    setActiveSort,
   } = props;
 
   return (
@@ -33,6 +35,8 @@ const CatalogPage = (props: PageRendererType) => {
         text={text}
         products={products}
         viewportWidth={viewportWidth}
+        activeSort={activeSort}
+        setActiveSort={setActiveSort}
       />
     </>
   );
