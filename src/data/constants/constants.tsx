@@ -8,11 +8,6 @@ import Card from "../../products/container/__Snippets/__Snippet/__Photos/templat
 
 export const menuItemsTop: MenuItem[] = [
   {
-    id: 0,
-    name: "home",
-  },
-
-  {
     id: 1,
     name: "cart",
   },

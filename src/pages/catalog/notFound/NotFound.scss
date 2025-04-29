@@ -1,0 +1,11 @@
+@use "../../../Main" as Main;
+
+.not-found {
+  @include Main.typography(Main.$shop-gray);
+  margin-top: 12px;
+  padding-left: 12px;
+  @media (max-width: Main.$mobile + 1px) {
+    margin-top: 0;
+    padding-left: 8px;
+  }
+}

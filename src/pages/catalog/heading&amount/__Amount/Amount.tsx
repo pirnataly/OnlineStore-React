@@ -6,7 +6,7 @@ import { getEndOfAmount } from "../../../../utils/utils";
 const Amount = ({ text, page }: PageHeadingProps) => {
   return (
     <div className={`amount ${page}__amount`}>
-      {text} {getEndOfAmount(text)}
+      {text !== "0" ? text : null} {getEndOfAmount(text)}
     </div>
   );
 };

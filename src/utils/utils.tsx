@@ -118,6 +118,9 @@ export function getSnippetsWithTypeCard(snippets: ProductItem[]) {
 export function getEndOfAmount(str: string): string {
   let result: string;
   switch (str[str.length - 1]) {
+    case "0":
+      result = "";
+      break;
     case "1":
       result = "товар";
       break;

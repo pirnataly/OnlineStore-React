@@ -19,6 +19,7 @@ function App() {
     function handleOnResize() {
       setViewportWidth(window.innerWidth);
     }
+
     window.addEventListener("resize", handleOnResize);
     return () => window.removeEventListener("resize", handleOnResize);
   }, []);
