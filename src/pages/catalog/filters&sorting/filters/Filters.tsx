@@ -3,9 +3,9 @@ import { FiltersProps } from "../../../../interfaces/types";
 import "./Filters.scss";
 import FiltersList from "./__FiltersList/FiltersList";
 
-const Filters = ({ filters, viewportWidth }: FiltersProps) => {
+const Filters = ({ filters, viewportWidth,activeFilter,setActiveFilter }: FiltersProps) => {
   const [dropOpen, setDropOpen] = useState(false);
-
+console.log(dropOpen)
   return (
     <div className={"filters"}>
       {viewportWidth <= 1090 ? (
@@ -23,11 +23,11 @@ const Filters = ({ filters, viewportWidth }: FiltersProps) => {
                 : "dropdown__list"
             }
           >
-            <FiltersList filters={filters} />
+            <FiltersList  filters={filters} activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
           </div>
         </button>
       ) : (
-        <FiltersList filters={filters} />
+        <FiltersList  filters={filters} activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
       )}
     </div>
   );

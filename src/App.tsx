@@ -16,6 +16,7 @@ function App() {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [activeSort, setActiveSort] = useState("Популярные");
 
+
   useEffect(() => {
     function handleOnResize() {
       setViewportWidth(window.innerWidth);

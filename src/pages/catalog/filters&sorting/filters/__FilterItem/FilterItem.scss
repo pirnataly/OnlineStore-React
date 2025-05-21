@@ -22,9 +22,8 @@
     @media (max-width: Main.$filters-sorting-change-point) {
       display: none;
     }
-
-    @media (hover: hover) {
-      cursor: pointer;
-    }
+  }
+  @media (hover: hover) {
+    cursor: pointer;
   }
 }

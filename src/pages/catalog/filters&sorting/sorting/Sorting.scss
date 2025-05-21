@@ -13,20 +13,21 @@
   padding: 7px 10px 9px 12px;
   border-radius: 8px;
   background-color: Main.$shop-almost-white;
+}
 
-  &__list {
-    display: none;
+.sorting-dropdown__list {
+  display: none;
 
-    &_active {
-      position: absolute;
-      z-index: 2;
-      border-radius: 8px;
-      display: flex;
-      top: 42px;
-      left: 0;
-    }
+  &_active {
+    position: absolute;
+    z-index: 2;
+    border-radius: 8px;
+    display: flex;
+    top: 42px;
+    left: 0;
   }
 }
+
 
 .sort-text {
   margin-right: 14px;

@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: Main.$desktop;
   height: 100vh;
+  max-width: Main.$desktop;
   background-color: Main.$shop-white;
+
 
   &__navigation {
     display: none;

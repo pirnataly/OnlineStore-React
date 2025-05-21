@@ -1,8 +1,9 @@
-import React, { SyntheticEvent, useEffect, useState } from "react";
+import React, {SyntheticEvent, useEffect, useState} from "react";
 import Overlay from "../../overlay/Overlay";
 import Search from "./__Search/Search";
 import SearchButton from "../__SearchButton/SearchButton";
-import { SearchWrapperProps } from "../../interfaces/types";
+import {SearchWrapperProps} from "../../interfaces/types";
+
 
 const SearchWrapper = (props: SearchWrapperProps) => {
   const {
@@ -32,12 +33,12 @@ const SearchWrapper = (props: SearchWrapperProps) => {
   function handleClick(e: SyntheticEvent) {
     const target = e.target as HTMLElement;
     if (
-      target.closest(".searching-panel") &&
-      !(
-        target.closest(".category-item") ||
-        (target.closest(".history-item") &&
-          !target.classList.contains("delete-ico"))
-      )
+        target.closest(".searching-panel") &&
+        !(
+            target.closest(".category-item") ||
+            (target.closest(".history-item") &&
+                !target.classList.contains("delete-ico"))
+        )
     ) {
       return;
     } else {
@@ -45,18 +46,20 @@ const SearchWrapper = (props: SearchWrapperProps) => {
     }
   }
 
+
   const component = window.matchMedia("(max-width: 376px)").matches ? (
-    <SearchButton onClickHandler={handleFocus} />
+      <SearchButton onClickHandler={handleFocus}/>
   ) : (
-    <Search
-      onFocusHandler={handleFocus}
-      parent="header"
-      create={() => {}}
-      inputValue={inputValue}
-      setInputValue={setInputValue}
-      changeInputFunc={() => setIsOpen(false)}
-      changeSearchValueFunc={changePageDueToValue}
-    />
+      <Search
+          onFocusHandler={handleFocus}
+          parent="header"
+          create={() => {
+          }}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          changeInputFunc={() => setIsOpen(false)}
+          changeSearchValueFunc={changePageDueToValue}
+      />
   );
 
   function changeInputHandler() {
@@ -66,21 +69,21 @@ const SearchWrapper = (props: SearchWrapperProps) => {
   }
 
   return (
-    <div className={"search-wrapper header__search"}>
-      {component}
-      {isOpen && (
-        <Overlay
-          changePageDueToValue={changePageDueToValue}
-          onClickHandler={handleClick}
-          onFocusHandler={handleFocus}
-          changeCategoryFunc={changeCategoryFunc}
-          changeInputHandler={changeInputHandler}
-          inputValue={inputValue}
-          setInputValue={setInputValue}
-          viewportWidth={viewportWidth}
-        />
-      )}
-    </div>
+      <div className={"search-wrapper header__search"}>
+        {component}
+        {isOpen && (
+            <Overlay
+                changePageDueToValue={changePageDueToValue}
+                onClickHandler={handleClick}
+                onFocusHandler={handleFocus}
+                changeCategoryFunc={changeCategoryFunc}
+                changeInputHandler={changeInputHandler}
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                viewportWidth={viewportWidth}
+            />
+        )}
+      </div>
   );
 };
 

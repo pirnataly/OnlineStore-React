@@ -158,3 +158,34 @@ export function selectProducts(
 export function capitalize(str: string) {
   return str[0].toUpperCase() + str.slice(1);
 }
+
+
+export function sortBySelectedSort(selectedSort:string,snippetsWithCardType:ProductItemWithType[]){
+  let result;
+  switch (selectedSort) {
+    case "Популярные":
+      result = [...snippetsWithCardType].sort(
+          (a, b) => Number(b["likes"]) - Number(a["likes"]),
+      );
+      break;
+      // full_price временно
+    case "Подороже":
+      result = [...snippetsWithCardType].sort(
+          (a, b) => Number(b["full_price"]) - Number(a["full_price"]),
+      );
+      break;
+    case "Подешевле":
+      result = [...snippetsWithCardType].sort(
+          (a, b) => Number(a["full_price"]) - Number(b["full_price"]),
+      );
+      break;
+    case "С высоким рейтингом":
+      result = [...snippetsWithCardType].sort(
+          (a, b) => Number(b["review_rating"]) - Number(a["review_rating"]),
+      );
+      break;
+    default:
+      result = snippetsWithCardType;
+  }
+  return result;
+}

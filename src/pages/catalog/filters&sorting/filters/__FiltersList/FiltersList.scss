@@ -8,4 +8,7 @@
     flex-direction: column;
     width: auto;
   }
+  &_active{
+    display: flex;
+  }
 }

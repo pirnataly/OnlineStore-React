@@ -1,5 +1,5 @@
-import { components } from "../data/constants/constants";
-import React, { SyntheticEvent } from "react";
+import {components} from "../data/constants/constants";
+import React, {JSX, SyntheticEvent} from "react";
 
 export type MenuItem = {
   id: number;
@@ -77,8 +77,8 @@ type ContainerSnippets = {
 export type ParentType = { parent: string };
 
 export type ContainerConfigWithSnippetsTypes = ContainerConfigTruncated &
-  ParentType &
-  ContainerSnippets;
+    ParentType &
+    ContainerSnippets;
 
 export type ComponentKeys = keyof typeof components;
 
@@ -110,7 +110,7 @@ export type PageHeadingProps = {
   page: Pages;
   count?: number;
 };
-export type FiltersListProps = { filters: string[] };
+
 
 export type SortingListProps = {
   sorting: string[];
@@ -118,17 +118,30 @@ export type SortingListProps = {
   activeSort: string;
 };
 
+
 export type FiltersSortingProps = {
   viewportWidth: number;
   activeSort: string;
   setActiveSort: (str: string) => void;
+  activeFilter: string;
+  setActiveFilter: (str: string) => void;
 };
 
-export type FiltersProps = { filters: string[]; viewportWidth: number };
+export type FiltersProps = {
+  filters: string[]
+} & Omit<FiltersSortingProps, "activeSort" | "setActiveSort">;
 
-export type SortingProps = { sorting: string[] } & FiltersSortingProps;
+export type FiltersListProps = Omit<FiltersProps, "viewportWidth">;
 
-export type FilterItemName = { name: string };
+export type DropdownType = {
+  dropOpen: boolean,
+  child: JSX.Element,
+  parent: string
+}
+
+export type SortingProps = { sorting: string[] } & Omit<FiltersSortingProps, "activeFilter" | "setActiveFilter">;
+
+export type FilterItemName = { name: string } & Pick<FiltersSortingProps, "setActiveFilter">;
 
 export type SortingItemName = Pick<FilterItemName, "name"> & {
   func: FunctionStringVoid;
@@ -154,8 +167,8 @@ export type HeaderPropsHandlers = {
 };
 
 export type HeaderProps = HeaderPropsHandlers &
-  ParentType &
-  UseStateInput & { logoText: string; viewportWidth: number };
+    ParentType &
+    UseStateInput & { logoText: string; viewportWidth: number };
 
 export type CatalogProps = {
   activeSort: string;
@@ -167,8 +180,8 @@ export type CatalogProps = {
 };
 
 export type PageRendererType = CatalogProps &
-  HeaderPropsHandlers &
-  UseStateInput;
+    HeaderPropsHandlers &
+    UseStateInput;
 
 export type SearchItemValue = { item: string; key: string };
 
@@ -204,3 +217,5 @@ export type SearchPropsHandlers = {
 };
 
 export type SearchProps = SearchPropsHandlers & ParentType & UseStateInput;
+
+
